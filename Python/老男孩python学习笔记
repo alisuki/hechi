@@ -1,0 +1,504 @@
+#!/usr/bin/python
+python学习笔记
+复习网址：http://www.cnblogs.com/wupeiqi/articles/4938499.html
+
+绘制流程图站点：www.processon.com
+
+帮助说明：
+help(方法名)
+pydoc -p 8000	#推荐使用
+pydoc os	#在shell使用可查看os模块的帮助
+http://docs.python.org/download.html 
+
+清屏：Ctrl + L
+
+1.导入模块的方法：
+import sys	#导入整个模块，使用时必须在方法前加上sys，如：sys.argv
+
+from sys import *	#导入模块下所有方法，一般情况下不建议用，以避免模块里的方法与变量重名冲突
+
+from sys import argv	#仅导入sys模块下的argv这个方法，调用时可直接使用方法名，如：argv
+
+import multiprocessing as multi		#导入模块后别名为:multi  ，这样以后就可以使用别名，不用打那么多的字
+
+2.用户交互的方法：
+raw_input	#等待用户输入，输入的内容默认被识别为字符串型
+input		#自动识别输入的数据类型，输入什么就输出什么，如果是变量即输出变量
+
+3.格式化输出：	# %s为字符串型，%d为数字型
+name=raw_input('姓名：')
+sex=raw_input('性别：')
+age=raw_input('年龄：')
+print '''
+-------------------------
+正在输出 %s 的个人信息：
+	姓名：%s
+	性别：%s
+	年龄：%d
+-------------------------
+''' % (name,name,sex,age)
+
+4.流程控制
+for i in range(10):
+	age = raw_input('请猜他的年龄是多少？')
+	if age >50:
+		print "太大了"
+	elif age >40:
+		print "还是有点大"
+	elif age ==38:
+		print "对啦，你很棒"
+		break
+	else:
+		print "再猜一次"
+
+count=0
+while count<10000:
+	count +=1
+else:
+	print count
+
+注：流程控制语句后面都可以跟else
+if...else 
+while...else
+for...else
+
+跳出循环：
+break.....continue	
+	
+文件操作：打开   f = open('file.txt','r')
+'''
+f.close       f.isatty      f.readinto    f.truncate
+f.closed      f.mode        f.readline    f.write
+f.encoding    f.name        f.readlines   f.writelines
+f.errors      f.newlines    f.seek        f.xreadlines
+f.fileno      f.next        f.softspace   
+f.flush       f.read        f.tell
+'''
+
+f.read()
+f.write('\n新内容')
+f.close()
+f.flush()		#从缓冲区写入到文件
+f.readline()	#分行读取
+f.readlines()	#以列表的方式一次性读出来，处理大文件要等很久
+f.xreadlines()	#功能同上，但处理大文件，速度很快，马上读出
+f.seek(0)		#指针跳到文件开头
+f.tell()		#到文件末尾
+f.truncate(100)	#文件截断，仅保留前100字节
+
+高级命令：打开文件后直接进行操作，结束后会自动关闭文件
+with open('./test.txt','r') as f:
+	pass		#占位符
+
+
+字符串的处理: msg = 'this is a test'
+'''
+msg.capitalize  msg.islower     msg.rpartition
+msg.center      msg.isspace     msg.rsplit
+msg.count       msg.istitle     msg.rstrip
+msg.decode      msg.isupper     msg.split
+msg.encode      msg.join        msg.splitlines
+msg.endswith    msg.ljust       msg.startswith
+msg.expandtabs  msg.lower       msg.strip
+msg.find        msg.lstrip      msg.swapcase
+msg.format      msg.partition   msg.title
+msg.index       msg.replace     msg.translate
+msg.isalnum     msg.rfind       msg.upper
+msg.isalpha     msg.rindex      msg.zfill
+msg.isdigit     msg.rjust 
+'''
+
+msg.find(substring,[start[,end]])	#查找字符串,可指定范围,返回索引值(所在位置)，否则返回-1
+msg.count('s')				#统计查找的字串个数
+msg.rfind(substring,[start[,end]])	#反向查找
+msg.index(substring,[start[,end]])	#同find,找不到产生Error异常
+msg.rindex(substring,[start[,end]])	#同上反向查找
+msg.count(substring,[start[,end]])	#返回找到子串（在文本中要查找字串）的个数
+msg.replace(old, new[, count])		#字串替换
+msg.capitalize	#首字母大写
+msg.lower()		#转小写
+msg.upper()		#转大写
+msg.swapcase()		#大小写互转
+msg.split(string,'')	#字串分割，将string转list,以空格切分
+msg.join(lists,':')	#字串合并，将list转string,以:连接
+'--'.join(lists)
+msg.strip('*')		#删除字串开头和结尾的空格或*号
+msg.lstrip('*')		#删除字串 左侧（开头）的*号
+msg.rstrip('*')		#删除字串 右侧（结尾）的*号
+
+
+处理字符串的内置函数：
+len(str)		#串长度
+cmp("my friend",str)	#字符串比较，第一个大，返回1
+max('abcdefgADGE')	#寻找字符串中最大的字符
+min('abcdefgADGE')	#寻找字符串中最小的字符
+
+字符串高亮显示：'''
+格式：\033[显示方式;前景色;背景色m正文\033[0m
+ 
+说明：
+前景色            背景色           颜色
+---------------------------------------
+30                40              黑色
+31                41              红色
+32                42              绿色
+33                43              黃色
+34                44              蓝色
+35                45              紫红色
+36                46              青蓝色
+37                47              白色
+显示方式           意义
+-------------------------
+0                终端默认设置
+1                高亮显示
+4                使用下划线
+5                闪烁
+7                反白显示
+8                不可见
+ 
+例子：
+print '\033[0;31;40m  ---这是显示的内容---  \033[0m'
+
+\033[1;31;40m    <!--1-高亮显示 31-前景色红色  40-背景色黑色-->
+\033[0m          <!--采用终端默认设置，即取消颜色设置-->   
+'''
+
+
+列表的使用[]：list = (range(100))
+'''
+list.append   list.index    list.remove   
+list.count    list.insert   list.reverse  
+list.extend   list.pop      list.sort  
+'''
+list.append('Kevien')   #追加元素 Kevien
+list.index('Kevien')	#取出Kevien的索引号
+list.remove('Kevien')	#删除元素
+list.count('Kevien')	#统计元素Kevien的个数
+list.insert(2,'Kevien')	#将Kevien插入到第3个元素位  
+list.extend		#扩展功能，可将多个列表合并到一起，也可将字串折分后合并到列表
+list.pop(5)		#删除第6个元素，并返回被删除的值
+list.sort()		#顺序排列
+list.reverse()		#逆序排列
+
+取索引值：注，前面的索引号必须要小于后面的索引号，否则报错
+[0:5]		#取前5个元素
+[7:]		#取第7个及以后的元素
+[-8:]		#取倒数8个元素
+[-8:-3]		#从倒数第8个至倒数第3个以前的
+[-8:4]		#从倒数第8个开始到第4个以前的，
+[1:8:3]		#取每2个到第9个元素之间值，且步进值为2
+
+
+字典操作{}： dict = {'kevien':'男','susse':'女'}
+'''
+dict.clear       dict.items       dict.pop         dict.viewitems
+dict.copy        dict.iteritems   dict.popitem     dict.viewkeys
+dict.fromkeys    dict.iterkeys    dict.setdefault  dict.viewvalues
+dict.get         dict.itervalues  dict.update      
+dict.has_key     dict.keys        dict.values      
+'''
+D.get('key')			#取字典内key的值
+D.has_key('job')		#判断job键是否存在，返回True或False
+D.keys()			#仅显示所有key
+D.values()			#仅显示所有Values
+D.setdefault('key','value')	#如果key不存在就创建并赋值，存在则不赋值并直接返回原有的值
+D.update(a)			#将字典a合并到字典D,如果存在重复的key,则用字典a里的key直接更新替换D里的key
+dict1=D				#别名字典，相当于软件链接
+dict2=D.copy()			#copy字典D到字典dict2
+
+
+
+set集合{}： set = {'test','fdsa','test','fewq'}
+特点：类似于字典，无序，元素不重复
+功能：关系测试，去重
+'''
+set.add                          set.issubset
+set.clear                        set.issuperset
+set.copy                         set.mro
+set.difference                   set.pop
+set.difference_update            set.remove
+set.discard                      set.symmetric_difference
+set.intersection                 set.symmetric_difference_update
+set.intersection_update          set.union
+set.isdisjoint                   set.update
+'''
+
+set集合运算：
+x = {1,2,3,4}
+y = {3,4,5,6}
+x & y	#求交集，输出 x与y 里面都有的
+x | y	#求并集，输出 x与y 去重
+x - y	#求差集，输出 x的内容 与y不重复的部分
+x ^ y	#求对称差集，输出x与y里面不重复的部分
+
+
+模块和模块的常用方法：
+from path import del	#从path导入模块del,del模块如果能被导入则path目录下必须得有这个文件：  __init__.py
+del.remove()			#remove就是del模块里的一个函数
+__name__				#显示文件主次层级
+if __name__ == '__main__'	#判断当前文件是否为主文件，常用于防止黑客攻击调用或破解
+__file__				#当前文件的路径
+__doc__					#当前文件的描述
+
+函数编程：
+def show1(arg)		#默认参数，如果要从数据库内读取传入100000个参数咋办？则使用以下参数
+def show2(*arg)		#可变参数，未知实际需要传入多少个参数，此种这情况下，将多个参数封装成一个列表，然后传入
+def show3(**arg)	#可变参数，同上，将字典作为参数传入
+return				#返回跳出函数体
+return('函数结束!')	#返回信息：'函数结束!'
+
+
+示例一：
+def show1(arg):
+	print arg
+show1('Kevien')
+
+
+示例二：
+def show2(*list):
+	for item in list:
+		print item
+		
+list = range(23)
+show2(*list)
+
+
+示例三：
+def show3(**dict):
+	for item in dict:
+		print item
+		
+dict = {'name':'Kevien','age':'28','sex':'man','job':'Boss'}
+show3(**dict)		
+
+
+yield:非常重要，需要再加强
+生成器，延迟技术，类似于响应式网页技术，遍历到的时候才输出，速度快，省内存
+def foo():
+	yield 1
+	yield 2
+	yield 3
+
+re = foo()
+for item in re:
+	print item
+
+
+三元运算：高级技术
+result = '大于' if 1>2 else '小于'		#如果为真则返回前面的值，否则返回后面的值。
+print result
+
+test = [x*x for x in range(10)]
+
+temp = lambda x,y,z:x*y+z		#  : 前为参数，: 后为运算
+
+test2 = map(lambda x:x*2,range(10))
+
+内置函数：
+a = []
+help(a)
+dir(a)
+vars(a)
+type(a)
+import
+reload()
+id()
+divmod(9,2)		#用于分页计算，很重要，结果--->(4,1)
+max()
+min
+sum
+pow
+
+len()
+all()
+any()
+
+chr()		#用于生成验证码必备，通过ASC数字找字符
+ord()		#用于生成验证码必备,通过字符找ASC数字
+
+hex()	#十六进制
+bin()	#二进制
+oct()	#八进制
+
+map		#非常重要
+
+eval(a)	#将字串当成表达式进行运算，如:a='8*8'
+
+__import__ 反射技术，通过字串的形式导入模块，并以字串的形式执行函数
+示例：
+temp = 'sys'
+model = __import__(temp)
+func = getattr(model,'path')	#到model模块里找path函数,并传递给func
+func()					#相当于执行sys.path()
+
+
+random模块		#生成随机数（验证码）
+
+
+hashlib		#加密模块
+
+作业：
+	1.生成随机验证码
+	2.密码加密
+
+
+
+用于序列化的两个模块:json 和 pickle 
+
+json，用于字符串 和 python数据类型间进行转换
+pickle，用于python特有的类型 和 python的数据类型间进行转换
+Json模块提供了四个功能：dumps、dump、loads、load
+
+pickle模块提供了四个功能：dumps、dump、loads、load
+
+pickle		#序列化模块，可将信息序列化后存进文件里，需要使用时反序列出来即可实现加密效果,同时还可用于内存数据共享交互
+pickle.dump(li,open('./mypasswd','w'))	#将列表li序列化后存入文件--mypasswd
+result = pickle.load(open('./mypasswd','r'))		#反序列化出来
+print result
+
+json		#同上，使用方法也都一样，但应用范围更广，可跨平台跨语言共享
+name_dict = {'name':'Kevien','age':'32','sex':'man'}
+obj = json.dumps(name_dict)
+json.loads(obj)
+
+
+
+re正则表达式模块：
+import re
+re.match		
+re.search
+re.compile
+re.findall
+re.group
+re.groups
+
+
+
+time时间模块，三种表示方式：
+time.time()					#时间戳
+time.gmtime()				#结构化
+time.strftime('%Y-%m-%d')	#格式化
+
+
+作业：
+	网上银行
+	功能：
+		1.额度15000
+		2.可以提现，手续费5%
+		3.每月最后一天出账单（每月30天），写入文件
+		4.记录每月日常消费流水
+		5.提供还款接口优化
+	可选：
+		1.每月10号为还款日 ，过期未还，按欠款额5%计息
+
+-------第四天---------
+
+#装饰器：为原有函数增加装饰内容; 关联识别符：@
+def warter(fun):
+    def func():
+        print "验证信息"
+        fun()
+    return func
+
+@warter		#用于关联warter函数
+def src1():
+    print "内容操作:1"
+    
+@warter
+def src2():
+    print "内容操作2"
+    
+@warter
+def src3():
+    print "内容操作3"
+    
+
+src1()
+src2()
+src3()
+
+
+类：
+class MyClass(obj):					#class 创建类
+
+test0 = "这是一个静态字段，即变量"	#test0 即：静态字段
+
+def Pro(self,name,age,sex):
+	self.name = name			
+
+test1 = MyClass('Kevien','22','男')	#test1 就是对象
+
+print test1.name					#self.name 就是动态字段
+
+@staticmethod
+def test2():						#静态方法
+	print "注意这是没有传参数的函数"
+
+@property
+def	test3(self):				#动态方法
+	print self.name	
+
+print test1.test3()		
+
+#非常重要：私有字段与方法：主要为了考虑安全性，比如说认证方式，不让别人从外部访问，要不容易被人破解
+#私有字段：只有在类的内部才能调用
+self.__show1 = flag
+
+#私有方法：只有在类的内部才能调用
+def __show2(self):
+
+
+类的继承等，需再次加强学习一次
+
+
+
+异常处理： try:....except:....
+try:	
+	这是要执行的代码
+
+except Exception,e:		#用于接收错误信息
+	print e
+	print "出现错误时，用户只能看到这个信息，比如：404"
+
+finally:		#这句可根据功能需要进行增减
+	print '无论异常与否，都会执行！'
+
+
+#自定义错误
+
+raise	#手动触发错误
+
+
+-------------------第五天------------------
+
+-------------------第六天------------------
+
+-------------------第七天------------------
+
+-------------------第八天------------------
+
+
+
+
+下一节学习Day5-14
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

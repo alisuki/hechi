@@ -1,0 +1,11 @@
+eclipse安装配置教程：
+sudo apt-get update
+sudo apt-get install eclipse
+sudo unzip -n '/home/hechi/下载/PyDev 3.9.2.zip' -d '/usr/lib/eclipse/dropins/'
+eclipse
+
+安装中文包：也可到这里去选择http://www.eclipse.org/babel/downloads.php
+help--Install New Software--add--填入以下：
+luna_lang
+http://download.eclipse.org/technology/babel/update-site/R0.14.1/luna
+再一路next

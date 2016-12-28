@@ -1,0 +1,331 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>线程池 - 武沛齐 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="../../bundles/blog-common.css?v=03KQeESEmpLfzDqUo0NiWUg5Zd5aRam3JHBZTK05Wug1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="../../skins/SimpleBlue/bundle-SimpleBlue.css?v=jJERBFSojhmgst84aaRDal9S3q1WoO-WcNudmMzGJS81"/>
+<link type="text/css" rel="stylesheet" href="../../blog/customcss/133379.css?v=YSNZANkz7eBKoXq2iHYfghvodkY%253d"/>
+<link id="mobile-style" media="only screen and (max-width: 768px)" type="text/css" rel="stylesheet" href="../../skins/SimpleBlue/bundle-SimpleBlue-mobile.css?v=BlWRqh78YPBjZE2nsyndTVBgXau6g8pl0IYzREPAN_U1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/wupeiqi/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/wupeiqi/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/wupeiqi/wlwmanifest.xml"/>
+<script src="http://common.cnblogs.com/script/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'wupeiqi', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="../../bundles/blog-common.js?v=hH1lCMV8WaIu271Nx7jPuv36TENW9-RsSxziLxUpjtc1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+		
+<!--done-->
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/wupeiqi/">Mr.Seven</a></div>
+<div class="subtitle"></div>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+<li id="nav_myhome"><a id="blog_nav_myhome" class="menu" href="http://www.cnblogs.com/wupeiqi/">首页</a></li>
+<li id="nav_newpost"><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li id="nav_contact"><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/%E6%AD%A6%E6%B2%9B%E9%BD%90">联系</a></li>
+<li id="nav_rss"><a id="blog_nav_rss" class="menu" href="http://www.cnblogs.com/wupeiqi/rss">订阅</a>
+<!--<a id="blog_nav_rss_image" class="aHeaderXML" href="http://www.cnblogs.com/wupeiqi/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li id="nav_admin"><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<!--done-->
+随笔-124&nbsp;
+文章-126&nbsp;
+评论-205&nbsp;
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class = "post">
+		<h1 class = "postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="4839959.html">线程池</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><p>版本一：</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('31df05f2-e8ac-4df5-92d5-fc8441f800df')"><img id="code_img_closed_31df05f2-e8ac-4df5-92d5-fc8441f800df" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_31df05f2-e8ac-4df5-92d5-fc8441f800df" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('31df05f2-e8ac-4df5-92d5-fc8441f800df',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_31df05f2-e8ac-4df5-92d5-fc8441f800df" class="cnblogs_code_hide">
+<pre><span style="color: #008000;">#</span><span style="color: #008000;">!/usr/bin/env python</span><span style="color: #008000;">
+#</span><span style="color: #008000;"> -*- coding:utf-8 -*-</span>
+<span style="color: #0000ff;">import</span><span style="color: #000000;"> Queue
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> threading
+
+
+</span><span style="color: #0000ff;">class</span><span style="color: #000000;"> ThreadPool(object):
+
+    </span><span style="color: #0000ff;">def</span> <span style="color: #800080;">__init__</span>(self, max_num=20<span style="color: #000000;">):
+        self.queue </span>=<span style="color: #000000;"> Queue.Queue(max_num)
+        </span><span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span><span style="color: #000000;"> xrange(max_num):
+            self.queue.put(threading.Thread)
+
+    </span><span style="color: #0000ff;">def</span><span style="color: #000000;"> get_thread(self):
+        </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> self.queue.get()
+
+    </span><span style="color: #0000ff;">def</span><span style="color: #000000;"> add_thread(self):
+        self.queue.put(threading.Thread)
+
+</span><span style="color: #800000;">"""</span><span style="color: #800000;">
+pool = ThreadPool(10)
+
+def func(arg, p):
+    print arg
+    import time
+    time.sleep(2)
+    p.add_thread()
+
+
+for i in xrange(30):
+    thread = pool.get_thread()
+    t = thread(target=func, args=(i, pool))
+    t.start()
+</span><span style="color: #800000;">"""</span></pre>
+</div>
+<span class="cnblogs_code_collapse">View Code</span>　　</div>
+<p>版本二：</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('c5e5d40d-8d5c-413a-b283-05f565a9bb88')"><img id="code_img_closed_c5e5d40d-8d5c-413a-b283-05f565a9bb88" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_c5e5d40d-8d5c-413a-b283-05f565a9bb88" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('c5e5d40d-8d5c-413a-b283-05f565a9bb88',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_c5e5d40d-8d5c-413a-b283-05f565a9bb88" class="cnblogs_code_hide">
+<pre><span style="color: #008000;">#</span><span style="color: #008000;">!/usr/bin/env python</span><span style="color: #008000;">
+#</span><span style="color: #008000;"> -*- coding:utf-8 -*-</span>
+
+<span style="color: #0000ff;">import</span><span style="color: #000000;"> queue
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> threading
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> contextlib
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> time
+
+StopEvent </span>=<span style="color: #000000;"> object()
+
+
+</span><span style="color: #0000ff;">class</span><span style="color: #000000;"> ThreadPool(object):
+
+    </span><span style="color: #0000ff;">def</span> <span style="color: #800080;">__init__</span>(self, max_num, max_task_num =<span style="color: #000000;"> None):
+        </span><span style="color: #0000ff;">if</span><span style="color: #000000;"> max_task_num:
+            self.q </span>=<span style="color: #000000;"> queue.Queue(max_task_num)
+        </span><span style="color: #0000ff;">else</span><span style="color: #000000;">:
+            self.q </span>=<span style="color: #000000;"> queue.Queue()
+        self.max_num </span>=<span style="color: #000000;"> max_num
+        self.cancel </span>=<span style="color: #000000;"> False
+        self.terminal </span>=<span style="color: #000000;"> False
+        self.generate_list </span>=<span style="color: #000000;"> []
+        self.free_list </span>=<span style="color: #000000;"> []
+
+    </span><span style="color: #0000ff;">def</span> run(self, func, args, callback=<span style="color: #000000;">None):
+        </span><span style="color: #800000;">"""</span><span style="color: #800000;">
+        线程池执行一个任务
+        :param func: 任务函数
+        :param args: 任务函数所需参数
+        :param callback: 任务执行失败或成功后执行的回调函数，回调函数有两个参数1、任务函数执行状态；2、任务函数返回值（默认为None，即：不执行回调函数）
+        :return: 如果线程池已经终止，则返回True否则None
+        </span><span style="color: #800000;">"""</span>
+        <span style="color: #0000ff;">if</span><span style="color: #000000;"> self.cancel:
+            </span><span style="color: #0000ff;">return</span>
+        <span style="color: #0000ff;">if</span> len(self.free_list) == 0 <span style="color: #0000ff;">and</span> len(self.generate_list) &lt;<span style="color: #000000;"> self.max_num:
+            self.generate_thread()
+        w </span>=<span style="color: #000000;"> (func, args, callback,)
+        self.q.put(w)
+
+    </span><span style="color: #0000ff;">def</span><span style="color: #000000;"> generate_thread(self):
+        </span><span style="color: #800000;">"""</span><span style="color: #800000;">
+        创建一个线程
+        </span><span style="color: #800000;">"""</span><span style="color: #000000;">
+        t </span>= threading.Thread(target=<span style="color: #000000;">self.call)
+        t.start()
+
+    </span><span style="color: #0000ff;">def</span><span style="color: #000000;"> call(self):
+        </span><span style="color: #800000;">"""</span><span style="color: #800000;">
+        循环去获取任务函数并执行任务函数
+        </span><span style="color: #800000;">"""</span><span style="color: #000000;">
+        current_thread </span>=<span style="color: #000000;"> threading.currentThread()
+        self.generate_list.append(current_thread)
+
+        event </span>=<span style="color: #000000;"> self.q.get()
+        </span><span style="color: #0000ff;">while</span> event !=<span style="color: #000000;"> StopEvent:
+
+            func, arguments, callback </span>=<span style="color: #000000;"> event
+            </span><span style="color: #0000ff;">try</span><span style="color: #000000;">:
+                result </span>= func(*<span style="color: #000000;">arguments)
+                success </span>=<span style="color: #000000;"> True
+            </span><span style="color: #0000ff;">except</span><span style="color: #000000;"> Exception as e:
+                success </span>=<span style="color: #000000;"> False
+                result </span>=<span style="color: #000000;"> None
+
+            </span><span style="color: #0000ff;">if</span> callback <span style="color: #0000ff;">is</span> <span style="color: #0000ff;">not</span><span style="color: #000000;"> None:
+                </span><span style="color: #0000ff;">try</span><span style="color: #000000;">:
+                    callback(success, result)
+                </span><span style="color: #0000ff;">except</span><span style="color: #000000;"> Exception as e:
+                    </span><span style="color: #0000ff;">pass</span><span style="color: #000000;">
+
+            with self.worker_state(self.free_list, current_thread):
+                </span><span style="color: #0000ff;">if</span><span style="color: #000000;"> self.terminal:
+                    event </span>=<span style="color: #000000;"> StopEvent
+                </span><span style="color: #0000ff;">else</span><span style="color: #000000;">:
+                    event </span>=<span style="color: #000000;"> self.q.get()
+        </span><span style="color: #0000ff;">else</span><span style="color: #000000;">:
+
+            self.generate_list.remove(current_thread)
+
+    </span><span style="color: #0000ff;">def</span><span style="color: #000000;"> close(self):
+        </span><span style="color: #800000;">"""</span><span style="color: #800000;">
+        执行完所有的任务后，所有线程停止
+        </span><span style="color: #800000;">"""</span><span style="color: #000000;">
+        self.cancel </span>=<span style="color: #000000;"> True
+        full_size </span>=<span style="color: #000000;"> len(self.generate_list)
+        </span><span style="color: #0000ff;">while</span><span style="color: #000000;"> full_size:
+            self.q.put(StopEvent)
+            full_size </span>-= 1
+
+    <span style="color: #0000ff;">def</span><span style="color: #000000;"> terminate(self):
+        </span><span style="color: #800000;">"""</span><span style="color: #800000;">
+        无论是否还有任务，终止线程
+        </span><span style="color: #800000;">"""</span><span style="color: #000000;">
+        self.terminal </span>=<span style="color: #000000;"> True
+
+        </span><span style="color: #0000ff;">while</span><span style="color: #000000;"> self.generate_list:
+            self.q.put(StopEvent)
+
+        self.q.queue.clear()
+
+    @contextlib.contextmanager
+    </span><span style="color: #0000ff;">def</span><span style="color: #000000;"> worker_state(self, state_list, worker_thread):
+        </span><span style="color: #800000;">"""</span><span style="color: #800000;">
+        用于记录线程中正在等待的线程数
+        </span><span style="color: #800000;">"""</span><span style="color: #000000;">
+        state_list.append(worker_thread)
+        </span><span style="color: #0000ff;">try</span><span style="color: #000000;">:
+            </span><span style="color: #0000ff;">yield</span>
+        <span style="color: #0000ff;">finally</span><span style="color: #000000;">:
+            state_list.remove(worker_thread)
+
+
+
+</span><span style="color: #008000;">#</span><span style="color: #008000;"> How to use</span>
+<span style="color: #000000;">
+
+pool </span>= ThreadPool(5<span style="color: #000000;">)
+
+</span><span style="color: #0000ff;">def</span><span style="color: #000000;"> callback(status, result):
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> status, execute action status</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;"> result, execute action return value</span>
+    <span style="color: #0000ff;">pass</span>
+
+
+<span style="color: #0000ff;">def</span><span style="color: #000000;"> action(i):
+    </span><span style="color: #0000ff;">print</span><span style="color: #000000;">(i)
+
+</span><span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> range(30<span style="color: #000000;">):
+    ret </span>=<span style="color: #000000;"> pool.run(action, (i,), callback)
+
+time.sleep(</span>5<span style="color: #000000;">)
+</span><span style="color: #0000ff;">print</span><span style="color: #000000;">(len(pool.generate_list), len(pool.free_list))
+</span><span style="color: #0000ff;">print</span><span style="color: #000000;">(len(pool.generate_list), len(pool.free_list))
+</span><span style="color: #008000;">#</span><span style="color: #008000;"> pool.close()</span><span style="color: #008000;">
+#</span><span style="color: #008000;"> pool.terminate()</span></pre>
+</div>
+<span class="cnblogs_code_collapse">View Code</span></div>
+<p>&nbsp;</p>
+<p>更多参见：twisted.python.threadpool</p>
+<p>上下文管理：https://docs.python.org/2/library/contextlib.html</p>
+<p>&nbsp;</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+
+		</div>
+		<div class = "postDesc">posted @ <span id="post-date">2015-09-26 08:12</span> <a href='http://www.cnblogs.com/wupeiqi/'>武沛齐</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>) &nbsp;<a href="https://i.cnblogs.com/EditArticles.aspx?postid=4839959" rel="nofollow">编辑</a> <a href="4839959.html#" onclick="AddToWz(4839959);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=133379,cb_entryId=4839959,cb_blogApp=currentBlogApp,cb_blogUserGuid='7208b24d-95c9-e111-aa3f-842b2b196315',cb_entryCreatedDate='2015/9/26 8:12:00';loadViewCount(cb_entryId);</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='4839959.html#' onclick='return RefreshPage();'>刷新页面</a><a href='4839959.html#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='ad_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<div id='ad_c2' class='c_ad_block'></div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script></div>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright &copy;2016 武沛齐
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+</body>
+</html>

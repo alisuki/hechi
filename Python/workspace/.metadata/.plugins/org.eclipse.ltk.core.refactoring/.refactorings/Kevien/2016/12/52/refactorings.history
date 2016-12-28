@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Kevien/第二篇/2、求1-100的所有数的和.py&apos; to &apos;2_求1-100的所有数的和.py&apos;" description="Rename resource &apos;2、求1-100的所有数的和.py&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="第二篇/2、求1-100的所有数的和.py" name="2_求1-100的所有数的和.py" stamp="1482213043668" updateReferences="true"/>
+</session>

@@ -1,0 +1,20 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: BugMfz9ON/xOepc8o+1gRldA+3rzC
+ /WYJVqJAPbf2RA=
+SHA-256-Digest-Manifest: l9CjwRi71P5BDrtONlecI25bH1wt6kwaEbthXiFN880=
+Created-By: 1.7.0_55 (Oracle Corporation)
+
+Name: fastparser.jar
+SHA-256-Digest: +PcM4Puc92sfzr6ZAjnnMe1nvVK6qlBtUfD7/qZ+0fk=
+
+Name: LICENSE.TXT
+SHA-256-Digest: mtk2pu43aWF40oMq/sr3cRMcILygEgrX4KgNzXYsnaA=
+
+Name: META-INF/maven/org.python.pydev/com.python.pydev.fastparser/pom.
+ xml
+SHA-256-Digest: PbEfTjkqoJdL0qsirvG0IMPEDAB3JRRBzdv5PYsGs5A=
+
+Name: META-INF/maven/org.python.pydev/com.python.pydev.fastparser/pom.
+ properties
+SHA-256-Digest: +T8qo50NsZ1WNWd5gDvEUFnu5HMF2LHySyjWt3Ame08=
+

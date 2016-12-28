@@ -1,0 +1,67 @@
+1.	mysql命令用户连接数据库。
+	mysql命令格式： mysql -h主机地址 -u用户名 －p用户密码
+		1) 连接到本机上的MYSQL
+		首先打开DOS窗口，然后进入目录mysql\bin，再键入命令mysql -u root -p，回车后提示你输密码。
+		注意：用户名前可以有空格也可以没有空格，但是密码前必须没有空格，否则让你重新输入密码。
+		2) 连接到远程主机上的MYSQL
+		假设远程主机的IP为：192.168.1.136，用户名为root，密码为abcd123。则键入以下命令：
+		    mysql -h192.168.1.136 -u root -p abcd123;（注：u与root之间可以不用加空格，其它也一样）
+	    3) 退出MYSQL命令：exit （回车）
+	    
+   
+2.	mysqladmin命令用于修改用户密码。
+	mysqladmin命令格式：mysqladmin -u 用户名 -p 旧密码 password 新密码
+		1) 给root加个密码ab12
+		首先在DOS下进入目录mysql\bin，然后键入以下命令：
+		    mysqladmin -u root -password ab12
+		注：因为开始时root没有密码，所以-p 旧密码一项就可以省略了。
+		
+		2) 再将root的密码改为djg345
+		    mysqladmin -u root -p ab12 password djg345
+	    
+注意：和上面不同，下面的因为是MYSQL环境中的命令，所以后面都带一个分号作为命令结束符
+
+3.	grant on命令用于增加新用户并控制其权限。
+	grant on命令格式：grant select on 数据库.* to 用户名@登录主机 identified by “密码”;
+		1) 增加一个用户test1，密码为abc，让他可以在任何主机上登录，并对所有数据库有查询、插入、修改、删除的权限。首先用root用户连入MYSQL，然后键入以下命令：
+		    grant select,insert,update,delete on *.* to [email=test1@”%]test1@”%[/email]” Identified by “abc”;
+		
+		但增加的用户是十分危险的，你想如某个人知道test1的密码，那么他就可以在internet上的任何一台电脑上登录你的mysql数据库并对你的数据可以为所欲为了，解决办法如下。
+		
+		2) 增加一个用户test2密码为abc，让他只可以在localhost上登录，并可以对数据库mydb进行查询、插入、修改、删除的操作（localhost指本地主机，即MYSQL数据库所在的那台主机），这样用户即使用知道test2的密码，他也无法从internet上直接访问数据库，只能通过MYSQL主机上的web页来访问了。
+		    grant select,insert,update,delete on mydb.* to [email=test2@localhost]test2@localhost[/email] identified by “abc”;
+		
+		如果你不想test2有密码，可以再打一个命令将密码消掉。
+		    grant select,insert,update,delete on mydb.* to [email=test2@localhost]test2@localhost[/email] identified by “”;  
+    
+    
+4.	create命令用于创建数据库。
+	create命令格式：create database <数据库名>;
+		注意：创建数据库之前要先连接Mysql服务器。
+		1) 建立一个名为xhkdb的数据库：
+		    mysql> create database xhkdb;
+		2) 创建数据库并分配用户：
+		CREATE DATABASE 数据库名;
+		GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER ON 数据库名.* TO 数据库名@localhost IDENTIFIED BY '密码';
+		SET PASSWORD FOR '数据库名'@'localhost' = OLD_PASSWORD('密码');
+		依次执行3个命令完成数据库创建。
+	
+	注意：中文 “密码”和“数据库”是户自己需要设置的。   
+    
+5.	show databases命令用于显示所有数据库。
+	show databases命令格式：show databases; （注意：最后有个s）
+		例如：mysql> show databases;
+		
+		注意：为了不在显示的时候乱码，要修改数据库默认编码。以下以GBK编码页面为例进行说明。
+		
+		1) 修改MYSQL的配置文件：my.ini里面修改default-character-set=gbk
+		
+		2) 代码运行时修改：
+		Java代码：jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=gbk
+		PHP代码：header("Content-Type:text/html;charset=gb2312");
+		C语言代码：int mysql_set_character_set( MYSQL * mysql, char * csname);
+		该函数用于为当前连接设置默认的字符集。字符串csname指定了1个有效的字符集名称。连接校对成为字符集的默认校对。该函数的工作方式与SET NAMES语句类似，但它还能设置mysql- > charset的值，从而影响了由mysql_real_escape_string() 设置的字符集。   
+	    
+    
+    
+    

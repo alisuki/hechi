@@ -1,0 +1,529 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>python 装饰器 - 武沛齐 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="../../bundles/blog-common.css?v=03KQeESEmpLfzDqUo0NiWUg5Zd5aRam3JHBZTK05Wug1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="../../skins/SimpleBlue/bundle-SimpleBlue.css?v=jJERBFSojhmgst84aaRDal9S3q1WoO-WcNudmMzGJS81"/>
+<link type="text/css" rel="stylesheet" href="../../blog/customcss/133379.css?v=YSNZANkz7eBKoXq2iHYfghvodkY%253d"/>
+<link id="mobile-style" media="only screen and (max-width: 768px)" type="text/css" rel="stylesheet" href="../../skins/SimpleBlue/bundle-SimpleBlue-mobile.css?v=BlWRqh78YPBjZE2nsyndTVBgXau6g8pl0IYzREPAN_U1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/wupeiqi/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/wupeiqi/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/wupeiqi/wlwmanifest.xml"/>
+<script src="http://common.cnblogs.com/script/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'wupeiqi', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="../../bundles/blog-common.js?v=hH1lCMV8WaIu271Nx7jPuv36TENW9-RsSxziLxUpjtc1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+		
+<!--done-->
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/wupeiqi/">Mr.Seven</a></div>
+<div class="subtitle"></div>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+<li id="nav_myhome"><a id="blog_nav_myhome" class="menu" href="http://www.cnblogs.com/wupeiqi/">首页</a></li>
+<li id="nav_newpost"><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li id="nav_contact"><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/%E6%AD%A6%E6%B2%9B%E9%BD%90">联系</a></li>
+<li id="nav_rss"><a id="blog_nav_rss" class="menu" href="http://www.cnblogs.com/wupeiqi/rss">订阅</a>
+<!--<a id="blog_nav_rss_image" class="aHeaderXML" href="http://www.cnblogs.com/wupeiqi/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li id="nav_admin"><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<!--done-->
+随笔-124&nbsp;
+文章-126&nbsp;
+评论-205&nbsp;
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class = "post">
+		<h1 class = "postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="4980620.html">python 装饰器</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><h3>1、必备</h3>
+<div class="cnblogs_Highlighter">
+<pre class="brush:python;gutter:true;">#### 第一波 ####
+def foo():
+	print 'foo'
+
+foo 	#表示是函数
+foo()   #表示执行foo函数
+
+#### 第二波 ####
+def foo():
+	print 'foo'
+
+foo = lambda x: x + 1
+
+foo()	# 执行下面的lambda表达式，而不再是原来的foo函数，因为函数 foo 被重新定义了
+</pre>
+</div>
+<h3>2、需求来了</h3>
+<p>初创公司有N个业务部门，1个基础平台部门，基础平台负责提供底层的功能，如：数据库操作、redis调用、监控API等功能。业务部门使用基础功能时，只需调用基础平台提供的功能即可。如下：</p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:python;gutter:true;">############### 基础平台提供的功能如下 ############### 
+
+def f1():
+	print 'f1'
+
+def f2():
+	print 'f2'
+
+def f3():
+	print 'f3'
+
+def f4():
+	print 'f4'
+
+############### 业务部门A 调用基础平台提供的功能 ############### 
+
+f1()
+f2()
+f3()
+f4()
+
+############### 业务部门B 调用基础平台提供的功能 ############### 
+
+f1()
+f2()
+f3()
+f4()
+</pre>
+</div>
+<p>目前公司有条不紊的进行着，但是，以前基础平台的开发人员在写代码时候没有关注验证相关的问题，即：基础平台的提供的功能可以被任何人使用。现在需要对基础平台的所有功能进行重构，为平台提供的所有功能添加验证机制，即：执行功能前，先进行验证。</p>
+<p><span style="font-size: 15px;"><strong>老大把工作交给 Low B，他是这么做的：</strong></span></p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:python;gutter:true;">跟每个业务部门交涉，每个业务部门自己写代码，调用基础平台的功能之前先验证。诶，这样一来基础平台就不需要做任何修改了。
+</pre>
+</div>
+<p>当天Low B 被开除了...</p>
+<p><strong><span style="font-size: 15px;">老大把工作交给 Low BB，他是这么做的：</span></strong></p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:python;gutter:true;">只对基础平台的代码进行重构，让N业务部门无需做任何修改
+</pre>
+</div>
+<div class="cnblogs_code" onclick="cnblogs_code_show('b78e86b6-b720-4a18-8c52-abd643191eef')"><img id="code_img_closed_b78e86b6-b720-4a18-8c52-abd643191eef" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_b78e86b6-b720-4a18-8c52-abd643191eef" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('b78e86b6-b720-4a18-8c52-abd643191eef',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_b78e86b6-b720-4a18-8c52-abd643191eef" class="cnblogs_code_hide">
+<pre><span style="color: #008000;">#</span><span style="color: #008000;">############## 基础平台提供的功能如下 ############### </span>
+
+<span style="color: #0000ff;">def</span><span style="color: #000000;"> f1():
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> 验证1</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;"> 验证2</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;"> 验证3</span>
+    <span style="color: #0000ff;">print</span> <span style="color: #800000;">'</span><span style="color: #800000;">f1</span><span style="color: #800000;">'</span>
+
+<span style="color: #0000ff;">def</span><span style="color: #000000;"> f2():
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> 验证1</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;"> 验证2</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;"> 验证3</span>
+    <span style="color: #0000ff;">print</span> <span style="color: #800000;">'</span><span style="color: #800000;">f2</span><span style="color: #800000;">'</span>
+
+<span style="color: #0000ff;">def</span><span style="color: #000000;"> f3():
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> 验证1</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;"> 验证2</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;"> 验证3</span>
+    <span style="color: #0000ff;">print</span> <span style="color: #800000;">'</span><span style="color: #800000;">f3</span><span style="color: #800000;">'</span>
+
+<span style="color: #0000ff;">def</span><span style="color: #000000;"> f4():
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> 验证1</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;"> 验证2</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;"> 验证3</span>
+    <span style="color: #0000ff;">print</span> <span style="color: #800000;">'</span><span style="color: #800000;">f4</span><span style="color: #800000;">'</span>
+
+<span style="color: #008000;">#</span><span style="color: #008000;">############## 业务部门不变 ############### </span><span style="color: #008000;">
+#</span><span style="color: #008000;">## 业务部门A 调用基础平台提供的功能### </span>
+<span style="color: #000000;">
+f1()
+f2()
+f3()
+f4()
+
+</span><span style="color: #008000;">#</span><span style="color: #008000;">## 业务部门B 调用基础平台提供的功能 ### </span>
+<span style="color: #000000;">
+f1()
+f2()
+f3()
+f4()</span></pre>
+</div>
+<span class="cnblogs_code_collapse">View Code</span></div>
+<p>过了一周 Low BB 被开除了...</p>
+<p><strong><span style="font-size: 15px;">老大把工作交给 Low BBB，他是这么做的：</span></strong></p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:python;gutter:true;">只对基础平台的代码进行重构，其他业务部门无需做任何修改
+</pre>
+</div>
+<div class="cnblogs_code" onclick="cnblogs_code_show('6913f6d9-d3ff-4583-900b-c470459e8e8c')"><img id="code_img_closed_6913f6d9-d3ff-4583-900b-c470459e8e8c" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_6913f6d9-d3ff-4583-900b-c470459e8e8c" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('6913f6d9-d3ff-4583-900b-c470459e8e8c',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_6913f6d9-d3ff-4583-900b-c470459e8e8c" class="cnblogs_code_hide">
+<pre><span style="color: #008000;">#</span><span style="color: #008000;">############## 基础平台提供的功能如下 ############### </span>
+
+<span style="color: #0000ff;">def</span><span style="color: #000000;"> check_login():
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> 验证1</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;"> 验证2</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;"> 验证3</span>
+    <span style="color: #0000ff;">pass</span>
+
+
+<span style="color: #0000ff;">def</span><span style="color: #000000;"> f1():
+    
+    check_login()
+
+    </span><span style="color: #0000ff;">print</span> <span style="color: #800000;">'</span><span style="color: #800000;">f1</span><span style="color: #800000;">'</span>
+
+<span style="color: #0000ff;">def</span><span style="color: #000000;"> f2():
+    
+    check_login()
+
+    </span><span style="color: #0000ff;">print</span> <span style="color: #800000;">'</span><span style="color: #800000;">f2</span><span style="color: #800000;">'</span>
+
+<span style="color: #0000ff;">def</span><span style="color: #000000;"> f3():
+    
+    check_login()
+
+    </span><span style="color: #0000ff;">print</span> <span style="color: #800000;">'</span><span style="color: #800000;">f3</span><span style="color: #800000;">'</span>
+
+<span style="color: #0000ff;">def</span><span style="color: #000000;"> f4():
+    
+    check_login()
+    
+    </span><span style="color: #0000ff;">print</span> <span style="color: #800000;">'</span><span style="color: #800000;">f4</span><span style="color: #800000;">'</span></pre>
+</div>
+<span class="cnblogs_code_collapse">View Code</span></div>
+<p>老大看了下Low BBB 的实现，嘴角漏出了一丝的欣慰的笑，语重心长的跟Low BBB聊了个天：</p>
+<p><strong>老大说：</strong></p>
+<p>写代码要遵循开发封闭原则，虽然在这个原则是用的面向对象开发，但是也适用于函数式编程，简单来说，它规定已经实现的功能代码不允许被修改，但可以被扩展，即：</p>
+<ul>
+<li>封闭：已实现的功能代码块</li>
+<li>开放：对扩展开发</li>
+</ul>
+<p>如果将开放封闭原则应用在上述需求中，那么就不允许在函数 f1 、f2、f3、f4的内部进行修改代码，老板就给了Low BBB一个实现方案：</p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:python;gutter:true;">def w1(func):
+	def inner():
+		# 验证1
+		# 验证2
+		# 验证3
+		return func()
+	return inner
+
+@w1
+def f1():
+	print 'f1'
+@w1
+def f2():
+	print 'f2'
+@w1
+def f3():
+	print 'f3'
+@w1
+def f4():
+	print 'f4'
+</pre>
+</div>
+<p>对于上述代码，也是仅仅对基础平台的代码进行修改，就可以实现在其他人调用函数 f1 f2 f3 f4 之前都进行【验证】操作，并且其他业务部门无需做任何操作。</p>
+<p>Low BBB心惊胆战的问了下，这段代码的内部执行原理是什么呢？</p>
+<p>老大正要生气，突然Low BBB的手机掉到地上，恰恰屏保就是Low BBB的女友照片，老大一看一紧一抖，喜笑颜开，交定了Low BBB这个朋友。详细的开始讲解了：</p>
+<p>单独以f1为例：</p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:python;gutter:true;">def w1(func):
+	def inner():
+		# 验证1
+		# 验证2
+		# 验证3
+		return func()
+	return inner
+
+@w1
+def f1():
+	print 'f1'
+</pre>
+</div>
+<p>当写完这段代码后（函数未被执行、未被执行、未被执行），python解释器就会从上到下解释代码，步骤如下：</p>
+<ol>
+<li>def w1(func): &nbsp;==&gt;将w1函数加载到内存</li>
+<li>@w1</li>
+</ol>
+<p>没错，<span style="color: #ff0000;"><strong>从表面上看</strong></span>解释器仅仅会解释这两句代码，因为函数在<span style="color: #ff0000;"><strong>没有被调用之前</strong></span>其内部代码不会被执行。</p>
+<p>从表面上看解释器着实会执行这两句，但是 @w1 这一句代码里却有大文章，<strong>@函数名</strong> 是python的一种语法糖。</p>
+<p>如上例@w1内部会执行一下操作：</p>
+<ul>
+<li><strong><span style="color: #ff0000;">执行w1函数</span></strong>，并将 @w1 下面的 <span style="color: #ff0000;"><strong>函数</strong></span>&nbsp;作为w1函数的参数，即：@w1 等价于 w1(f1)<br /><span style="color: #999999;">所以，内部就会去执行：</span><br /><span style="color: #999999;">&nbsp; &nbsp; def inner:</span><br /><span style="color: #999999;">&nbsp; &nbsp; &nbsp; &nbsp; #验证</span><br /><span style="color: #999999;">&nbsp; &nbsp; &nbsp; &nbsp; return f1() &nbsp; # func是参数，此时 func 等于 f1</span><br /><span style="color: #999999;">&nbsp; &nbsp; return inner &nbsp; &nbsp; # 返回的 inner，inner代表的是函数，非执行函数</span><br /><span style="color: #999999;">其实就是将原来的 f1 函数塞进另外一个函数中</span></li>
+<li>将执行完的 w1 函数返回值<strong><span style="color: #ff0000;">赋值</span></strong>给@w1下面的<strong><span style="color: #ff0000;">函数的函数名<br /></span></strong><span style="color: #999999;">w1函数的返回值是：<br />&nbsp;&nbsp; def inner:<br />&nbsp; &nbsp; &nbsp; &nbsp; #验证<br />&nbsp; &nbsp; &nbsp; &nbsp; return 原来f1() &nbsp;# 此处的 f1 表示原来的f1函数<br />然后，将此返回值再重新赋值给 f1，即：<strong><br /></strong>新f1 =&nbsp;def inner:<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; #验证<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return 原来f1()&nbsp;<br />所以，以后业务部门想要执行 f1 函数时，就会执行 新f1 函数，在 新f1 函数内部先执行验证，再执行原来的f1函数，然后将 原来f1 函数的返回值 返回给了业务调用者。<br />如此一来， 即执行了验证的功能，又执行了原来f1函数的内容，并将原f1函数返回值 返回给业务调用着</span></li>
+
+
+
+
+
+
+
+
+
+
+</ul>
+<p>Low BBB 你明白了吗？要是没明白的话，我晚上去你家帮你解决吧！！！</p>
+<p>先把上述流程看懂，之后还会继续更新...</p>
+<h3>3、问答时间</h3>
+<p>问题：被装饰的函数如果有参数呢？</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('fcaea1ca-c6c5-44fa-938f-cf827a293d91')"><img id="code_img_closed_fcaea1ca-c6c5-44fa-938f-cf827a293d91" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_fcaea1ca-c6c5-44fa-938f-cf827a293d91" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('fcaea1ca-c6c5-44fa-938f-cf827a293d91',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_fcaea1ca-c6c5-44fa-938f-cf827a293d91" class="cnblogs_code_hide">
+<pre><span style="color: #0000ff;">def</span><span style="color: #000000;"> w1(func):
+    </span><span style="color: #0000ff;">def</span><span style="color: #000000;"> inner(arg):
+        </span><span style="color: #008000;">#</span><span style="color: #008000;"> 验证1</span>
+        <span style="color: #008000;">#</span><span style="color: #008000;"> 验证2</span>
+        <span style="color: #008000;">#</span><span style="color: #008000;"> 验证3</span>
+        <span style="color: #0000ff;">return</span><span style="color: #000000;"> func(arg)
+    </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> inner
+
+@w1
+</span><span style="color: #0000ff;">def</span><span style="color: #000000;"> f1(arg):
+    </span><span style="color: #0000ff;">print</span> <span style="color: #800000;">'</span><span style="color: #800000;">f1</span><span style="color: #800000;">'</span></pre>
+</div>
+<span class="cnblogs_code_collapse">一个参数</span></div>
+<div class="cnblogs_code" onclick="cnblogs_code_show('9345b27f-4b1c-44cf-a0e6-b32b2f068477')"><img id="code_img_closed_9345b27f-4b1c-44cf-a0e6-b32b2f068477" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_9345b27f-4b1c-44cf-a0e6-b32b2f068477" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('9345b27f-4b1c-44cf-a0e6-b32b2f068477',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_9345b27f-4b1c-44cf-a0e6-b32b2f068477" class="cnblogs_code_hide">
+<pre><span style="color: #0000ff;">def</span><span style="color: #000000;"> w1(func):
+    </span><span style="color: #0000ff;">def</span><span style="color: #000000;"> inner(arg1,arg2):
+        </span><span style="color: #008000;">#</span><span style="color: #008000;"> 验证1</span>
+        <span style="color: #008000;">#</span><span style="color: #008000;"> 验证2</span>
+        <span style="color: #008000;">#</span><span style="color: #008000;"> 验证3</span>
+        <span style="color: #0000ff;">return</span><span style="color: #000000;"> func(arg1,arg2)
+    </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> inner
+
+@w1
+</span><span style="color: #0000ff;">def</span><span style="color: #000000;"> f1(arg1,arg2):
+    </span><span style="color: #0000ff;">print</span> <span style="color: #800000;">'</span><span style="color: #800000;">f1</span><span style="color: #800000;">'</span></pre>
+</div>
+<span class="cnblogs_code_collapse">两个参数</span></div>
+<div class="cnblogs_code" onclick="cnblogs_code_show('7a01ec0c-53b0-4e64-a4d3-ef87b3ea67c7')"><img id="code_img_closed_7a01ec0c-53b0-4e64-a4d3-ef87b3ea67c7" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_7a01ec0c-53b0-4e64-a4d3-ef87b3ea67c7" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('7a01ec0c-53b0-4e64-a4d3-ef87b3ea67c7',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_7a01ec0c-53b0-4e64-a4d3-ef87b3ea67c7" class="cnblogs_code_hide">
+<pre><span style="color: #0000ff;">def</span><span style="color: #000000;"> w1(func):
+    </span><span style="color: #0000ff;">def</span><span style="color: #000000;"> inner(arg1,arg2,arg3):
+        </span><span style="color: #008000;">#</span><span style="color: #008000;"> 验证1</span>
+        <span style="color: #008000;">#</span><span style="color: #008000;"> 验证2</span>
+        <span style="color: #008000;">#</span><span style="color: #008000;"> 验证3</span>
+        <span style="color: #0000ff;">return</span><span style="color: #000000;"> func(arg1,arg2,arg3)
+    </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> inner
+
+@w1
+</span><span style="color: #0000ff;">def</span><span style="color: #000000;"> f1(arg1,arg2,arg3):
+    </span><span style="color: #0000ff;">print</span> <span style="color: #800000;">'</span><span style="color: #800000;">f1</span><span style="color: #800000;">'</span></pre>
+</div>
+<span class="cnblogs_code_collapse">三个参数</span></div>
+<p>问题：可以装饰具有处理n个参数的函数的装饰器？</p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:python;gutter:true;">def w1(func):
+	def inner(*args,**kwargs):
+		# 验证1
+		# 验证2
+		# 验证3
+		return func(*args,**kwargs)
+	return inner
+
+@w1
+def f1(arg1,arg2,arg3):
+	print 'f1'</pre>
+</div>
+<p>问题：一个函数可以被多个装饰器装饰吗？</p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:python;gutter:true;">def w1(func):
+	def inner(*args,**kwargs):
+		# 验证1
+		# 验证2
+		# 验证3
+		return func(*args,**kwargs)
+	return inner
+
+def w2(func):
+	def inner(*args,**kwargs):
+		# 验证1
+		# 验证2
+		# 验证3
+		return func(*args,**kwargs)
+	return inner
+
+
+@w1
+@w2
+def f1(arg1,arg2,arg3):
+	print 'f1'</pre>
+</div>
+<p>问题：还有什么更吊的装饰器吗？</p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:python;gutter:true;">#!/usr/bin/env python
+#coding:utf-8
+ 
+def Before(request,kargs):
+    print 'before'
+     
+def After(request,kargs):
+    print 'after'
+ 
+ 
+def Filter(before_func,after_func):
+    def outer(main_func):
+        def wrapper(request,kargs):
+             
+            before_result = before_func(request,kargs)
+            if(before_result != None):
+                return before_result;
+             
+            main_result = main_func(request,kargs)
+            if(main_result != None):
+                return main_result;
+             
+            after_result = after_func(request,kargs)
+            if(after_result != None):
+                return after_result;
+             
+        return wrapper
+    return outer
+     
+@Filter(Before, After)
+def Index(request,kargs):
+    print 'index'
+</pre>
+</div>
+<h3>4、functools.wraps</h3>
+<p>上述的装饰器虽然已经完成了其应有的功能，即：装饰器内的函数代指了原函数，注意其只是代指而非相等，原函数的元信息没有被赋值到装饰器函数内部。例如：函数的注释信息</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('6c9d9772-e2df-4b68-a292-06a0c4c96c0e')"><img id="code_img_closed_6c9d9772-e2df-4b68-a292-06a0c4c96c0e" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_6c9d9772-e2df-4b68-a292-06a0c4c96c0e" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('6c9d9772-e2df-4b68-a292-06a0c4c96c0e',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_6c9d9772-e2df-4b68-a292-06a0c4c96c0e" class="cnblogs_code_hide">
+<pre><span style="color: #0000ff;">def</span><span style="color: #000000;"> outer(func):
+    </span><span style="color: #0000ff;">def</span> inner(*args, **<span style="color: #000000;">kwargs):
+        </span><span style="color: #0000ff;">print</span>(inner.<span style="color: #800080;">__doc__</span>)  <span style="color: #008000;">#</span><span style="color: #008000;"> None</span>
+        <span style="color: #0000ff;">return</span><span style="color: #000000;"> func()
+    </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> inner
+
+@outer
+</span><span style="color: #0000ff;">def</span><span style="color: #000000;"> function():
+    </span><span style="color: #800000;">"""</span><span style="color: #800000;">
+    asdfasd
+    :return:
+    </span><span style="color: #800000;">"""</span>
+    <span style="color: #0000ff;">print</span>(<span style="color: #800000;">'</span><span style="color: #800000;">func</span><span style="color: #800000;">'</span>)</pre>
+</div>
+<span class="cnblogs_code_collapse">无元信息</span></div>
+<p>如果使用@functools.wraps装饰装饰器内的函数，那么就会代指元信息和函数。</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('adf3845b-9ca0-4b3e-999f-5e1af7b1f828')"><img id="code_img_closed_adf3845b-9ca0-4b3e-999f-5e1af7b1f828" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_adf3845b-9ca0-4b3e-999f-5e1af7b1f828" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('adf3845b-9ca0-4b3e-999f-5e1af7b1f828',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_adf3845b-9ca0-4b3e-999f-5e1af7b1f828" class="cnblogs_code_hide">
+<pre><span style="color: #0000ff;">def</span><span style="color: #000000;"> outer(func):
+    @functools.wraps(func)
+    </span><span style="color: #0000ff;">def</span> inner(*args, **<span style="color: #000000;">kwargs):
+        </span><span style="color: #0000ff;">print</span>(inner.<span style="color: #800080;">__doc__</span>)  <span style="color: #008000;">#</span><span style="color: #008000;"> None</span>
+        <span style="color: #0000ff;">return</span><span style="color: #000000;"> func()
+    </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> inner
+
+@outer
+</span><span style="color: #0000ff;">def</span><span style="color: #000000;"> function():
+    </span><span style="color: #800000;">"""</span><span style="color: #800000;">
+    asdfasd
+    :return:
+    </span><span style="color: #800000;">"""</span>
+    <span style="color: #0000ff;">print</span>(<span style="color: #800000;">'</span><span style="color: #800000;">func</span><span style="color: #800000;">'</span>)</pre>
+</div>
+<span class="cnblogs_code_collapse">含元信息</span></div>
+<p>&nbsp;</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+
+		</div>
+		<div class = "postDesc">posted @ <span id="post-date">2015-11-20 14:23</span> <a href='http://www.cnblogs.com/wupeiqi/'>武沛齐</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>) &nbsp;<a href="https://i.cnblogs.com/EditArticles.aspx?postid=4980620" rel="nofollow">编辑</a> <a href="4980620.html#" onclick="AddToWz(4980620);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=133379,cb_entryId=4980620,cb_blogApp=currentBlogApp,cb_blogUserGuid='7208b24d-95c9-e111-aa3f-842b2b196315',cb_entryCreatedDate='2015/11/20 14:23:00';loadViewCount(cb_entryId);</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='4980620.html#' onclick='return RefreshPage();'>刷新页面</a><a href='4980620.html#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='ad_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<div id='ad_c2' class='c_ad_block'></div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script></div>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright &copy;2016 武沛齐
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+</body>
+</html>

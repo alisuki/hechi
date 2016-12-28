@@ -1,0 +1,68 @@
+#!/usr/bin/env python
+# _*_ coding:utf8 _*_
+# Kevien：vianus@qq.com  CreatDate:2016-12-21
+
+
+print '三元运算:是对简单的条件语句的缩写。'
+# 书写格式 
+print "result = 值1 if 条件 else 值2"
+# 如果条件成立，那么将 “值1” 赋值给result变量，否则，将“值2”赋值给result变量
+
+print '---------------------------------------'
+
+
+
+print '''
+set集合操作:
+    可用于数据去重复！
+    是一个无序且不重复的元素集合
+  
+
+a = t | s          # t 和 s的并集 
+b = t & s          # t 和 s的交集 
+c = t – s          # 求差集（项在t中，但不在s中)  
+d = t ^ s          # 对称差集（项在t或s中，但不会同时出现在二者中）
+
+基本操作：  
+
+s = set([元素])        #创建一个set集合：s
+  
+t.add('x')            # 添加一项  
+  
+s.update([10,37,42])  # 在s中添加多项    
+  
+t.remove('H')  #使用remove()可以删除一项
+t.discard(*args, **kwargs): # 移除指定元素，不存在不报错
+
+len(s)          #set 的长度  
+  
+x in s          #测试 x 是否是 s 的成员  
+  
+x not in s      #测试 x 是否不是 s 的成员  
+  
+s.issubset(t)  #s <= t    测试是否 s 中的每一个元素都在 t 中  
+  
+s.issuperset(t)  #s >= t    测试是否 t 中的每一个元素都在 s 中  
+  
+s.union(t)  #s | t    返回一个新的 set 包含 s 和 t 中的每一个元素  
+  
+s.intersection(t)   # s & t    返回一个新的 set 包含 s 和 t 中的公共元素  
+  
+s.difference(t)  #s - t   A中存在，B中不存在; 返回一个新的 set 包含 s 中有但是 t 中没有的元素  
+s.difference_update(*args, **kwargs)    # 从当前集合中删除和B中相同的元素
+
+s.symmetric_difference(t)   #s ^ t    返回一个新的 set 包含 s 和 t 中不重复的元素  
+  
+s.copy()  #返回 set “s”的一个浅复制
+
+s.clear()  #删除 set “s”中的所有元素
+
+----------------------------------------------
+'''
+
+
+t = set(['a','b','c'])
+s = set(['Hello Word!'])
+print t
+print s
+ 

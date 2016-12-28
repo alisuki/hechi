@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench progressCount="19" version="2.0">
+<workbenchAdvisor/>
+<window height="772" maximized="true" width="555" x="349" y="0">
+<fastViewData fastViewLocation="1024">
+<orientation position="512" view="org.eclipse.ui.views.ProgressView"/>
+<orientation position="512" view="org.eclipse.ui.views.ContentOutline"/>
+</fastViewData>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout>
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="106" y="26"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="com.python.pydev.debug.actionSet" itemType="typeToolBarContribution" x="88" y="26"/>
+<coolItem id="com.python.pydev.navigate.actionSet" itemType="typeToolBarContribution" x="36" y="26"/>
+<coolItem id="org.eclipse.debug.ui.launch.toolbar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="142" y="26"/>
+<coolItem id="org.eclipse.debug.ui.main.toolbar" itemType="typeToolBarContribution" x="320" y="26"/>
+<coolItem id="com.python.pydev.toolbars.evaluateActionSetterToolbar" itemType="typeToolBarContribution" x="36" y="26"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="54" y="26"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="62" y="26"/>
+<coolItem id="org.python.pydev.editor.PythonEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="212" y="26"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page aggregateWorkingSetId="Aggregate for window 1481999913770" focus="true" label="工作空间 － 调试">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.internal.presentations.classic.WorkbenchPresentationFactoryClassic">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor id="org.python.pydev.editor.PythonEditor" name="MySQL使用.py" partName="MySQL使用" path="/home/hechi/workspace/Kevien/第6篇/MySQL使用.py" title="MySQL使用" tooltip="Kevien/第6篇/MySQL使用.py" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Kevien/第6篇/MySQL使用.py"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="402" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.ui.DefaultTextEditor" name="Mysql常用命令" partName="Mysql常用命令" path="/home/hechi/workspace/Kevien/第6篇/Mysql常用命令" title="Mysql常用命令" tooltip="Kevien/第6篇/Mysql常用命令" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Kevien/第6篇/Mysql常用命令"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1247" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.ui.DefaultTextEditor" name="Linux Mysql操作命令" partName="Linux Mysql操作命令" path="/home/hechi/workspace/Kevien/第6篇/Linux Mysql操作命令" title="Linux Mysql操作命令" tooltip="Kevien/第6篇/Linux Mysql操作命令" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Kevien/第6篇/Linux Mysql操作命令"/>
+<editorState selectionHorizontalPixel="0" selectionLength="76" selectionOffset="3809" selectionTopPixel="0"/>
+</editor>
+</editors>
+<views>
+<view id="org.eclipse.ui.navigator.ProjectExplorer" partName="项目资源管理器">
+<viewState CommonNavigator.LINKING_ENABLED="1" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
+</view>
+<view id="org.eclipse.debug.ui.DebugView" partName="调试">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.TaskList" partName="Tasks">
+<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.completionField" categoryGroup="none" markerContentGenerator="org.eclipse.ui.ide.tasksGenerator" partName="Tasks">
+<columnWidths org.eclipse.ui.ide.completionField="40" org.eclipse.ui.ide.descriptionField="400" org.eclipse.ui.ide.locationField="120" org.eclipse.ui.ide.markerType="120" org.eclipse.ui.ide.pathField="160" org.eclipse.ui.ide.priorityField="40" org.eclipse.ui.ide.resourceField="120"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.completionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.priorityField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.descriptionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
+</viewState>
+</view>
+<view id="org.eclipse.debug.ui.BreakpointView" partName="Breakpoints">
+<viewState/>
+</view>
+<view id="org.eclipse.debug.ui.VariableView" partName="变量">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
+<viewState/>
+</view>
+</views>
+<perspectives activePart="org.eclipse.ui.DefaultTextEditor" activePerspective="org.eclipse.debug.ui.DebugPerspective">
+<perspective editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.debug.internal.ui.DebugPerspectiveFactory" id="org.eclipse.debug.ui.DebugPerspective" label="调试"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.debug.ui.JDTDebugActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.CodingActionSet"/>
+<alwaysOnActionSet id="com.python.pydev.navigate.actionSet"/>
+<alwaysOnActionSet id="com.python.pydev.debug.actionSet"/>
+<alwaysOnActionSet id="org.python.pydev.exceptionBreakpoints"/>
+<alwaysOnActionSet id="org.python.pydev.pyPropertyTrace"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.debugActionSet"/>
+<show_view_action id="org.eclipse.ant.ui.views.AntView"/>
+<show_view_action id="org.eclipse.debug.ui.BreakpointView"/>
+<show_view_action id="org.eclipse.debug.ui.DebugView"/>
+<show_view_action id="org.eclipse.debug.ui.ExpressionView"/>
+<show_view_action id="org.eclipse.debug.ui.VariableView"/>
+<show_view_action id="org.eclipse.jdt.debug.ui.DisplayView"/>
+<show_view_action id="org.eclipse.pde.runtime.LogView"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaPerspective"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaBrowsingPerspective"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.override.methods"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.refactoring.menu"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.inline"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.pull.up"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.push.down"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.clean.up"/>
+<hide_menu_item_id id="org.eclipse.ui.edit.text.shiftRight"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.extract.method"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.change.type"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.generate.tostring"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.move.element"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.introduce.parameter.object"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.self.encapsulate.field"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.find.broken.nls.keys"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.promote.local.variable"/>
+<hide_menu_item_id id="org.eclipse.ltk.ui.refactor.apply.refactoring.script"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.create.delegate.methods"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.modify.method.parameters"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.extract.class"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.move.inner.to.top.level"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.introduce.indirection"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.use.supertype"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.extract.local.variable"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.generate.hashcode.equals"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.add.import"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.quick.format"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.extract.interface"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.refactor.migrate.jar"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.introduce.factory"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.surround.with.quickMenu"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.convert.anonymous.to.nested"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.toggle.comment"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.create.getter.setter"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.externalize.strings"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.generate.constructor.using.fields"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.add.block.comment"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.extract.constant"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.add.javadoc.comment"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.add.unimplemented.constructors"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.rename.element"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.organize.imports"/>
+<hide_menu_item_id id="org.eclipse.ui.edit.text.shiftLeft"/>
+<hide_menu_item_id id="org.eclipse.ltk.ui.refactor.create.refactoring.script"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.extract.superclass"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.sort.members"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.format"/>
+<hide_menu_item_id id="org.eclipse.ltk.ui.refactor.show.refactoring.history"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.introduce.parameter"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.source.menu"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.remove.block.comment"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.infer.type.arguments"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.indent"/>
+<hide_toolbar_item_id id="org.eclipse.ui.file.print"/>
+<hide_toolbar_item_id id="com.python.pydev.debug.actions.AttachToProcess"/>
+<hide_toolbar_item_id id="com.python.pydev.debug.actionSet"/>
+<hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
+<hide_toolbar_item_id id="org.eclipse.jdt.ui.navigate.open.type"/>
+<hide_toolbar_item_id id="com.python.pydev.debug.actions.EndDebugServer"/>
+<hide_toolbar_item_id id="com.python.pydev.analysis.actions.pyGlobalsBrowserWorkbench"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<hide_toolbar_item_id id="com.python.pydev.debug.actions.StartDebugServer"/>
+<hide_toolbar_item_id id="com.python.pydev.navigate.actionSet"/>
+<hide_toolbar_item_id id="org.eclipse.debug.internal.ui.actions.ProfileDropDownAction"/>
+<view id="org.eclipse.debug.ui.VariableView"/>
+<view id="org.eclipse.debug.ui.BreakpointView"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.debug.ui.DebugView"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.PackageExplorer" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.internal.presentations.classic.WorkbenchPresentationFactoryClassic"/>
+</folder>
+</info>
+<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="936" ratioRight="312" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.7488076" ratioLeft="471" ratioRight="158" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.PropertySheet" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.debug.ui.DisplayView" label="LabelNotFound"/>
+<page content="org.eclipse.search.SearchResultView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.internal.presentations.classic.WorkbenchPresentationFactoryClassic"/>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@68f58297" ratio="0.44798303" ratioLeft="211" ratioRight="260" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="项目资源管理器"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<presentation id="org.eclipse.ui.internal.presentations.classic.WorkbenchPresentationFactoryClassic">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.8506024" ratioLeft="1059" ratioRight="186" relationship="2" relative="org.eclipse.ui.internal.ViewStack@68f58297">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.internal.presentations.classic.WorkbenchPresentationFactoryClassic"/>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@580a7520" ratio="0.5" ratioLeft="156" ratioRight="156" relationship="2" relative="org.eclipse.debug.internal.ui.OutlineFolderView">
+<folder activePageID="org.eclipse.debug.ui.VariableView" appearance="2" expanded="2">
+<page content="org.eclipse.debug.ui.VariableView" label="变量"/>
+<page content="org.eclipse.debug.ui.BreakpointView" label="Breakpoints"/>
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<presentation id="org.eclipse.ui.internal.presentations.classic.WorkbenchPresentationFactoryClassic">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@5d2b206d" ratio="0.9492308" ratioLeft="617" ratioRight="33" relationship="4" relative="org.eclipse.ui.internal.ViewStack@580a7520">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.internal.presentations.classic.WorkbenchPresentationFactoryClassic"/>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@2dcc4892" ratio="0.59384614" ratioLeft="386" ratioRight="264" relationship="4" relative="org.eclipse.ui.internal.ViewStack@580a7520">
+<folder activePageID="org.eclipse.debug.ui.DebugView" appearance="2" expanded="2">
+<page content="org.eclipse.debug.ui.DebugView" label="调试"/>
+<presentation id="org.eclipse.ui.internal.presentations.classic.WorkbenchPresentationFactoryClassic">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@11e2fc89" ratio="0.6876923" ratioLeft="447" ratioRight="203" relationship="4" relative="org.eclipse.ui.internal.ViewStack@68f58297">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.TaskList" label="LabelNotFound"/>
+<page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.internal.presentations.classic.WorkbenchPresentationFactoryClassic"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.2623106" ratioLeft="277" ratioRight="779" relationship="2" relative="org.eclipse.ui.internal.ViewStack@68f58297"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.ToolsFolderView" ratio="0.5" ratioLeft="624" ratioRight="624" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.debug.ui.ExpressionView" label="LabelNotFound"/>
+<page content="org.eclipse.debug.ui.RegisterView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.internal.presentations.classic.WorkbenchPresentationFactoryClassic"/>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+<perspective editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.ui.internal.ide.application.ResourcePerspective" id="org.eclipse.ui.resourcePerspective" label="Resource"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<show_view_action id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<show_view_action id="org.eclipse.ui.views.BookmarkView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.PropertySheet"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.ui.views.ProgressView"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.ant.ui.views.AntView"/>
+<show_view_action id="org.eclipse.pde.runtime.LogView"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.folder"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.file"/>
+<new_wizard_action id="org.eclipse.ui.editors.wizards.UntitledTextFileWizard"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaPerspective"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaBrowsingPerspective"/>
+<perspective_action id="org.eclipse.team.cvs.ui.cvsPerspective"/>
+<perspective_action id="org.eclipse.team.ui.TeamSynchronizingPerspective"/>
+<hide_toolbar_item_id id="org.eclipse.debug.ui.commands.RunToLine"/>
+<hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.ui.views.TaskList"/>
+<fastViewBars/>
+<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="topLeft">&#x0A;<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<page content="org.eclipse.team.ccvs.ui.RepositoriesView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.internal.presentations.classic.WorkbenchPresentationFactoryClassic">&#x0A;<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@135e1b18" ratio="0.7495049" ratioLeft="757" ratioRight="253" relationship="2" relative="topLeft">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+<page content="org.eclipse.pde.runtime.LogView" label="LabelNotFound"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.25940594" ratioLeft="262" ratioRight="748" relationship="2" relative="topLeft"/>
+<info folder="true" part="bottomRight" ratio="0.7123077" ratioLeft="463" ratioRight="187" relationship="4" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="org.eclipse.team.ui.GenericHistoryView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.PropertySheet" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.PropertySheet:1482002252737" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
+<page content="org.eclipse.debug.ui.VariableView" label="LabelNotFound"/>
+<page content="org.eclipse.debug.ui.DebugView" label="LabelNotFound"/>
+<page content="org.eclipse.debug.ui.BreakpointView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.internal.presentations.classic.WorkbenchPresentationFactoryClassic">&#x0A;<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@307f2cc7" ratio="0.8612245" ratioLeft="844" ratioRight="136" relationship="2" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.views.TaskList" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
+<presentation id="org.eclipse.ui.internal.presentations.classic.WorkbenchPresentationFactoryClassic">&#x0A;<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="bottomLeft" ratio="0.5" ratioLeft="324" ratioRight="324" relationship="4" relative="topLeft">&#x0A;<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.internal.presentations.classic.WorkbenchPresentationFactoryClassic">&#x0A;<part id="0"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.python.pydev.editor.PythonEditor" path="/Kevien/第6篇/MySQL使用.py"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/Kevien/第6篇/Linux Mysql操作命令"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/Kevien/第6篇/Mysql常用命令"/>
+</editors>
+<item historyLabel="MySQL使用" index="0">
+<position info="not_deleted" x="170" y="60"/>
+</item>
+<item historyLabel="Linux Mysql操作命令" index="1">
+<position info="not_deleted" x="779" y="0"/>
+</item>
+<item historyLabel="MySQL使用" index="0">
+<position info="not_deleted" x="402" y="0"/>
+</item>
+<item historyLabel="Linux Mysql操作命令" index="1">
+<position info="not_deleted" x="779" y="0"/>
+</item>
+<item historyLabel="Mysql常用命令" index="2">
+<position info="not_deleted" x="4106" y="0"/>
+</item>
+<item historyLabel="Linux Mysql操作命令" index="1">
+<position/>
+</item>
+<item historyLabel="Mysql常用命令" index="2">
+<position info="not_deleted" x="13089" y="0"/>
+</item>
+<item historyLabel="MySQL使用" index="0">
+<position info="not_deleted" x="402" y="0"/>
+</item>
+<item historyLabel="Mysql常用命令" index="2">
+<position info="not_deleted" x="8551" y="1"/>
+</item>
+<item historyLabel="Linux Mysql操作命令" index="1">
+<position info="not_deleted" x="3809" y="76"/>
+</item>
+<item historyLabel="Mysql常用命令" index="2">
+<position info="not_deleted" x="8571" y="0"/>
+</item>
+<item historyLabel="Linux Mysql操作命令" index="1">
+<position info="not_deleted" x="3809" y="76"/>
+</item>
+<item historyLabel="Mysql常用命令" index="2">
+<position info="not_deleted" x="8571" y="0"/>
+</item>
+<item historyLabel="MySQL使用" index="0">
+<position info="not_deleted" x="402" y="0"/>
+</item>
+<item active="true" historyLabel="Mysql常用命令" index="2">
+<position info="not_deleted" x="87" y="0"/>
+</item>
+</navigationHistory>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+</trimArea>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="Linux Mysql操作命令" tooltip="Kevien/第6篇/Linux Mysql操作命令">
+<persistable path="/Kevien/第6篇/Linux Mysql操作命令"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="Mysql常用命令" tooltip="Kevien/第6篇/Mysql常用命令">
+<persistable path="/Kevien/第6篇/Mysql常用命令"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.python.pydev.editor.PythonEditor" name="MySQL使用.py" tooltip="Kevien/第6篇/MySQL使用.py">
+<persistable path="/Kevien/第6篇/MySQL使用.py"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="Python常用包" tooltip="Kevien/Python常用包">
+<persistable path="/Kevien/Python常用包"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.python.pydev.editor.PythonEditor" name="sec_md5.py" tooltip="Kevien/001学习备录/sec_md5.py">
+<persistable path="/Kevien/001学习备录/sec_md5.py"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.python.pydev.editor.PythonEditor" name="def_arg.py" tooltip="Kevien/001学习备录/def_arg.py">
+<persistable path="/Kevien/001学习备录/def_arg.py"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.python.pydev.editor.PythonEditor" name="lambda.py" tooltip="Kevien/001学习备录/lambda.py">
+<persistable path="/Kevien/001学习备录/lambda.py"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.python.pydev.editor.PythonEditor" name="3_输出1-100内的所有奇数.py" tooltip="Kevien/第2篇/3_输出1-100内的所有奇数.py">
+<persistable path="/Kevien/第2篇/3_输出1-100内的所有奇数.py"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.python.pydev.editor.PythonEditor" name="2_求1-100的所有数的和.py" tooltip="Kevien/第2篇/2_求1-100的所有数的和.py">
+<persistable path="/Kevien/第2篇/2_求1-100的所有数的和.py"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.python.pydev.editor.PythonEditor" name="1_使用while循环输入1234568910.py" tooltip="Kevien/第2篇/1_使用while循环输入1234568910.py">
+<persistable path="/Kevien/第2篇/1_使用while循环输入1234568910.py"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.python.pydev.editor.PythonEditor" name="lambda.py" tooltip="Kevien/Learn/lambda.py">
+<persistable path="/Kevien/Learn/lambda.py"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.python.pydev.editor.PythonEditor" name="sec_md5.py" tooltip="Kevien/Learn/sec_md5.py">
+<persistable path="/Kevien/Learn/sec_md5.py"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.python.pydev.editor.PythonEditor" name="装饰器.py" tooltip="Kevien/Learn/装饰器.py">
+<persistable path="/Kevien/Learn/装饰器.py"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.python.pydev.editor.PythonEditor" name="序列化.py" tooltip="Kevien/Learn/序列化.py">
+<persistable path="/Kevien/Learn/序列化.py"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.python.pydev.editor.PythonEditor" name="类.py" tooltip="Kevien/Learn/类.py">
+<persistable path="/Kevien/Learn/类.py"/>
+</file>
+</mruList>
+</workbench>

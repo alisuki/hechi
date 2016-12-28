@@ -1,0 +1,701 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>08day06 - 武沛齐 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=03KQeESEmpLfzDqUo0NiWUg5Zd5aRam3JHBZTK05Wug1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/SimpleBlue/bundle-SimpleBlue.css?v=jJERBFSojhmgst84aaRDal9S3q1WoO-WcNudmMzGJS81"/>
+<link type="text/css" rel="stylesheet" href="/blog/customcss/133379.css?v=YSNZANkz7eBKoXq2iHYfghvodkY%3d"/>
+<link id="mobile-style" media="only screen and (max-width: 768px)" type="text/css" rel="stylesheet" href="/skins/SimpleBlue/bundle-SimpleBlue-mobile.css?v=BlWRqh78YPBjZE2nsyndTVBgXau6g8pl0IYzREPAN_U1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/wupeiqi/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/wupeiqi/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/wupeiqi/wlwmanifest.xml"/>
+<script src="//common.cnblogs.com/script/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'wupeiqi', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="/bundles/blog-common.js?v=hH1lCMV8WaIu271Nx7jPuv36TENW9-RsSxziLxUpjtc1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+		
+<!--done-->
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/wupeiqi/">Mr.Seven</a></div>
+<div class="subtitle"></div>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+<li id="nav_myhome"><a id="blog_nav_myhome" class="menu" href="http://www.cnblogs.com/wupeiqi/">首页</a></li>
+<li id="nav_newpost"><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li id="nav_contact"><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/%E6%AD%A6%E6%B2%9B%E9%BD%90">联系</a></li>
+<li id="nav_rss"><a id="blog_nav_rss" class="menu" href="http://www.cnblogs.com/wupeiqi/rss">订阅</a>
+<!--<a id="blog_nav_rss_image" class="aHeaderXML" href="http://www.cnblogs.com/wupeiqi/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li id="nav_admin"><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<!--done-->
+随笔-124&nbsp;
+文章-127&nbsp;
+评论-205&nbsp;
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class = "post">
+		<h1 class = "postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/wupeiqi/articles/4356675.html">08day06</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><p>上节回顾</p>
+<ul>
+<li>面向对象拾遗</li>
+<li>断言</li>
+<li>python mysql</li>
+<li>三层架构</li>
+<li>socket</li>
+</ul>
+<p>本节内容</p>
+<h3>ftp上传</h3>
+<div class="cnblogs_code" onclick="cnblogs_code_show('2c452968-3b49-4ef5-b11d-700876d67761')"><img id="code_img_closed_2c452968-3b49-4ef5-b11d-700876d67761" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_2c452968-3b49-4ef5-b11d-700876d67761" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('2c452968-3b49-4ef5-b11d-700876d67761',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_2c452968-3b49-4ef5-b11d-700876d67761" class="cnblogs_code_hide">
+<pre>#!/usr/bin/<span style="color: #000000;">env python
+#coding:utf</span>-<span style="color: #800080;">8</span><span style="color: #000000;">
+
+import SocketServer
+import os
+
+</span><span style="color: #0000ff;">class</span><span style="color: #000000;"> MyServer(SocketServer.BaseRequestHandler):
+    def handle(self):
+        base_path </span>= <span style="color: #800000;">'</span><span style="color: #800000;">G:/temp</span><span style="color: #800000;">'</span><span style="color: #000000;">
+        conn </span>=<span style="color: #000000;"> self.request
+        print </span><span style="color: #800000;">'</span><span style="color: #800000;">connected...</span><span style="color: #800000;">'</span>
+        <span style="color: #0000ff;">while</span><span style="color: #000000;"> True:
+            pre_data </span>= conn.recv(<span style="color: #800080;">1024</span><span style="color: #000000;">)
+            #获取请求方法、文件名、文件大小
+            cmd,file_name,file_size </span>= pre_data.split(<span style="color: #800000;">'</span><span style="color: #800000;">|</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+            #已经接收文件的大小
+            recv_size </span>= <span style="color: #800080;">0</span><span style="color: #000000;">
+            #上传文件路径拼接
+            file_dir </span>=<span style="color: #000000;"> os.path.join(base_path,file_name)
+            f </span>= file(file_dir,<span style="color: #800000;">'</span><span style="color: #800000;">wb</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+            Flag </span>=<span style="color: #000000;"> True
+            </span><span style="color: #0000ff;">while</span><span style="color: #000000;"> Flag:
+                #未上传完毕，
+                </span><span style="color: #0000ff;">if</span> <span style="color: #0000ff;">int</span>(file_size)&gt;<span style="color: #000000;">recv_size:
+                    #最多接收1024，可能接收的小于1024
+                    data </span>= conn.recv(<span style="color: #800080;">1024</span><span style="color: #000000;">) 
+                    recv_size</span>+=<span style="color: #000000;">len(data)
+                #上传完毕，则退出循环
+                </span><span style="color: #0000ff;">else</span><span style="color: #000000;">:
+                    recv_size </span>= <span style="color: #800080;">0</span><span style="color: #000000;">
+                    Flag </span>=<span style="color: #000000;"> False
+                    </span><span style="color: #0000ff;">continue</span><span style="color: #000000;">
+        
+                #写入文件
+                f.write(data)
+            print </span><span style="color: #800000;">'</span><span style="color: #800000;">upload successed.</span><span style="color: #800000;">'</span><span style="color: #000000;">
+            f.close()
+    
+instance </span>= SocketServer.ThreadingTCPServer((<span style="color: #800000;">'</span><span style="color: #800000;">127.0.0.1</span><span style="color: #800000;">'</span>,<span style="color: #800080;">9999</span><span style="color: #000000;">),MyServer)
+instance.serve_forever()    </span></pre>
+</div>
+<span class="cnblogs_code_collapse">server</span></div>
+<div class="cnblogs_code" onclick="cnblogs_code_show('973560b6-030c-4808-8c4e-f959db75a212')"><img id="code_img_closed_973560b6-030c-4808-8c4e-f959db75a212" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_973560b6-030c-4808-8c4e-f959db75a212" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('973560b6-030c-4808-8c4e-f959db75a212',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_973560b6-030c-4808-8c4e-f959db75a212" class="cnblogs_code_hide">
+<pre>#!/usr/bin/<span style="color: #000000;">env python
+#coding:utf</span>-<span style="color: #800080;">8</span><span style="color: #000000;">
+
+
+import socket
+import sys
+import os
+
+ip_port </span>= (<span style="color: #800000;">'</span><span style="color: #800000;">127.0.0.1</span><span style="color: #800000;">'</span>,<span style="color: #800080;">9999</span><span style="color: #000000;">)
+sk </span>=<span style="color: #000000;"> socket.socket()
+sk.connect(ip_port)
+
+container </span>= {<span style="color: #800000;">'</span><span style="color: #800000;">key</span><span style="color: #800000;">'</span>:<span style="color: #800000;">''</span>,<span style="color: #800000;">'</span><span style="color: #800000;">data</span><span style="color: #800000;">'</span>:<span style="color: #800000;">''</span><span style="color: #000000;">}
+</span><span style="color: #0000ff;">while</span><span style="color: #000000;"> True:
+    input </span>= raw_input(<span style="color: #800000;">'</span><span style="color: #800000;">path:</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+    cmd,path </span>= input.split(<span style="color: #800000;">'</span><span style="color: #800000;">|</span><span style="color: #800000;">'</span><span style="color: #000000;">) 
+    file_name </span>=<span style="color: #000000;"> os.path.basename(path)
+    file_size</span>=<span style="color: #000000;">os.stat(path).st_size
+    sk.send(cmd</span>+<span style="color: #800000;">"</span><span style="color: #800000;">|</span><span style="color: #800000;">"</span>+file_name+<span style="color: #800000;">'</span><span style="color: #800000;">|</span><span style="color: #800000;">'</span>+<span style="color: #000000;">str(file_size))
+    send_size </span>= <span style="color: #800080;">0</span><span style="color: #000000;">
+    f</span>= file(path,<span style="color: #800000;">'</span><span style="color: #800000;">rb</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+    Flag </span>=<span style="color: #000000;"> True
+    </span><span style="color: #0000ff;">while</span><span style="color: #000000;"> Flag:
+        </span><span style="color: #0000ff;">if</span> send_size + <span style="color: #800080;">1024</span> &gt;<span style="color: #000000;">file_size:
+            data </span>= f.read(file_size-<span style="color: #000000;">send_size)
+            Flag </span>=<span style="color: #000000;"> False
+        </span><span style="color: #0000ff;">else</span><span style="color: #000000;">:
+            data </span>= f.read(<span style="color: #800080;">1024</span><span style="color: #000000;">)
+            send_size</span>+=<span style="color: #800080;">1024</span><span style="color: #000000;">
+        sk.send(data)
+    f.close()
+    
+sk.close()
+
+client</span></pre>
+</div>
+<span class="cnblogs_code_collapse">client</span></div>
+<h3>线程和进程简介</h3>
+<ul>
+<li>应用程序和进程以及线程的关系？</li>
+<li>一个应用程序里可以有多个进程，一个进程里可以有多个线程 最原始的计算机是如何运行的？</li>
+<li>CPU是什么？为什么要使用多个CPU？</li>
+<li>为什么要使用多线程？</li>
+<li>为什么要使用多进程？</li>
+<li>java和C#中的多线程和python多线程的区别？</li>
+<li>python多线程和傻缺的GIL python</li>
+<li>如何让程序真正的实现同时运行？</li>
+<li>线程和进程的选择：计算密集型和IO密集型程序。（IO操作不占用CPU）</li>
+</ul>
+<p>　　进程的开销通常比线程昂贵, 因为线程自动共享内存地址空间和文件描述符. 意味着, 创建进程比创建线程会花费更多</p>
+<p>　　在执行一些<strong>sleep/read/write/recv/send</strong>这些会导致阻塞的函数时，当前线程会主动放弃GIL，然后调用相应的系统API，完成后再重新申请GIL。因此，GIL也并不是导致Python的多线程完全没用，在一些IO等待的场合，Python多线程还是发挥了作用，当然如果多线程都是用于CPU密集的代码，那多线程的执行效率就明显会比单线程的低。</p>
+<h3>多线程开发</h3>
+<p><strong>1、threading.Thread模块</strong></p>
+<ul>
+<li>start</li>
+<li>getName()</li>
+<li>setName()</li>
+<li>isDaemon()</li>
+<li>setDaemon()</li>
+<li>join(timeout)</li>
+<li>run()</li>
+</ul>
+<p><span style="color: #999999; background-color: #ffffff;"><em>thread 和 threading 模块的选择？使用更高级的threading模块</em></span></p>
+<p><strong>2、线程锁</strong></p>
+<p>　　线程锁中的threading.Lock 和 threading.Rlock</p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:csharp;collapse:true;;gutter:true;">#!/usr/bin/env python
+#coding:utf-8
+
+import threading
+import time
+
+gl_num = 0
+
+lock = threading.RLock()
+
+def Func():
+    lock.acquire()
+    global gl_num
+    gl_num +=1
+    time.sleep(1)
+    print gl_num
+    lock.release()
+    
+for i in range(10):
+    t = threading.Thread(target=Func)
+    t.start()
+</pre>
+</div>
+<p>　　</p>
+<h3>多进程开发</h3>
+<p><strong>1、创建进程程序</strong></p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('ed7f2073-f8a6-4820-98df-7869652cc772')"><img id="code_img_closed_ed7f2073-f8a6-4820-98df-7869652cc772" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_ed7f2073-f8a6-4820-98df-7869652cc772" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('ed7f2073-f8a6-4820-98df-7869652cc772',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_ed7f2073-f8a6-4820-98df-7869652cc772" class="cnblogs_code_hide">
+<pre><span style="color: #0000ff;">from</span><span style="color: #000000;"> multiprocessing import Process
+import threading
+import time
+
+
+def Foo(i):
+    print </span><span style="color: #800000;">'</span><span style="color: #800000;">say hi</span><span style="color: #800000;">'</span><span style="color: #000000;">,i
+
+
+</span><span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> range(<span style="color: #800080;">10</span><span style="color: #000000;">):
+    p </span>= Process(target=Foo,args=<span style="color: #000000;">(i,))
+    p.start()</span></pre>
+</div>
+<span class="cnblogs_code_collapse">View Code</span></div>
+<p><em><span style="color: #999999;">注意：由于进程之间的数据需要各自持有一份，所以创建进程需要的非常大的开销。</span></em></p>
+<p><strong>2、进程间的数据共享</strong></p>
+<p>默认各自持有一份</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('41c5945b-a52f-4b9c-ae65-5f0bda51cf94')"><img id="code_img_closed_41c5945b-a52f-4b9c-ae65-5f0bda51cf94" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_41c5945b-a52f-4b9c-ae65-5f0bda51cf94" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('41c5945b-a52f-4b9c-ae65-5f0bda51cf94',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_41c5945b-a52f-4b9c-ae65-5f0bda51cf94" class="cnblogs_code_hide">
+<pre>#!/usr/bin/<span style="color: #000000;">env python
+#coding:utf</span>-<span style="color: #800080;">8</span>
+
+<span style="color: #0000ff;">from</span><span style="color: #000000;"> multiprocessing import Process
+</span><span style="color: #0000ff;">from</span><span style="color: #000000;"> multiprocessing import Manager
+
+import time
+
+
+li </span>=<span style="color: #000000;"> []
+
+def Foo(i):
+    li.append(i)
+    print </span><span style="color: #800000;">'</span><span style="color: #800000;">say hi</span><span style="color: #800000;">'</span><span style="color: #000000;">,li
+ 
+</span><span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> range(<span style="color: #800080;">10</span><span style="color: #000000;">):
+    p </span>= Process(target=Foo,args=<span style="color: #000000;">(i,))
+    p.start()
+    
+print li</span></pre>
+</div>
+<span class="cnblogs_code_collapse">View Code</span></div>
+<p>通过特殊的数据结构，可以完成进程间的数据共享</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('9e49ef69-0e79-479f-a56c-92a7e27af99d')"><img id="code_img_closed_9e49ef69-0e79-479f-a56c-92a7e27af99d" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_9e49ef69-0e79-479f-a56c-92a7e27af99d" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('9e49ef69-0e79-479f-a56c-92a7e27af99d',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_9e49ef69-0e79-479f-a56c-92a7e27af99d" class="cnblogs_code_hide">
+<pre><span style="color: #000000;">#方法一，Array
+</span><span style="color: #0000ff;">from</span><span style="color: #000000;"> multiprocessing import Process,Array
+temp </span>= Array(<span style="color: #800000;">'</span><span style="color: #800000;">i</span><span style="color: #800000;">'</span>, [<span style="color: #800080;">11</span>,<span style="color: #800080;">22</span>,<span style="color: #800080;">33</span>,<span style="color: #800080;">44</span><span style="color: #000000;">])
+
+def Foo(i):
+    temp[i] </span>= <span style="color: #800080;">100</span>+<span style="color: #000000;">i
+    </span><span style="color: #0000ff;">for</span> item <span style="color: #0000ff;">in</span><span style="color: #000000;"> temp:
+        print i,</span><span style="color: #800000;">'</span><span style="color: #800000;">-----&gt;</span><span style="color: #800000;">'</span><span style="color: #000000;">,item
+
+</span><span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> range(<span style="color: #800080;">2</span><span style="color: #000000;">):
+    p </span>= Process(target=Foo,args=<span style="color: #000000;">(i,))
+    p.start()
+    p.join()
+
+#方法二：manage.dict()共享数据
+</span><span style="color: #0000ff;">from</span><span style="color: #000000;"> multiprocessing import Process,Manager
+
+manage </span>=<span style="color: #000000;"> Manager()
+dic </span>=<span style="color: #000000;"> manage.dict()
+
+def Foo(i):
+    dic[i] </span>= <span style="color: #800080;">100</span>+<span style="color: #000000;">i
+    print dic.values()
+
+</span><span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> range(<span style="color: #800080;">2</span><span style="color: #000000;">):
+    p </span>= Process(target=Foo,args=<span style="color: #000000;">(i,))
+    p.start()
+    p.join()
+
+
+
+#方法三：manage.Namespace()共享数据
+</span><span style="color: #0000ff;">from</span><span style="color: #000000;"> multiprocessing import Process,Manager
+
+manage </span>=<span style="color: #000000;"> Manager()
+</span><span style="color: #0000ff;">namespace</span> =<span style="color: #000000;"> manage.Namespace()
+</span><span style="color: #0000ff;">namespace</span>.x = [<span style="color: #800080;">11</span>,<span style="color: #800080;">22</span>,<span style="color: #800080;">33</span><span style="color: #000000;">]
+
+def Foo(i,dic):
+    </span><span style="color: #0000ff;">namespace</span>.x = [<span style="color: #800080;">11</span>,<span style="color: #800080;">22</span>,<span style="color: #800080;">33</span><span style="color: #000000;">,i]
+    print </span><span style="color: #0000ff;">namespace</span>
+
+<span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> range(<span style="color: #800080;">2</span><span style="color: #000000;">):
+    p </span>= Process(target=Foo,args=(i,<span style="color: #0000ff;">namespace</span><span style="color: #000000;">))
+    p.start()
+    p.join()</span></pre>
+</div>
+<span class="cnblogs_code_collapse">View Code</span></div>
+<p><strong>3、进程池</strong></p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('7cae4eba-4bdf-4b94-9f8b-935df012e077')"><img id="code_img_closed_7cae4eba-4bdf-4b94-9f8b-935df012e077" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_7cae4eba-4bdf-4b94-9f8b-935df012e077" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('7cae4eba-4bdf-4b94-9f8b-935df012e077',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_7cae4eba-4bdf-4b94-9f8b-935df012e077" class="cnblogs_code_hide">
+<pre><span style="color: #0000ff;">from</span><span style="color: #000000;">  multiprocessing import Process,Pool
+
+def Foo(i):
+    #print i
+    </span><span style="color: #0000ff;">return</span> i+<span style="color: #800080;">100</span><span style="color: #000000;">
+
+def Bar(arg):
+    print arg
+     
+pool </span>= Pool(<span style="color: #800080;">5</span><span style="color: #000000;">)
+#print pool.apply(Foo,(</span><span style="color: #800080;">1</span><span style="color: #000000;">,))
+#print pool.apply_async(func </span>=Foo, args=(<span style="color: #800080;">1</span>,)).<span style="color: #0000ff;">get</span><span style="color: #000000;">()
+pool.apply_async(func </span>=Foo, args=(<span style="color: #800080;">1</span>,),callback=Bar)</pre>
+</div>
+<span class="cnblogs_code_collapse">View Code</span></div>
+<p>&nbsp;</p>
+<h3>Paramiko</h3>
+<p>一、安装，<a href="http://files.cnblogs.com/wupeiqi/day7.zip" target="_blank">下载</a></p>
+<p>　　1、下载安装&nbsp;pycrypto-2.6.1.tar.gz　　（apt-get&nbsp;install&nbsp;python-dev）</p>
+<p>　　　　解压，进入，python setup.py build【编译】，python setup.py install 【安装】 &nbsp;----》import Crypto</p>
+<p>　　2、下载安装&nbsp;paramiko-1.10.1.tar.gz　　</p>
+<p>　　　　解压，进入，python setup.py build【编译】，python setup.py install 【安装】---》&nbsp;&nbsp;import paramiko</p>
+<p>&nbsp;</p>
+<p>二、paramiko 功能</p>
+<p>1、连接远程服务器，并执行操作</p>
+<p>用户名和密码连接</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('61a6187c-8a94-475f-9266-ead3832ef934')"><img id="code_img_closed_61a6187c-8a94-475f-9266-ead3832ef934" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_61a6187c-8a94-475f-9266-ead3832ef934" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('61a6187c-8a94-475f-9266-ead3832ef934',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_61a6187c-8a94-475f-9266-ead3832ef934" class="cnblogs_code_hide">
+<pre>#!/usr/bin/<span style="color: #000000;">env python
+#coding:utf</span>-<span style="color: #800080;">8</span><span style="color: #000000;">
+
+import paramiko
+
+ssh </span>=<span style="color: #000000;"> paramiko.SSHClient()
+ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+ssh.connect(</span><span style="color: #800000;">'</span><span style="color: #800000;">192.168.1.108</span><span style="color: #800000;">'</span>, <span style="color: #800080;">22</span>, <span style="color: #800000;">'</span><span style="color: #800000;">alex</span><span style="color: #800000;">'</span>, <span style="color: #800000;">'</span><span style="color: #800000;">123</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+stdin, stdout, stderr </span>= ssh.exec_command(<span style="color: #800000;">'</span><span style="color: #800000;">df</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+print stdout.read()
+ssh.close();</span></pre>
+</div>
+<span class="cnblogs_code_collapse">View Code</span></div>
+<p>2、上传和下载文件</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('67d060fe-30d6-405d-810f-492a9f257b7c')"><img id="code_img_closed_67d060fe-30d6-405d-810f-492a9f257b7c" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_67d060fe-30d6-405d-810f-492a9f257b7c" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('67d060fe-30d6-405d-810f-492a9f257b7c',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_67d060fe-30d6-405d-810f-492a9f257b7c" class="cnblogs_code_hide">
+<pre><span style="color: #000000;">import os,sys
+import paramiko
+
+t </span>= paramiko.Transport((<span style="color: #800000;">'</span><span style="color: #800000;">182.92.219.86</span><span style="color: #800000;">'</span>,<span style="color: #800080;">22</span><span style="color: #000000;">))
+t.connect(username</span>=<span style="color: #800000;">'</span><span style="color: #800000;">wupeiqi</span><span style="color: #800000;">'</span>,password=<span style="color: #800000;">'</span><span style="color: #800000;">WOshiniba8</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+sftp </span>=<span style="color: #000000;"> paramiko.SFTPClient.from_transport(t)
+sftp.put(</span><span style="color: #800000;">'</span><span style="color: #800000;">/tmp/test.py</span><span style="color: #800000;">'</span>,<span style="color: #800000;">'</span><span style="color: #800000;">/tmp/test.py</span><span style="color: #800000;">'</span><span style="color: #000000;">) 
+t.close()
+
+
+import os,sys
+import paramiko
+
+t </span>= paramiko.Transport((<span style="color: #800000;">'</span><span style="color: #800000;">182.92.219.86</span><span style="color: #800000;">'</span>,<span style="color: #800080;">22</span><span style="color: #000000;">))
+t.connect(username</span>=<span style="color: #800000;">'</span><span style="color: #800000;">wupeiqi</span><span style="color: #800000;">'</span>,password=<span style="color: #800000;">'</span><span style="color: #800000;">WOshiniba8</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+sftp </span>=<span style="color: #000000;"> paramiko.SFTPClient.from_transport(t)
+sftp.</span><span style="color: #0000ff;">get</span>(<span style="color: #800000;">'</span><span style="color: #800000;">/tmp/test.py</span><span style="color: #800000;">'</span>,<span style="color: #800000;">'</span><span style="color: #800000;">/tmp/test2.py</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+t.close()</span></pre>
+</div>
+<span class="cnblogs_code_collapse">View Code</span></div>
+<p>3、通过SSH连接服务器</p>
+<p>　　ssh-keygen -t rsa</p>
+<p>　　ssh-copy-id -i ~/ssh/id_rsa.pub wupeiqi@192.168.159.129</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('696ccabe-aed5-456c-a7df-469affcedd49')"><img id="code_img_closed_696ccabe-aed5-456c-a7df-469affcedd49" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_696ccabe-aed5-456c-a7df-469affcedd49" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('696ccabe-aed5-456c-a7df-469affcedd49',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_696ccabe-aed5-456c-a7df-469affcedd49" class="cnblogs_code_hide">
+<pre><span style="color: #000000;">import paramiko
+
+private_key_path </span>= <span style="color: #800000;">'</span><span style="color: #800000;">/home/auto/.ssh/id_rsa</span><span style="color: #800000;">'</span><span style="color: #000000;">
+key </span>=<span style="color: #000000;"> paramiko.RSAKey.from_private_key_file(private_key_path)
+
+ssh </span>=<span style="color: #000000;"> paramiko.SSHClient()
+ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+ssh.connect(</span><span style="color: #800000;">'</span><span style="color: #800000;">182.92.219.96 </span><span style="color: #800000;">'</span>, <span style="color: #800080;">22</span>, <span style="color: #800000;">'</span><span style="color: #800000;">wupeiqi</span><span style="color: #800000;">'</span>, <span style="color: #800000;">'</span><span style="color: #800000;">xxxx</span><span style="color: #800000;">'</span><span style="color: #000000;">, key)
+
+stdin, stdout, stderr </span>= ssh.exec_command(<span style="color: #800000;">'</span><span style="color: #800000;">df</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+print stdout.read()
+ssh.close();</span></pre>
+</div>
+<span class="cnblogs_code_collapse">View Code</span></div>
+<p>4、SSH上传和下载文件</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('0bab8dd2-c5a1-4694-a4c3-fef5ceacca24')"><img id="code_img_closed_0bab8dd2-c5a1-4694-a4c3-fef5ceacca24" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_0bab8dd2-c5a1-4694-a4c3-fef5ceacca24" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('0bab8dd2-c5a1-4694-a4c3-fef5ceacca24',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_0bab8dd2-c5a1-4694-a4c3-fef5ceacca24" class="cnblogs_code_hide">
+<pre><span style="color: #000000;">import paramiko
+
+pravie_key_path </span>= <span style="color: #800000;">'</span><span style="color: #800000;">/home/auto/.ssh/id_rsa</span><span style="color: #800000;">'</span><span style="color: #000000;">
+key </span>=<span style="color: #000000;"> paramiko.RSAKey.from_private_key_file(pravie_key_path)
+
+t </span>= paramiko.Transport((<span style="color: #800000;">'</span><span style="color: #800000;">182.92.219.86</span><span style="color: #800000;">'</span>,<span style="color: #800080;">22</span><span style="color: #000000;">))
+t.connect(username</span>=<span style="color: #800000;">'</span><span style="color: #800000;">wupeiqi</span><span style="color: #800000;">'</span>,pkey=<span style="color: #000000;">key)
+
+sftp </span>=<span style="color: #000000;"> paramiko.SFTPClient.from_transport(t)
+sftp.put(</span><span style="color: #800000;">'</span><span style="color: #800000;">/tmp/test3.py</span><span style="color: #800000;">'</span>,<span style="color: #800000;">'</span><span style="color: #800000;">/tmp/test3.py</span><span style="color: #800000;">'</span><span style="color: #000000;">) 
+
+t.close()
+
+import paramiko
+
+pravie_key_path </span>= <span style="color: #800000;">'</span><span style="color: #800000;">/home/auto/.ssh/id_rsa</span><span style="color: #800000;">'</span><span style="color: #000000;">
+key </span>=<span style="color: #000000;"> paramiko.RSAKey.from_private_key_file(pravie_key_path)
+
+t </span>= paramiko.Transport((<span style="color: #800000;">'</span><span style="color: #800000;">182.92.219.86</span><span style="color: #800000;">'</span>,<span style="color: #800080;">22</span><span style="color: #000000;">))
+t.connect(username</span>=<span style="color: #800000;">'</span><span style="color: #800000;">wupeiqi</span><span style="color: #800000;">'</span>,pkey=<span style="color: #000000;">key)
+
+sftp </span>=<span style="color: #000000;"> paramiko.SFTPClient.from_transport(t)
+sftp.</span><span style="color: #0000ff;">get</span>(<span style="color: #800000;">'</span><span style="color: #800000;">/tmp/test3.py</span><span style="color: #800000;">'</span>,<span style="color: #800000;">'</span><span style="color: #800000;">/tmp/test4.py</span><span style="color: #800000;">'</span><span style="color: #000000;">) 
+
+t.close()</span></pre>
+</div>
+<span class="cnblogs_code_collapse">View Code</span></div>
+<p>5、第三种连接</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('a6575256-d27a-4ab7-ae2e-f4bb5fa71a5a')"><img id="code_img_closed_a6575256-d27a-4ab7-ae2e-f4bb5fa71a5a" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_a6575256-d27a-4ab7-ae2e-f4bb5fa71a5a" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('a6575256-d27a-4ab7-ae2e-f4bb5fa71a5a',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_a6575256-d27a-4ab7-ae2e-f4bb5fa71a5a" class="cnblogs_code_hide">
+<pre><span style="color: #000000;">import paramiko
+
+scp </span>= paramiko.Transport((<span style="color: #800000;">'</span><span style="color: #800000;">182.92.219.86</span><span style="color: #800000;">'</span>,<span style="color: #800080;">22</span><span style="color: #000000;">));
+scp.connect(username</span>=<span style="color: #800000;">'</span><span style="color: #800000;">wupeiqi</span><span style="color: #800000;">'</span>,password=<span style="color: #800000;">'</span><span style="color: #800000;">xxx</span><span style="color: #800000;">'</span><span style="color: #000000;">);
+channel </span>=<span style="color: #000000;"> scp.open_session();
+print channel.exec_command(</span><span style="color: #800000;">'</span><span style="color: #800000;">mkdir hello</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+channel.close();
+scp.close();</span></pre>
+</div>
+<span class="cnblogs_code_collapse">View Code</span></div>
+<p>6、交互式连接</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('a0922bb5-82b1-4dc4-b5c9-fafd1b90d68f')"><img id="code_img_closed_a0922bb5-82b1-4dc4-b5c9-fafd1b90d68f" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_a0922bb5-82b1-4dc4-b5c9-fafd1b90d68f" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('a0922bb5-82b1-4dc4-b5c9-fafd1b90d68f',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_a0922bb5-82b1-4dc4-b5c9-fafd1b90d68f" class="cnblogs_code_hide">
+<pre><span style="color: #000000;">import paramiko
+
+scp </span>= paramiko.Transport((<span style="color: #800000;">'</span><span style="color: #800000;">182.92.219.86</span><span style="color: #800000;">'</span>,<span style="color: #800080;">22</span><span style="color: #000000;">));
+scp.connect(username</span>=<span style="color: #800000;">'</span><span style="color: #800000;">wupeiqi</span><span style="color: #800000;">'</span>,password=<span style="color: #800000;">'</span><span style="color: #800000;">xxx</span><span style="color: #800000;">'</span><span style="color: #000000;">);
+channel </span>=<span style="color: #000000;"> scp.open_session();
+print channel.exec_command(</span><span style="color: #800000;">'</span><span style="color: #800000;">mkdir hello</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+channel.close();
+scp.close();
+
+import paramiko
+import interactive
+
+ssh </span>=<span style="color: #000000;"> paramiko.SSHClient()
+ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+ssh.connect(</span><span style="color: #800000;">'</span><span style="color: #800000;">192.168.1.108</span><span style="color: #800000;">'</span>, <span style="color: #800080;">22</span>, <span style="color: #800000;">'</span><span style="color: #800000;">alex</span><span style="color: #800000;">'</span>, <span style="color: #800000;">'</span><span style="color: #800000;">123</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+
+channel </span>=<span style="color: #000000;"> ssh.invoke_shell()
+interactive.interactive_shell(channel)
+channel.close()
+ssh.close();</span></pre>
+</div>
+<span class="cnblogs_code_collapse">View Code</span></div>
+<p>7、paramiko的demo.py文件</p>
+<h3>审计系统</h3>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://images.cnitblog.com/blog2015/425762/201503/220740211416841.png" alt="" /></p>
+<p>需求：记录用户在服务器的所有操作！！</p>
+<p>1、需要一台主机当作堡垒机</p>
+<p>2、所有用户只能登录堡垒机</p>
+<p>3、登录堡垒机后，可以对远程服务器进行操作</p>
+<p>4、记录用户的所有操作</p>
+<p>　　【登录堡垒机】--&gt; 【选择服务器】 --&gt; 【操作服务器，并记录操作】</p>
+<p>实现：</p>
+<p>1、创建堡垒机用户</p>
+<p>　　adduser xxx</p>
+<p>2、用户登录堡垒机后，自动执行脚本</p>
+<p>　　配置 .brashrc</p>
+<p>　　添加&nbsp;/usr/bin/python /home/wupeiqi/share/workspace/07day07/section_two/menu.py</p>
+<p>3、堡垒机提示与用户对应的服务器</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('8bf393b6-3ce3-4743-b70e-64238e74f2d1')"><img id="code_img_closed_8bf393b6-3ce3-4743-b70e-64238e74f2d1" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_8bf393b6-3ce3-4743-b70e-64238e74f2d1" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('8bf393b6-3ce3-4743-b70e-64238e74f2d1',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_8bf393b6-3ce3-4743-b70e-64238e74f2d1" class="cnblogs_code_hide">
+<pre><span style="color: #000000;">import os,sys
+
+msg </span>= <span style="color: #800000;">"""
+</span>\<span style="color: #800080;">033</span>[<span style="color: #800080;">42</span>;1mWelcome <span style="color: #0000ff;">using</span> old boy<span style="color: #800000;">'</span><span style="color: #800000;">s auditing system!\033[0m</span><span style="color: #800000;">
+"""
+</span><span style="color: #000000;">print msg
+
+host_dic </span>=<span style="color: #000000;"> {
+    </span><span style="color: #800000;">'</span><span style="color: #800000;">zhangke</span><span style="color: #800000;">'</span>: <span style="color: #800000;">'</span><span style="color: #800000;">10.0.0.137</span><span style="color: #800000;">'</span><span style="color: #000000;">,
+    </span><span style="color: #800000;">'</span><span style="color: #800000;">xiaoqing</span><span style="color: #800000;">'</span>: <span style="color: #800000;">'</span><span style="color: #800000;">10.0.0.135</span><span style="color: #800000;">'</span><span style="color: #000000;">,
+    </span><span style="color: #800000;">'</span><span style="color: #800000;">hanxin</span><span style="color: #800000;">'</span> : <span style="color: #800000;">'</span><span style="color: #800000;">10.0.1.139</span><span style="color: #800000;">'</span><span style="color: #000000;">
+}
+
+</span><span style="color: #0000ff;">while</span><span style="color: #000000;"> True:
+    </span><span style="color: #0000ff;">for</span> hostname, ip <span style="color: #0000ff;">in</span><span style="color: #000000;"> host_dic.items():
+        print hostname,ip
+    </span><span style="color: #0000ff;">try</span><span style="color: #000000;">:
+        host </span>= raw_input(<span style="color: #800000;">'</span><span style="color: #800000;">Please choose one server to login:</span><span style="color: #800000;">'</span><span style="color: #000000;">).strip()
+        </span><span style="color: #0000ff;">if</span> host == <span style="color: #800000;">'</span><span style="color: #800000;">quit</span><span style="color: #800000;">'</span><span style="color: #000000;">:
+            print </span><span style="color: #800000;">"</span><span style="color: #800000;">Goodbye!</span><span style="color: #800000;">"</span>
+            <span style="color: #0000ff;">break</span><span style="color: #000000;">
+    except KeyboardInterrupt:</span><span style="color: #0000ff;">continue</span><span style="color: #000000;">
+    except EOFError:</span><span style="color: #0000ff;">continue</span>
+    <span style="color: #0000ff;">if</span> len(host) ==<span style="color: #800080;">0</span>:<span style="color: #0000ff;">continue</span>
+    <span style="color: #0000ff;">if</span><span style="color: #000000;"> not host_dic.has_key(host) : 
+        print </span><span style="color: #800000;">'</span><span style="color: #800000;">No host matched, try again.</span><span style="color: #800000;">'</span>
+        <span style="color: #0000ff;">continue</span><span style="color: #000000;">
+    print </span><span style="color: #800000;">'</span><span style="color: #800000;">\033[32;1mGoing to connect \033[0m</span><span style="color: #800000;">'</span><span style="color: #000000;">, host_dic[host]
+    os.system(</span><span style="color: #800000;">"</span><span style="color: #800000;">python demo.py %s</span><span style="color: #800000;">"</span> %<span style="color: #000000;"> host_dic[host])
+
+menu</span></pre>
+</div>
+<span class="cnblogs_code_collapse">View Code</span></div>
+<p>4、记录操作日志</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('68a23cf2-45a6-4165-a606-7b94a07ea5cd')"><img id="code_img_closed_68a23cf2-45a6-4165-a606-7b94a07ea5cd" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_68a23cf2-45a6-4165-a606-7b94a07ea5cd" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('68a23cf2-45a6-4165-a606-7b94a07ea5cd',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_68a23cf2-45a6-4165-a606-7b94a07ea5cd" class="cnblogs_code_hide">
+<pre># Copyright (C) <span style="color: #800080;">2003</span>-<span style="color: #800080;">2007</span>  Robey Pointer &lt;robeypointer@gmail.com&gt;<span style="color: #000000;">
+#
+# This file </span><span style="color: #0000ff;">is</span><span style="color: #000000;"> part of paramiko.
+#
+# Paramiko </span><span style="color: #0000ff;">is</span> free software; you can redistribute it and/<span style="color: #000000;">or modify it under the
+# terms of the GNU Lesser General Public License </span><span style="color: #0000ff;">as</span><span style="color: #000000;"> published by the Free
+# Software Foundation; either version </span><span style="color: #800080;">2.1</span><span style="color: #000000;"> of the License, or (at your option)
+# any later version.
+#
+# Paramiko </span><span style="color: #0000ff;">is</span> distrubuted <span style="color: #0000ff;">in</span><span style="color: #000000;"> the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE.  See the GNU Lesser General Public License </span><span style="color: #0000ff;">for</span><span style="color: #000000;"> more
+# details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with Paramiko; </span><span style="color: #0000ff;">if</span><span style="color: #000000;"> not, write to the Free Software Foundation, Inc.,
+# </span><span style="color: #800080;">59</span> Temple Place, Suite <span style="color: #800080;">330</span>, Boston, MA  <span style="color: #800080;">02111</span>-<span style="color: #800080;">1307</span><span style="color: #000000;">  USA.
+
+
+import socket
+import sys
+
+# windows does not have termios...
+</span><span style="color: #0000ff;">try</span><span style="color: #000000;">:
+    import termios
+    import tty
+    has_termios </span>=<span style="color: #000000;"> True
+except ImportError:
+    has_termios </span>=<span style="color: #000000;"> False
+
+
+def interactive_shell(chan):
+    </span><span style="color: #0000ff;">if</span><span style="color: #000000;"> has_termios:
+        posix_shell(chan)
+    </span><span style="color: #0000ff;">else</span><span style="color: #000000;">:
+        windows_shell(chan)
+
+
+def posix_shell(chan):
+    import </span><span style="color: #0000ff;">select</span><span style="color: #000000;">
+    
+    oldtty </span>=<span style="color: #000000;"> termios.tcgetattr(sys.stdin)
+    </span><span style="color: #0000ff;">try</span><span style="color: #000000;">:
+        tty.setraw(sys.stdin.fileno())
+        tty.setcbreak(sys.stdin.fileno())
+        chan.settimeout(</span><span style="color: #800080;">0.0</span><span style="color: #000000;">)
+        f </span>= file(<span style="color: #800000;">'</span><span style="color: #800000;">/tmp/auto.log</span><span style="color: #800000;">'</span>,<span style="color: #800000;">'</span><span style="color: #800000;">a+</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+        </span><span style="color: #0000ff;">while</span><span style="color: #000000;"> True:
+            r, w, e </span>= <span style="color: #0000ff;">select</span>.<span style="color: #0000ff;">select</span><span style="color: #000000;">([chan, sys.stdin], [], [])
+            </span><span style="color: #0000ff;">if</span> chan <span style="color: #0000ff;">in</span><span style="color: #000000;"> r:
+                </span><span style="color: #0000ff;">try</span><span style="color: #000000;">:
+                    x </span>= chan.recv(<span style="color: #800080;">1024</span><span style="color: #000000;">)
+                    </span><span style="color: #0000ff;">if</span> len(x) == <span style="color: #800080;">0</span><span style="color: #000000;">:
+                        print </span><span style="color: #800000;">'</span><span style="color: #800000;">\r\n*** EOF\r\n</span><span style="color: #800000;">'</span><span style="color: #000000;">,
+                        </span><span style="color: #0000ff;">break</span><span style="color: #000000;">
+                    sys.stdout.write(x)
+                    sys.stdout.flush()
+                except socket.timeout:
+                    pass
+            </span><span style="color: #0000ff;">if</span> sys.stdin <span style="color: #0000ff;">in</span><span style="color: #000000;"> r:
+                x </span>= sys.stdin.read(<span style="color: #800080;">1</span><span style="color: #000000;">)
+                f.write(x)
+                f.flush()
+                </span><span style="color: #0000ff;">if</span> len(x) == <span style="color: #800080;">0</span><span style="color: #000000;">:
+                    </span><span style="color: #0000ff;">break</span><span style="color: #000000;">
+                chan.send(x)
+        f.close()
+
+    </span><span style="color: #0000ff;">finally</span><span style="color: #000000;">:
+        termios.tcsetattr(sys.stdin, termios.TCSADRAIN, oldtty)
+
+    
+# thanks to Mike Looijmans </span><span style="color: #0000ff;">for</span> <span style="color: #0000ff;">this</span><span style="color: #000000;"> code
+def windows_shell(chan):
+    import threading
+
+    sys.stdout.write(</span><span style="color: #800000;">"</span><span style="color: #800000;">Line-buffered terminal emulation. Press F6 or ^Z to send EOF.\r\n\r\n</span><span style="color: #800000;">"</span><span style="color: #000000;">)
+        
+    def writeall(sock):
+        </span><span style="color: #0000ff;">while</span><span style="color: #000000;"> True:
+            data </span>= sock.recv(<span style="color: #800080;">256</span><span style="color: #000000;">)
+            </span><span style="color: #0000ff;">if</span><span style="color: #000000;"> not data:
+                sys.stdout.write(</span><span style="color: #800000;">'</span><span style="color: #800000;">\r\n*** EOF ***\r\n\r\n</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+                sys.stdout.flush()
+                </span><span style="color: #0000ff;">break</span><span style="color: #000000;">
+            sys.stdout.write(data)
+            sys.stdout.flush()
+        
+    writer </span>= threading.Thread(target=writeall, args=<span style="color: #000000;">(chan,))
+    writer.start()
+        
+    </span><span style="color: #0000ff;">try</span><span style="color: #000000;">:
+        </span><span style="color: #0000ff;">while</span><span style="color: #000000;"> True:
+            d </span>= sys.stdin.read(<span style="color: #800080;">1</span><span style="color: #000000;">)
+            </span><span style="color: #0000ff;">if</span><span style="color: #000000;"> not d:
+                </span><span style="color: #0000ff;">break</span><span style="color: #000000;">
+            chan.send(d)
+    except EOFError:
+        # user hit </span>^<span style="color: #000000;">Z or F6
+        pass</span></pre>
+</div>
+<span class="cnblogs_code_collapse">View Code</span></div>
+<p>&nbsp;</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+
+		</div>
+		<div class = "postDesc">posted @ <span id="post-date">2015-03-22 07:04</span> <a href='http://www.cnblogs.com/wupeiqi/'>武沛齐</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>) &nbsp;<a href="https://i.cnblogs.com/EditArticles.aspx?postid=4356675" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(4356675);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=133379,cb_entryId=4356675,cb_blogApp=currentBlogApp,cb_blogUserGuid='7208b24d-95c9-e111-aa3f-842b2b196315',cb_entryCreatedDate='2015/3/22 7:04:00';loadViewCount(cb_entryId);</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='ad_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<div id='ad_c2' class='c_ad_block'></div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script></div>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright &copy;2016 武沛齐
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+</body>
+</html>
