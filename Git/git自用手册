@@ -1,7 +1,14 @@
 
-git自用自查手册
+
+git自用自查手册：
 
 常用命令简明备忘录
+
+
+重要：
+	创建ssh密钥：	ssh-keygen -t rsa -C "vianus@qq.com"
+	将公钥添加到git服务器中，第一次连接时需要输入一次git帐户的密码
+
 
 #----------------------------------------
 
@@ -37,7 +44,7 @@ git自用自查手册
 
 远程仓库相关命令：
 
-克隆远程仓库：$ git clone git://github.com/jquery/jquery.git
+克隆远程仓库：$ git clone git://git.com/jquery/jquery.git
 
 查看远程仓库：$ git remote -v
 
@@ -59,11 +66,15 @@ git自用自查手册
 
 查看远程分支：$ git branch -r
 
-创建远程分支：$ git push origin 分支名
+创建远程分支：$ git push 远程仓库名 本地分支名
+
+同步分支到远程： $ git push 远程仓库名 本地分支名:远程分支名
+
+拉取远程分支： $ git fetch 远程仓库名 远程分支名
 
 删除远程分支：
-	$ git branch -dr 远程分支名 
-    $ git push origin --delete 远程分支名
+	  $ git push 远程仓库名 :远程分支名
+或：  $ git push 远程仓库名 --delete 远程分支名
 
  
 
