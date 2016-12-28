@@ -6,7 +6,7 @@ git自用自查手册：
 
 
 重要：
-	创建ssh密钥：	ssh-keygen -t rsa -C "vianus@qq.com"
+	创建ssh密钥：	ssh-keygen -t rsa -C "124999758@qq.com"
 	将公钥添加到git服务器中，第一次连接时需要输入一次git帐户的密码
 
 
