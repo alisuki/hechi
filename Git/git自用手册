@@ -48,7 +48,8 @@ git自用自查手册：
 
 查看远程仓库：$ git remote -v
 
-添加远程仓库：$ git remote add [name] [url]
+添加远程仓库：$ git remote add [name] [url]	
+	示例： git remote add hechi git@github.com:alisuki/hechi.git
 
 删除远程仓库：$ git remote rm [name]
 
