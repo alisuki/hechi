@@ -1,0 +1,134 @@
+
+/*   教程页面
+http://www.cnblogs.com/wupeiqi/articles/4457274.html
+*/
+
+
+1、存在形式
+	1、文件形式
+		<script src="js/oldboy.js"></script>
+	2、嵌入html
+		<script type='text/javascript'>alert('page');</script>
+
+2、代码块的位置
+
+　　<body>标签内的代码底部
+
+3、变量和函数的声明
+	1、全局变量和局部变量
+		name ＝ 'alex'
+		var name ＝ 'alex'
+ 
+	2、基本函数和自执行函数
+		function Foo(arg){
+			console.log(arg);
+		}
+ 
+		(function (arg) {
+			alert(arg);
+		})('alex')
+
+4、字符串常用方法和属性
+	obj.trim()
+	obj.charAt(index)
+	obj.substring(start,end)
+	obj.indexOf(char)
+	obj.length
+
+5、数组
+	声明，如：
+		var array = Array() 或 var array = []
+ 
+	添加
+		obj.push(ele)                   追加
+		obj.unshift(ele)                最前插入
+		obj.splice(index,0,'content')   指定索引插入
+ 
+	移除
+		obj.pop()                       数组尾部获取
+		obj.shift()                     数组头部获取
+		obj.splice(index,count)         数组指定位置后count个字符
+ 
+	切片
+		obj.slice(start,end)           
+ 
+	合并
+		newArray ＝ obj1.concat(obj2)   
+ 
+	翻转
+		obj.reverse()
+ 
+	字符串化
+		obj.join('_')
+ 
+	长度
+		obj.length
+	注意：字典是一种特殊的数组
+
+6、循环
+	var a = '123456789';
+	for(var i=0;i<10;i++){
+		 console.log(a[i]);
+	}<br>
+	for(var item in a){
+		 console.log(a[item]);
+	}
+
+7、异常处理
+	try{
+    
+	}catch(e) {
+     
+	}finally{
+     
+	}
+
+
+
+
+
+
+===================================
+
+
+name = 'Kevien'		//定义全局变量
+var name = 'Kevien'	//局部变量
+
+alert('这是一个弹窗')
+
+//	name = 'Kevien'		//单行注释
+
+
+//下面为多行注释
+/*
+def foo ():
+	pass
+*/
+
+//定义函数
+function Foo(name){
+	console.log(name);		//打印输出
+	console.log(arguments[0]);	//打印第一个参数
+	console.log(arguments[1]);	//打印第二个参数
+}	
+
+Foo('Kevien')
+
+
+//匿名函数,即把一个函数传给一个变量
+var temp = function(){
+	name = 'test';
+}
+
+//自执行函数，没有函数名
+(function (arg) {
+        alert(arg);
+    })('alex')
+
+
+//字符串操作
+obj.trim()		//去掉首尾的空格
+obj.charAt(index)	//按照index索引取字符
+
+
+

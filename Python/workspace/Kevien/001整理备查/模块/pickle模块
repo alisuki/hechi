@@ -1,0 +1,63 @@
+
+pickle/cPickle模块：
+
+可用于加密字符串，数据共享，游戏断电后回复到断电前的进度等
+
+将对象序列化还可持久化到磁盘，在需要的时候再读取并还原。cPickle比pickle更高效！
+
+
+#-----------序列化--------------
+将对象序列化到字符串：
+	cPickle.dumps (obj[, True])		# True 表示压缩数据，默认为：False 表示不压缩
+
+将字符串还原成对象：
+	cPickle.loads(string)	
+	
+
+#序列化示例：
+import cPickle as pickle			#导入并别名为pickle
+obj = (123,'dsak',['list','fdks'],{'name':'Kevien'})
+str = pickle.dumps (obj,True)		#序列化并压缩
+print str							#已压缩过了，所以此处会报错
+
+#反持久化示例：
+obj2 = pickle.loads(str)
+print obj2
+
+
+
+#-----------序列持久化--------------
+将对象持久化到文件：
+	cPickle.dump (obj, file[, True])	# True 表示压缩数据，读写速度更快并且占用磁盘空间更少，默认为：False 表示不压缩
+
+将对象从文件还原：
+	cPickle.load(file)					#注意：此处的file是一个句柄
+	
+
+#持久化示例：
+import cPickle as pickle
+obj = (123,'dsak',['list','fdks'],{'name':'Kevien'})
+file = open('/tmp/pickle.txt','wb')
+pickle.dump(obj,file,True)
+file.close()
+
+#反持久化示例：
+file = open('/tmp/pickle.txt','rb')
+obj = pickle.load(file)
+file.close()
+print(obj)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

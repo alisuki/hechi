@@ -1,0 +1,52 @@
+
+time模块：
+
+-------------------------------------
+
+时间的三种表示形式：
+	时间戳:	1483365408.107013
+	字符串:	2014-11-11 11:11
+	元  组:	tm_year=2017, tm_mon=1, tm_mday=2 ...
+
+
+返回时间戳：
+	time.time()					#返回当前时间戳
+	time.clock()				#这个需要注意，在不同的系统上含义不同。
+
+
+
+时间转换：	注意：字符串不能直接转时间戳，需要对应格式正确转元组后再转时间戳
+
+元组-->时间戳:
+	time.mktime(t)
+
+
+时间戳-->元组
+	time.localtime([secs])		#转为当前时区的元组
+	time.gmtime([secs])			#转为UTC时区的元组
+
+
+元组-->字符串:
+	time.strftime(format[, t])
+	如：	time.strftime('%Y-%m-%d',time.localtime())
+
+
+字符串-->元组:
+	time.strptime()	
+	如： time.strptime('2013-3-23','%Y-%m-%d')
+		 time.strptime('2013-3-23 22:08:24','%Y-%m-%d %H:%M:%S')
+
+
+元组-->欧式字符串：'Sun Jun 20 23:21:05 1993'
+	time.asctime([t])	
+
+
+元组-->欧式字符串：'Sun Jun 20 23:21:05 1993'
+	time.ctime([secs])	
+
+
+时间休眠：
+	time.sleep(secs)			#线程推迟指定的时间运行。单位为秒。
+
+
+

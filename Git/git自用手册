@@ -9,10 +9,17 @@ git自用自查手册：
 	创建ssh密钥：	ssh-keygen -t rsa -C "124999758@qq.com"
 	将公钥添加到git服务器中，第一次连接时需要输入一次git帐户的密码
 
+#----------------------------------------
+
+提示：更新被拒绝，因为您当前分支的最新提交落后于其对应的远程分支。
+git remote add origin https://github.com/topmy/odoo.git 
+git fetch origin  
+git merge origin/master  
+
 
 #----------------------------------------
 
-工作区相关命令：
+ 工作区相关命令：
 
 在当前目录新建代码库：$ git init
 
@@ -49,9 +56,10 @@ git自用自查手册：
 查看远程仓库：$ git remote -v
 
 添加远程仓库：$ git remote add [name] [url]	
-	示例： git remote add hechi git@github.com:alisuki/hechi.git
+		https方式：git remote add origin https://github.com/topmy/odoo.git
+		或ssh方式：git remote add origin git@github.com:topmy/odoo.git   
 
-删除远程仓库：$ git remote rm [name]
+断开远程仓库：$ git remote rm [name]
 
 修改远程仓库：$ git remote set-url --push [name] [newUrl]
 

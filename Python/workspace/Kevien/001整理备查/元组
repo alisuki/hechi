@@ -1,0 +1,17 @@
+一个元组由数个逗号分隔的值组成，例如:
+	tuple = 12345, 54321, 'hello!','hello!'
+
+tuple.count(x)	#统计x在元组中出现的次数
+tuple.index(value)	#输出value在元组中的索引
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

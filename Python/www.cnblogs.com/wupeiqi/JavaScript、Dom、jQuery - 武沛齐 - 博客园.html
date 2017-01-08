@@ -1,0 +1,1167 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JavaScript、Dom、jQuery - 武沛齐 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=03KQeESEmpLfzDqUo0NiWUg5Zd5aRam3JHBZTK05Wug1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/SimpleBlue/bundle-SimpleBlue.css?v=jJERBFSojhmgst84aaRDal9S3q1WoO-WcNudmMzGJS81"/>
+<link type="text/css" rel="stylesheet" href="/blog/customcss/133379.css?v=YSNZANkz7eBKoXq2iHYfghvodkY%3d"/>
+<link id="mobile-style" media="only screen and (max-width: 768px)" type="text/css" rel="stylesheet" href="/skins/SimpleBlue/bundle-SimpleBlue-mobile.css?v=BlWRqh78YPBjZE2nsyndTVBgXau6g8pl0IYzREPAN_U1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/wupeiqi/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/wupeiqi/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/wupeiqi/wlwmanifest.xml"/>
+<script src="//common.cnblogs.com/script/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'wupeiqi', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="/bundles/blog-common.js?v=hH1lCMV8WaIu271Nx7jPuv36TENW9-RsSxziLxUpjtc1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+		
+<!--done-->
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/wupeiqi/">Mr.Seven</a></div>
+<div class="subtitle"></div>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+<li id="nav_myhome"><a id="blog_nav_myhome" class="menu" href="http://www.cnblogs.com/wupeiqi/">首页</a></li>
+<li id="nav_newpost"><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li id="nav_contact"><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/%E6%AD%A6%E6%B2%9B%E9%BD%90">联系</a></li>
+<li id="nav_rss"><a id="blog_nav_rss" class="menu" href="http://www.cnblogs.com/wupeiqi/rss">订阅</a>
+<!--<a id="blog_nav_rss_image" class="aHeaderXML" href="http://www.cnblogs.com/wupeiqi/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li id="nav_admin"><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<!--done-->
+随笔-124&nbsp;
+文章-129&nbsp;
+评论-205&nbsp;
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class = "post">
+		<h1 class = "postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/wupeiqi/articles/4457274.html">JavaScript、Dom、jQuery</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><p>本节内容：</p>
+<ul>
+<li>JavaScript基础</li>
+<li>Dom编程</li>
+<li>jQeury</li>
+</ul>
+<h3>JavaScript基础</h3>
+<p>JavaScript是一种属于网络的脚本语言,已经被广泛用于Web应用开发,常用来为网页添加各式各样的动态功能,为用户提供更流畅美观的浏览效果。通常JavaScript脚本是通过嵌入在HTML中来实现自身的功能的。</p>
+<p>1、存在形式</p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:python;gutter:true;">1、文件形式
+	&lt;script src="js/oldboy.js"&gt;&lt;/script&gt;
+2、嵌入html
+	&lt;script type='text/javascript'&gt;alert('page');&lt;/script&gt;</pre>
+</div>
+<p>2、代码块的位置</p>
+<p>　　&lt;body&gt;标签内的代码底部</p>
+<p>3、变量和函数的声明</p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:python;gutter:true;">1、全局变量和局部变量
+	name ＝ 'alex'
+	var name ＝ 'alex'
+
+2、基本函数和自执行函数
+	function Foo(arg){
+		console.log(arg);
+	}
+
+	(function (arg) {
+	    alert(arg);
+	})('alex')</pre>
+</div>
+<p>4、字符串常用方法和属性</p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:python;gutter:true;">obj.trim()
+obj.charAt(index)
+obj.substring(start,end)
+obj.indexOf(char)
+obj.length
+</pre>
+</div>
+<p>5、数组</p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:python;gutter:true;">声明，如：
+	var array = Array() 或 var array = []
+
+添加
+	obj.push(ele)					追加
+	obj.unshift(ele)				最前插入
+	obj.splice(index,0,'content')	指定索引插入
+
+移除
+	obj.pop()						数组尾部获取
+	obj.shift()						数组头部获取
+	obj.splice(index,count)			数组指定位置后count个字符
+
+切片
+	obj.slice(start,end)			
+
+合并
+	newArray ＝ obj1.concat(obj2)	
+
+翻转
+	obj.reverse()
+
+字符串化
+	obj.join('_')
+
+长度
+	obj.length
+</pre>
+</div>
+<p><span style="color: #888888; line-height: 1.5;">注意：字典是一种特殊的数组</span></p>
+<p>6、循环</p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:javascript;gutter:true;">           var a = '123456789';
+           for(var i=0;i&lt;10;i++){
+                console.log(a[i]);
+           }<br />
+           for(var item in a){
+                console.log(a[item]);
+           }</pre>
+</div>
+<p>7、异常处理</p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:javascript;gutter:true;">    try{
+       
+    }catch(e) {
+        
+    }finally{
+        
+    }</pre>
+</div>
+<h3>DOM编程</h3>
+<p>文件对象模型（Document Object Model，简称DOM），是W3C组织推荐的处理可扩展标志语言的标准编程接口。</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://images.cnitblog.com/blog2015/425762/201504/260723025563038.png" alt="" width="424" height="233" /></p>
+<p>选择器：</p>
+<ul>
+<li>document.getElementById('id')</li>
+<li>document.getElementsByName('name')</li>
+<li>document.getElementsByTagName('tagname')</li>
+</ul>
+<p>常用函数：</p>
+<ul>
+<li>创建标签，document.createElement('a')<br />&nbsp; &nbsp;<img src="http://images.cnitblog.com/blog2015/425762/201504/260733379634650.png" alt="" /><br /><img src="http://images.cnitblog.com/blog2015/425762/201504/260733474635014.png" alt="" /></li>
+<li>获取或者修改样式<br />obj.className &nbsp;</li>
+<li>获取或设置属性<br />setattribute(key,val) &nbsp; &nbsp;getattribute(key)</li>
+<li>获取或修改样式中的属性<br />obj.style.属性<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img src="http://images.cnitblog.com/blog2015/425762/201504/260736097446779.png" alt="" /></li>
+<li>提交表单<br />document.geElementById(&lsquo;form&rsquo;).submit()</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+<p>常用事件：</p>
+<ul>
+<li>onclick</li>
+<li>onblur</li>
+<li>onfocus</li>
+<li>on...</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+<div class="cnblogs_Highlighter">
+<pre class="brush:python;collapse:true;;gutter:true;">onload和ready
+	body标签添加onload事件 或者 window.onload = function(){}  
+		覆盖上一个onload只能注册一次，而ready就可以多次注册
+	$(document).ready(function(){}) 或者 $(function(){})
+onload是所有DOM元素创建、图片加载完毕后才触发的。而ready则是DOM元素创建完毕后触发的，不等图片加载完毕。图片还么有渲染，就可以进行事件的执行。</pre>
+</div>
+<p><img src="http://images2015.cnblogs.com/blog/425762/201601/425762-20160131074141505-1325365867.png" alt="" width="666" height="596" /></p>
+<p>其他函数：</p>
+<ul>
+<li>console.log()</li>
+<li>location.href = "url" 和 open('url')</li>
+<li>alert()</li>
+<li>confirm()</li>
+<li>setInterval("alert()",2000); &nbsp; &nbsp;clearInterval(obj)</li>
+<li>setTimeout(); &nbsp; &nbsp;clearTimeout(obj)</li>
+</ul>
+<div class="cnblogs_code" onclick="cnblogs_code_show('0b9dc14a-fcc5-43c5-937a-7c84615cae60')"><img id="code_img_closed_0b9dc14a-fcc5-43c5-937a-7c84615cae60" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_0b9dc14a-fcc5-43c5-937a-7c84615cae60" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('0b9dc14a-fcc5-43c5-937a-7c84615cae60',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_0b9dc14a-fcc5-43c5-937a-7c84615cae60" class="cnblogs_code_hide">
+<pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset='utf-8' &gt;
+        &lt;title&gt;欢迎blue shit莅临指导&amp;nbsp;&amp;nbsp;&lt;/title&gt;
+        &lt;script type='text/javascript'&gt;
+            <span style="color: #0000ff;">function</span><span style="color: #000000;"> Go(){
+                </span><span style="color: #0000ff;">var</span> content =<span style="color: #000000;"> document.title;
+                </span><span style="color: #0000ff;">var</span> firstChar = content.charAt(0<span style="color: #000000;">)
+                </span><span style="color: #0000ff;">var</span> sub = content.substring(1<span style="color: #000000;">,content.length)
+                document.title </span>= sub +<span style="color: #000000;"> firstChar;
+            }
+            setInterval(</span>'Go()',1000<span style="color: #000000;">);
+        </span>&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;    
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
+<span class="cnblogs_code_collapse">跑马灯</span></div>
+<div class="cnblogs_code" onclick="cnblogs_code_show('c752a1f9-ff5a-49a0-b669-cf8fda2d079c')"><img id="code_img_closed_c752a1f9-ff5a-49a0-b669-cf8fda2d079c" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_c752a1f9-ff5a-49a0-b669-cf8fda2d079c" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('c752a1f9-ff5a-49a0-b669-cf8fda2d079c',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_c752a1f9-ff5a-49a0-b669-cf8fda2d079c" class="cnblogs_code_hide">
+<pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset='utf-8' /&gt;
+        &lt;title&gt;&lt;/title&gt;
+        
+        &lt;style&gt;<span style="color: #000000;">
+            .gray{
+                color:gray;
+            }
+            .black{
+                color:black;
+            }
+        </span>&lt;/style&gt;
+        &lt;script type="text/javascript"&gt;
+            <span style="color: #0000ff;">function</span><span style="color: #000000;"> Enter(){
+               </span><span style="color: #0000ff;">var</span> id= document.getElementById("tip"<span style="color: #000000;">)
+               id.className </span>= 'black'<span style="color: #000000;">;
+               </span><span style="color: #0000ff;">if</span>(id.value=='请输入关键字'||id.value.trim()==''<span style="color: #000000;">){
+                    id.value </span>= ''<span style="color: #000000;">
+               }
+            }
+            </span><span style="color: #0000ff;">function</span><span style="color: #000000;"> Leave(){
+                </span><span style="color: #0000ff;">var</span> id= document.getElementById("tip"<span style="color: #000000;">)
+                </span><span style="color: #0000ff;">var</span> val =<span style="color: #000000;"> id.value;
+                </span><span style="color: #0000ff;">if</span>(val.length==0||id.value.trim()==''<span style="color: #000000;">){
+                    id.value </span>= '请输入关键字'<span style="color: #000000;">
+                    id.className </span>= 'gray'<span style="color: #000000;">;
+                }</span><span style="color: #0000ff;">else</span><span style="color: #000000;">{
+                    id.className </span>= 'black'<span style="color: #000000;">;
+                }
+            }
+        </span>&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;input type='text' class='gray' id='tip' value='请输入关键字' onfocus='Enter();'  onblur='Leave();'/&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
+<span class="cnblogs_code_collapse">搜索框</span></div>
+<h3>jQuery</h3>
+<p>jQuery是一个兼容多浏览器的javascript库，核心理念是write less,do more(写得更少,做得更多)，对javascript进行了封装，是的更加便捷的开发，并且在兼容性方面十分优秀。</p>
+<ol>
+<li>选择器和筛选</li>
+<li>属性</li>
+<li>css</li>
+<li>文档处理</li>
+<li>事件</li>
+<li>扩展</li>
+<li>ajax</li>
+</ol>
+<p><span style="color: #888888;">ps：链式编程</span></p>
+<p>更多见：http://www.php100.com/manual/jquery/</p>
+<h3>实例</h3>
+<p>模态对话框</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('0bfc8fd0-cde6-49d2-bb8f-0fc29dc0a3fc')"><img id="code_img_closed_0bfc8fd0-cde6-49d2-bb8f-0fc29dc0a3fc" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_0bfc8fd0-cde6-49d2-bb8f-0fc29dc0a3fc" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('0bfc8fd0-cde6-49d2-bb8f-0fc29dc0a3fc',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_0bfc8fd0-cde6-49d2-bb8f-0fc29dc0a3fc" class="cnblogs_code_hide">
+<pre>对话框</pre>
+</div>
+<span class="cnblogs_code_collapse">demo</span></div>
+<p>加载框</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('ba20ca1c-55f5-4a41-81d1-958d14e6e961')"><img id="code_img_closed_ba20ca1c-55f5-4a41-81d1-958d14e6e961" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_ba20ca1c-55f5-4a41-81d1-958d14e6e961" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('ba20ca1c-55f5-4a41-81d1-958d14e6e961',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_ba20ca1c-55f5-4a41-81d1-958d14e6e961" class="cnblogs_code_hide">
+<pre>对话框</pre>
+</div>
+<span class="cnblogs_code_collapse">demo</span></div>
+<p>返回顶部</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('b9a168d0-38d4-4d25-ab02-5014ced5cd2e')"><img id="code_img_closed_b9a168d0-38d4-4d25-ab02-5014ced5cd2e" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_b9a168d0-38d4-4d25-ab02-5014ced5cd2e" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('b9a168d0-38d4-4d25-ab02-5014ced5cd2e',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_b9a168d0-38d4-4d25-ab02-5014ced5cd2e" class="cnblogs_code_hide">
+<pre><span style="color: #0000ff;">&lt;!</span><span style="color: #ff00ff;">DOCTYPE html</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">html </span><span style="color: #ff0000;">lang</span><span style="color: #0000ff;">="en"</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">head</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">meta </span><span style="color: #ff0000;">charset</span><span style="color: #0000ff;">="UTF-8"</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">title</span><span style="color: #0000ff;">&gt;&lt;/</span><span style="color: #800000;">title</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">style</span><span style="color: #0000ff;">&gt;</span><span style="background-color: #f5f5f5; color: #800000;">
+        .back</span><span style="background-color: #f5f5f5; color: #000000;">{</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            position</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> fixed</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            bottom</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> 0px</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            right</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> 0px</span><span style="background-color: #f5f5f5; color: #000000;">;</span>
+        <span style="background-color: #f5f5f5; color: #000000;">}</span><span style="background-color: #f5f5f5; color: #800000;">
+        .hide</span><span style="background-color: #f5f5f5; color: #000000;">{</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            display</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> none</span><span style="background-color: #f5f5f5; color: #000000;">;</span>
+        <span style="background-color: #f5f5f5; color: #000000;">}</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">style</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">head</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">body</span><span style="color: #0000ff;">&gt;</span>
+
+<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">style</span><span style="color: #0000ff;">="height: 2000px;"</span><span style="color: #0000ff;">&gt;&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+
+<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">onclick</span><span style="color: #0000ff;">="GoTop()"</span><span style="color: #ff0000;"> class</span><span style="color: #0000ff;">="back hide"</span><span style="color: #0000ff;">&gt;</span>返回顶部<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+
+<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">script </span><span style="color: #ff0000;">src</span><span style="color: #0000ff;">="jquery-1.8.2.js"</span><span style="color: #0000ff;">&gt;&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">script </span><span style="color: #ff0000;">type</span><span style="color: #0000ff;">="text/javascript"</span><span style="color: #0000ff;">&gt;</span>
+
+    <span style="background-color: #f5f5f5; color: #0000ff;">function</span><span style="background-color: #f5f5f5; color: #000000;"> GoTop(){
+        </span><span style="background-color: #f5f5f5; color: #008000;">//</span><span style="background-color: #f5f5f5; color: #008000;">返回顶部</span>
+<span style="background-color: #f5f5f5; color: #000000;">        $(window).scrollTop(</span><span style="background-color: #f5f5f5; color: #000000;">0</span><span style="background-color: #f5f5f5; color: #000000;">);
+    }
+
+    $(</span><span style="background-color: #f5f5f5; color: #0000ff;">function</span><span style="background-color: #f5f5f5; color: #000000;">(){
+
+        $(window).scroll(</span><span style="background-color: #f5f5f5; color: #0000ff;">function</span><span style="background-color: #f5f5f5; color: #000000;">(){
+            </span><span style="background-color: #f5f5f5; color: #008000;">//</span><span style="background-color: #f5f5f5; color: #008000;">当滚动滑轮时，执行函数体</span>
+
+            <span style="background-color: #f5f5f5; color: #008000;">//</span><span style="background-color: #f5f5f5; color: #008000;">获取当前滑轮滚动的高度</span>
+            <span style="background-color: #f5f5f5; color: #0000ff;">var</span><span style="background-color: #f5f5f5; color: #000000;"> top </span><span style="background-color: #f5f5f5; color: #000000;">=</span><span style="background-color: #f5f5f5; color: #000000;"> $(window).scrollTop();
+
+            </span><span style="background-color: #f5f5f5; color: #0000ff;">if</span><span style="background-color: #f5f5f5; color: #000000;">(top</span><span style="background-color: #f5f5f5; color: #000000;">&gt;</span><span style="background-color: #f5f5f5; color: #000000;">100</span><span style="background-color: #f5f5f5; color: #000000;">){
+                </span><span style="background-color: #f5f5f5; color: #008000;">//</span><span style="background-color: #f5f5f5; color: #008000;">展示&ldquo;返回顶部&rdquo;</span>
+<span style="background-color: #f5f5f5; color: #000000;">                $(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">.back</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">).removeClass(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">hide</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">);
+            }</span><span style="background-color: #f5f5f5; color: #0000ff;">else</span><span style="background-color: #f5f5f5; color: #000000;">{
+                </span><span style="background-color: #f5f5f5; color: #008000;">//</span><span style="background-color: #f5f5f5; color: #008000;">隐藏&ldquo;返回顶部&rdquo;</span>
+<span style="background-color: #f5f5f5; color: #000000;">                $(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">.back</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">).addClass(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">hide</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">);
+            }
+        });
+    });
+
+</span><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000ff;">&gt;</span>
+
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">body</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">html</span><span style="color: #0000ff;">&gt;</span></pre>
+</div>
+<span class="cnblogs_code_collapse">dem0</span></div>
+<p><a href="http://files.cnblogs.com/files/wupeiqi/GoTop%E7%BB%88%E6%9E%81%E7%89%88.zip" target="_blank"><span style="line-height: 1.5;">终极版下载</span></a></p>
+<p><span style="line-height: 1.5;">多选框</span></p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('c4c4c2df-e510-4031-83da-eaf55bd74f87')"><img id="code_img_closed_c4c4c2df-e510-4031-83da-eaf55bd74f87" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_c4c4c2df-e510-4031-83da-eaf55bd74f87" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('c4c4c2df-e510-4031-83da-eaf55bd74f87',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_c4c4c2df-e510-4031-83da-eaf55bd74f87" class="cnblogs_code_hide">
+<pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset='utf-8' /&gt;
+        &lt;title&gt;&lt;/title&gt;
+        &lt;script type="text/javascript" src='jquery-1.8.2.js'&gt;&lt;/script&gt;
+        &lt;script type="text/javascript"&gt;<span style="color: #000000;">
+            $(</span><span style="color: #0000ff;">function</span><span style="color: #000000;">(){
+                $(</span>'#selectAll').click(<span style="color: #0000ff;">function</span><span style="color: #000000;">(){
+                    $(</span>'#checklist :checkbox').prop('checked',<span style="color: #0000ff;">true</span><span style="color: #000000;">);
+                })
+                $(</span>'#unselectAll').click(<span style="color: #0000ff;">function</span><span style="color: #000000;">(){
+                    $(</span>'#checklist :checkbox').prop('checked',<span style="color: #0000ff;">false</span><span style="color: #000000;">);
+                })
+                $(</span>'#reverseAll').click(<span style="color: #0000ff;">function</span><span style="color: #000000;">(){
+                    $(</span>'#checklist :checkbox').each(<span style="color: #0000ff;">function</span><span style="color: #000000;">(){
+                        $(</span><span style="color: #0000ff;">this</span>).prop('checked',!$(<span style="color: #0000ff;">this</span>).prop('checked'<span style="color: #000000;">))
+                    })
+                })
+
+            })            
+        </span>&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id='checklist'&gt;
+            &lt;input type='checkbox' value='1'/&gt;篮球
+            &lt;input type='checkbox' value='2'/&gt;足球
+            &lt;input type='checkbox' value='3'/&gt;羽毛球
+        &lt;/div&gt;
+        &lt;input type='button' value='全选' id='selectAll' /&gt;
+        &lt;input type='button' value='不选' id='unselectAll' /&gt;
+        &lt;input type='button' value='反选' id='reverseAll' /&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
+<span class="cnblogs_code_collapse">View Code</span></div>
+<p>菜单</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('8f2e7f1b-8e8c-4c72-80b2-bbc2434fc4fc')"><img id="code_img_closed_8f2e7f1b-8e8c-4c72-80b2-bbc2434fc4fc" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_8f2e7f1b-8e8c-4c72-80b2-bbc2434fc4fc" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('8f2e7f1b-8e8c-4c72-80b2-bbc2434fc4fc',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_8f2e7f1b-8e8c-4c72-80b2-bbc2434fc4fc" class="cnblogs_code_hide">
+<pre><span style="color: #800000;">.hide</span>{<span style="color: #ff0000;">
+    display</span>:<span style="color: #0000ff;"> none</span>;
+}<span style="color: #800000;">
+
+.container</span>{<span style="color: #ff0000;">
+    width</span>:<span style="color: #0000ff;">300px</span>;<span style="color: #ff0000;">
+    height</span>:<span style="color: #0000ff;"> 600px</span>;<span style="color: #ff0000;">
+    background-color</span>:<span style="color: #0000ff;"> #ddd</span>;<span style="color: #ff0000;">
+    border</span>:<span style="color: #0000ff;"> 1px solid #999</span>;
+}<span style="color: #800000;">
+
+.container .title</span>{<span style="color: #ff0000;">
+    height</span>:<span style="color: #0000ff;"> 38px</span>;<span style="color: #ff0000;">
+    font-size</span>:<span style="color: #0000ff;"> 28px</span>;<span style="color: #ff0000;">
+    line-height</span>:<span style="color: #0000ff;"> 38px</span>;<span style="color: #ff0000;">
+    background-color</span>:<span style="color: #0000ff;"> orange</span>;<span style="color: #ff0000;">
+    cursor</span>:<span style="color: #0000ff;"> pointer</span>;
+}<span style="color: #800000;">
+
+.container .body</span>{<span style="color: #ff0000;">
+    background-color</span>:<span style="color: #0000ff;">white</span>;
+}<span style="color: #800000;">
+
+.container .body a</span>{<span style="color: #ff0000;">
+    display</span>:<span style="color: #0000ff;">block</span>;<span style="color: #ff0000;">
+    padding</span>:<span style="color: #0000ff;"> 10px</span>;
+}</pre>
+</div>
+<span class="cnblogs_code_collapse">css</span></div>
+<div class="cnblogs_code" onclick="cnblogs_code_show('d4ef7789-4d84-4692-b27b-e4985264d246')"><img id="code_img_closed_d4ef7789-4d84-4692-b27b-e4985264d246" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_d4ef7789-4d84-4692-b27b-e4985264d246" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('d4ef7789-4d84-4692-b27b-e4985264d246',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_d4ef7789-4d84-4692-b27b-e4985264d246" class="cnblogs_code_hide">
+<pre><span style="color: #0000ff;">&lt;!</span><span style="color: #ff00ff;">DOCTYPE html</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">html</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">head</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">meta </span><span style="color: #ff0000;">charset</span><span style="color: #0000ff;">='utf-8' </span><span style="color: #0000ff;">/&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">link </span><span style="color: #ff0000;">rel</span><span style="color: #0000ff;">="stylesheet"</span><span style="color: #ff0000;"> type</span><span style="color: #0000ff;">="text/css"</span><span style="color: #ff0000;"> href</span><span style="color: #0000ff;">="common.css"</span> <span style="color: #0000ff;">/&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">script </span><span style="color: #ff0000;">type</span><span style="color: #0000ff;">="text/javascript"</span><span style="color: #ff0000;"> src</span><span style="color: #0000ff;">='jquery-1.8.2.js'</span><span style="color: #0000ff;">&gt;&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000ff;">&gt;</span>
+
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">head</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">body</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">='container'</span><span style="color: #0000ff;">&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">='title'</span><span style="color: #0000ff;">&gt;</span>Menu1<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">='body'</span><span style="color: #0000ff;">&gt;</span>
+                    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">a </span><span style="color: #ff0000;">href</span><span style="color: #0000ff;">=""</span><span style="color: #0000ff;">&gt;</span>content1<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">a</span><span style="color: #0000ff;">&gt;</span>
+                    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">a </span><span style="color: #ff0000;">href</span><span style="color: #0000ff;">=""</span><span style="color: #0000ff;">&gt;</span>content2<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">a</span><span style="color: #0000ff;">&gt;</span>
+                    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">a </span><span style="color: #ff0000;">href</span><span style="color: #0000ff;">=""</span><span style="color: #0000ff;">&gt;</span>content3<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">a</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+            <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">='title'</span><span style="color: #0000ff;">&gt;</span>Menu1<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">='body </span><span style="color: #ff0000;">hide'</span><span style="color: #0000ff;">&gt;</span>
+                    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">a </span><span style="color: #ff0000;">href</span><span style="color: #0000ff;">=""</span><span style="color: #0000ff;">&gt;</span>content1<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">a</span><span style="color: #0000ff;">&gt;</span>
+                    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">a </span><span style="color: #ff0000;">href</span><span style="color: #0000ff;">=""</span><span style="color: #0000ff;">&gt;</span>content2<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">a</span><span style="color: #0000ff;">&gt;</span>
+                    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">a </span><span style="color: #ff0000;">href</span><span style="color: #0000ff;">=""</span><span style="color: #0000ff;">&gt;</span>content3<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">a</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+            <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">='title'</span><span style="color: #0000ff;">&gt;</span>Menu1<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">='body </span><span style="color: #ff0000;">hide'</span><span style="color: #0000ff;">&gt;</span>
+                    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">a </span><span style="color: #ff0000;">href</span><span style="color: #0000ff;">=""</span><span style="color: #0000ff;">&gt;</span>content1<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">a</span><span style="color: #0000ff;">&gt;</span>
+                    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">a </span><span style="color: #ff0000;">href</span><span style="color: #0000ff;">=""</span><span style="color: #0000ff;">&gt;</span>content2<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">a</span><span style="color: #0000ff;">&gt;</span>
+                    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">a </span><span style="color: #ff0000;">href</span><span style="color: #0000ff;">=""</span><span style="color: #0000ff;">&gt;</span>content3<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">a</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+            <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+            
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">='title'</span><span style="color: #0000ff;">&gt;</span>Menu1<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">='body </span><span style="color: #ff0000;">hide'</span><span style="color: #0000ff;">&gt;</span>
+                    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">a </span><span style="color: #ff0000;">href</span><span style="color: #0000ff;">=""</span><span style="color: #0000ff;">&gt;</span>content1<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">a</span><span style="color: #0000ff;">&gt;</span>
+                    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">a </span><span style="color: #ff0000;">href</span><span style="color: #0000ff;">=""</span><span style="color: #0000ff;">&gt;</span>content2<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">a</span><span style="color: #0000ff;">&gt;</span>
+                    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">a </span><span style="color: #ff0000;">href</span><span style="color: #0000ff;">=""</span><span style="color: #0000ff;">&gt;</span>content3<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">a</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+            <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+            
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">='title'</span><span style="color: #0000ff;">&gt;</span>Menu1<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">='body </span><span style="color: #ff0000;">hide'</span><span style="color: #0000ff;">&gt;</span>
+                    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">a </span><span style="color: #ff0000;">href</span><span style="color: #0000ff;">=""</span><span style="color: #0000ff;">&gt;</span>content1<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">a</span><span style="color: #0000ff;">&gt;</span>
+                    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">a </span><span style="color: #ff0000;">href</span><span style="color: #0000ff;">=""</span><span style="color: #0000ff;">&gt;</span>content2<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">a</span><span style="color: #0000ff;">&gt;</span>
+                    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">a </span><span style="color: #ff0000;">href</span><span style="color: #0000ff;">=""</span><span style="color: #0000ff;">&gt;</span>content3<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">a</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+            <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+
+        <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">script </span><span style="color: #ff0000;">type</span><span style="color: #0000ff;">="text/javascript"</span><span style="color: #0000ff;">&gt;</span><span style="background-color: #f5f5f5; color: #000000;">
+            $(</span><span style="background-color: #f5f5f5; color: #0000ff;">function</span><span style="background-color: #f5f5f5; color: #000000;">(){
+                $(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">.title</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">).click(</span><span style="background-color: #f5f5f5; color: #0000ff;">function</span><span style="background-color: #f5f5f5; color: #000000;">(){
+                    $(</span><span style="background-color: #f5f5f5; color: #0000ff;">this</span><span style="background-color: #f5f5f5; color: #000000;">).parent().siblings().children(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">.body</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">).addClass(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">hide</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">);
+                    $(</span><span style="background-color: #f5f5f5; color: #0000ff;">this</span><span style="background-color: #f5f5f5; color: #000000;">).next().removeClass(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">hide</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">);
+                });
+            });
+        </span><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">body</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">html</span><span style="color: #0000ff;">&gt;</span></pre>
+</div>
+<span class="cnblogs_code_collapse">Html</span></div>
+<p>Tab</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('f3b41167-f37b-42d3-a5e6-c43e7ce11c63')"><img id="code_img_closed_f3b41167-f37b-42d3-a5e6-c43e7ce11c63" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_f3b41167-f37b-42d3-a5e6-c43e7ce11c63" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('f3b41167-f37b-42d3-a5e6-c43e7ce11c63',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_f3b41167-f37b-42d3-a5e6-c43e7ce11c63" class="cnblogs_code_hide">
+<pre><span style="color: #008000;">/*</span><span style="color: #008000;">公共开始</span><span style="color: #008000;">*/</span><span style="color: #800000;">
+body </span>{<span style="color: #ff0000;">
+    margin</span>:<span style="color: #0000ff;"> 0 auto</span>;<span style="color: #ff0000;">
+    font-family</span>:<span style="color: #0000ff;"> Arial</span>;<span style="color: #ff0000;">
+    _font-family</span>:<span style="color: #0000ff;"> 宋体,Arial</span>;<span style="color: #ff0000;">
+    font-size</span>:<span style="color: #0000ff;"> 12px</span>;
+}<span style="color: #800000;">
+body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td, figure, div </span>{<span style="color: #ff0000;">
+    margin</span>:<span style="color: #0000ff;"> 0</span>;<span style="color: #ff0000;">
+    padding</span>:<span style="color: #0000ff;"> 0</span>;
+}<span style="color: #800000;">
+
+ol, ul, li </span>{<span style="color: #ff0000;">
+    list-style</span>:<span style="color: #0000ff;"> none</span>;
+}<span style="color: #800000;">
+a</span>{<span style="color: #ff0000;">
+    cursor</span>:<span style="color: #0000ff;">pointer</span>;<span style="color: #ff0000;">
+    text-decoration</span>:<span style="color: #0000ff;">none</span>;
+}
+<span style="color: #008000;">/*</span><span style="color: #008000;">a:hover{
+    color: #F60 !important;
+    text-decoration: underline;
+}</span><span style="color: #008000;">*/</span><span style="color: #800000;">
+img</span>{<span style="color: #ff0000;">
+    border</span>:<span style="color: #0000ff;">none</span>;<span style="color: #ff0000;">
+    border-width</span>:<span style="color: #0000ff;">0px</span>;
+}<span style="color: #800000;">
+table</span>{<span style="color: #ff0000;">
+    border-collapse</span>:<span style="color: #0000ff;"> collapse</span>;<span style="color: #ff0000;">
+    border-spacing</span>:<span style="color: #0000ff;"> 0</span>;
+}<span style="color: #800000;">
+
+.red</span>{<span style="color: #ff0000;">
+    color</span>:<span style="color: #0000ff;"> #c00!important</span>;
+}<span style="color: #800000;">
+.m8</span>{<span style="color: #ff0000;">
+    margin</span>:<span style="color: #0000ff;">8px</span>;
+}<span style="color: #800000;">
+.mt10</span>{<span style="color: #ff0000;">
+    margin-top</span>:<span style="color: #0000ff;">10px</span>;
+}<span style="color: #800000;">
+.mt20</span>{<span style="color: #ff0000;">
+    margin-top</span>:<span style="color: #0000ff;">20px</span>;
+}<span style="color: #800000;">
+.mr5</span>{<span style="color: #ff0000;">
+    margin-right</span>:<span style="color: #0000ff;">5px</span>;
+}<span style="color: #800000;">
+.ml5</span>{<span style="color: #ff0000;">
+    margin-left</span>:<span style="color: #0000ff;">5px</span>;
+}<span style="color: #800000;">
+
+.ml10</span>{<span style="color: #ff0000;">
+    margin-left</span>:<span style="color: #0000ff;">10px</span>;
+}<span style="color: #800000;">
+
+.mb10</span>{<span style="color: #ff0000;">
+    margin-bottom</span>:<span style="color: #0000ff;">10px</span>;
+}<span style="color: #800000;">
+.pt18</span>{<span style="color: #ff0000;">
+    padding-top</span>:<span style="color: #0000ff;">18px</span>;
+}<span style="color: #800000;">
+.pt20</span>{<span style="color: #ff0000;">
+    padding-top</span>:<span style="color: #0000ff;">20px</span>;
+}<span style="color: #800000;">
+.pb20</span>{<span style="color: #ff0000;">
+    padding-bottom</span>:<span style="color: #0000ff;">20px</span>;
+}<span style="color: #800000;">
+.nbr</span>{<span style="color: #ff0000;">
+    border-right</span>:<span style="color: #0000ff;">0px</span>;
+}<span style="color: #800000;">
+.font12</span>{<span style="color: #ff0000;">
+    font-size</span>:<span style="color: #0000ff;">12px</span>;
+}<span style="color: #800000;">
+.font14</span>{<span style="color: #ff0000;">
+    font-size</span>:<span style="color: #0000ff;">14px</span>;
+}<span style="color: #800000;">
+.font16</span>{<span style="color: #ff0000;">
+    font-size</span>:<span style="color: #0000ff;">16px</span>;
+}<span style="color: #800000;">
+.bold</span>{<span style="color: #ff0000;">
+    font-weight</span>:<span style="color: #0000ff;">bold</span>;
+}<span style="color: #800000;">
+.left</span>{<span style="color: #ff0000;">
+    float</span>:<span style="color: #0000ff;">left</span>;
+}<span style="color: #800000;">
+.right</span>{<span style="color: #ff0000;">
+    float</span>:<span style="color: #0000ff;">right</span>;
+}<span style="color: #800000;">
+.hide</span>{<span style="color: #ff0000;">
+    display</span>:<span style="color: #0000ff;">none</span>;
+}<span style="color: #800000;">
+.show</span>{<span style="color: #ff0000;">
+     display</span>:<span style="color: #0000ff;">table</span>;
+}<span style="color: #800000;">
+.clearfix</span>{<span style="color: #ff0000;">
+    clear</span>:<span style="color: #0000ff;">both</span>;
+}<span style="color: #800000;">
+.clearfix:after </span>{<span style="color: #ff0000;">
+    content</span>:<span style="color: #0000ff;"> "."</span>;<span style="color: #ff0000;">
+    display</span>:<span style="color: #0000ff;"> block</span>;<span style="color: #ff0000;">
+    height</span>:<span style="color: #0000ff;"> 0</span>;<span style="color: #ff0000;">
+    clear</span>:<span style="color: #0000ff;"> both</span>;<span style="color: #ff0000;">
+    visibility</span>:<span style="color: #0000ff;"> hidden</span>;
+}<span style="color: #800000;">
+* html .clearfix </span>{<span style="color: #ff0000;">zoom</span>:<span style="color: #0000ff;"> 1</span>;}<span style="color: #800000;">
+
+.container</span>{<span style="color: #ff0000;">
+    width</span>:<span style="color: #0000ff;">1190px</span>;<span style="color: #ff0000;">
+    margin-left</span>:<span style="color: #0000ff;">auto</span>;<span style="color: #ff0000;">
+    margin-right</span>:<span style="color: #0000ff;">auto</span>;
+
+}<span style="color: #800000;">
+
+.group-box-1 .title</span>{<span style="color: #ff0000;">
+    height</span>:<span style="color: #0000ff;"> 33px</span>;<span style="color: #ff0000;">
+    line-height</span>:<span style="color: #0000ff;"> 33px</span>;<span style="color: #ff0000;">
+    border</span>:<span style="color: #0000ff;"> 1px solid #DDD</span>;<span style="color: #ff0000;">
+    background</span>:<span style="color: #0000ff;"> #f5f5f5</span>;<span style="color: #ff0000;">
+    padding-top</span>:<span style="color: #0000ff;"> 0</span>;<span style="color: #ff0000;">
+    padding-left</span>:<span style="color: #0000ff;"> 0</span>;
+                
+}<span style="color: #800000;">
+.group-box-1 .title .title-font</span>{<span style="color: #ff0000;">
+    display</span>:<span style="color: #0000ff;"> inline-block</span>;<span style="color: #ff0000;">
+    font-size</span>:<span style="color: #0000ff;"> 14px</span>;<span style="color: #ff0000;">
+    font-family</span>:<span style="color: #0000ff;"> 'Microsoft Yahei','SimHei'</span>;<span style="color: #ff0000;">
+    font-weight</span>:<span style="color: #0000ff;"> bold</span>;<span style="color: #ff0000;">
+    color</span>:<span style="color: #0000ff;"> #333</span>;<span style="color: #ff0000;">
+    padding-left</span>:<span style="color: #0000ff;"> 10px</span>;
+}<span style="color: #800000;">
+.group-box-1 .body </span>{<span style="color: #ff0000;">
+    border</span>:<span style="color: #0000ff;"> 1px solid #e4e4e4</span>;<span style="color: #ff0000;">
+    border-top</span>:<span style="color: #0000ff;"> none</span>;
+}<span style="color: #800000;">
+
+.tab-menu-box1 </span>{<span style="color: #ff0000;">
+    border</span>:<span style="color: #0000ff;"> 1px solid #ddd</span>;<span style="color: #ff0000;">
+    margin-bottom</span>:<span style="color: #0000ff;"> 20px</span>;
+}<span style="color: #800000;">
+
+.tab-menu-box1 .menu </span>{<span style="color: #ff0000;">
+    line-height</span>:<span style="color: #0000ff;"> 33px</span>;<span style="color: #ff0000;">
+    height</span>:<span style="color: #0000ff;"> 33px</span>;<span style="color: #ff0000;">
+    background-color</span>:<span style="color: #0000ff;"> #f5f5f5</span>;
+}<span style="color: #800000;">
+
+.tab-menu-box1 .content </span>{<span style="color: #ff0000;">
+    min-height</span>:<span style="color: #0000ff;"> 100px</span>;<span style="color: #ff0000;">
+    border-top</span>:<span style="color: #0000ff;"> 1px solid #ddd</span>;<span style="color: #ff0000;">
+    background-color</span>:<span style="color: #0000ff;"> white</span>;
+}<span style="color: #800000;">
+
+.tab-menu-box1 .menu ul </span>{<span style="color: #ff0000;">
+    padding</span>:<span style="color: #0000ff;"> 0</span>;<span style="color: #ff0000;">
+    margin</span>:<span style="color: #0000ff;"> 0</span>;<span style="color: #ff0000;">
+    list-style</span>:<span style="color: #0000ff;"> none</span>;
+    <span style="color: #008000;">/*</span><span style="color: #008000;">position: absolute;</span><span style="color: #008000;">*/</span>
+}<span style="color: #800000;">
+
+.tab-menu-box1 .menu ul li </span>{<span style="color: #ff0000;">
+    position</span>:<span style="color: #0000ff;"> relative</span>;<span style="color: #ff0000;">
+    float</span>:<span style="color: #0000ff;"> left</span>;<span style="color: #ff0000;">
+    font-size</span>:<span style="color: #0000ff;"> 14px</span>;<span style="color: #ff0000;">
+    font-family</span>:<span style="color: #0000ff;"> 'Microsoft Yahei','SimHei'</span>;<span style="color: #ff0000;">
+    text-align</span>:<span style="color: #0000ff;"> center</span>;<span style="color: #ff0000;">
+    font-size</span>:<span style="color: #0000ff;"> 14px</span>;<span style="color: #ff0000;">
+    font-weight</span>:<span style="color: #0000ff;"> bold</span>;<span style="color: #ff0000;">
+    border-right</span>:<span style="color: #0000ff;"> 1px solid #ddd</span>;<span style="color: #ff0000;">
+    padding</span>:<span style="color: #0000ff;"> 0 18px</span>;<span style="color: #ff0000;">
+    cursor</span>:<span style="color: #0000ff;"> pointer</span>;
+}<span style="color: #800000;">
+
+.tab-menu-box1 .menu ul li:hover </span>{<span style="color: #ff0000;">
+    color</span>:<span style="color: #0000ff;"> #c9033b</span>;
+}<span style="color: #800000;">
+
+.tab-menu-box1 .menu .more </span>{<span style="color: #ff0000;">
+    float</span>:<span style="color: #0000ff;"> right</span>;<span style="color: #ff0000;">
+    font-size</span>:<span style="color: #0000ff;"> 12px</span>;<span style="color: #ff0000;">
+    padding-right</span>:<span style="color: #0000ff;"> 10px</span>;<span style="color: #ff0000;">
+    font-family</span>:<span style="color: #0000ff;"> "宋体"</span>;<span style="color: #ff0000;">
+    color</span>:<span style="color: #0000ff;"> #666</span>;<span style="color: #ff0000;">
+    text-decoration</span>:<span style="color: #0000ff;"> none</span>;
+}<span style="color: #800000;">
+
+.tab-menu-box1 .menu a:hover </span>{<span style="color: #ff0000;">
+    color</span>:<span style="color: #0000ff;"> #f60 !important</span>;<span style="color: #ff0000;">
+    text-decoration</span>:<span style="color: #0000ff;"> underline</span>;
+}<span style="color: #800000;">
+
+.tab-menu-box1 .menu .current </span>{<span style="color: #ff0000;">
+    margin-top</span>:<span style="color: #0000ff;"> -1px</span>;<span style="color: #ff0000;">
+    color</span>:<span style="color: #0000ff;"> #c9033b</span>;<span style="color: #ff0000;">
+    background</span>:<span style="color: #0000ff;"> #fff</span>;<span style="color: #ff0000;">
+    height</span>:<span style="color: #0000ff;"> 33px</span>;<span style="color: #ff0000;">
+    border-top</span>:<span style="color: #0000ff;"> 2px solid #c9033b</span>;<span style="color: #ff0000;">
+    z-index</span>:<span style="color: #0000ff;"> 10</span>;
+}<span style="color: #800000;">
+
+.tab-menu-box-2 .float-title </span>{<span style="color: #ff0000;">
+    display</span>:<span style="color: #0000ff;"> none</span>;<span style="color: #ff0000;">
+    top</span>:<span style="color: #0000ff;"> 0px</span>;<span style="color: #ff0000;">
+    position</span>:<span style="color: #0000ff;"> fixed</span>;<span style="color: #ff0000;">
+    z-index</span>:<span style="color: #0000ff;"> 50</span>;
+}<span style="color: #800000;">
+
+.tab-menu-box-2 .title </span>{<span style="color: #ff0000;">
+    width</span>:<span style="color: #0000ff;"> 890px</span>;<span style="color: #ff0000;">
+    border-bottom</span>:<span style="color: #0000ff;"> 2px solid #b20101</span>;<span style="color: #ff0000;">
+    border-left</span>:<span style="color: #0000ff;"> 1px solid #e1e1e1</span>;<span style="color: #ff0000;">
+    clear</span>:<span style="color: #0000ff;"> both</span>;<span style="color: #ff0000;">
+    height</span>:<span style="color: #0000ff;"> 32px</span>;
+}<span style="color: #800000;">
+
+.tab-menu-box-2 .title a </span>{<span style="color: #ff0000;">
+    float</span>:<span style="color: #0000ff;"> left</span>;<span style="color: #ff0000;">
+    width</span>:<span style="color: #0000ff;"> 107px</span>;<span style="color: #ff0000;">
+    height</span>:<span style="color: #0000ff;"> 31px</span>;<span style="color: #ff0000;">
+    line-height</span>:<span style="color: #0000ff;"> 31px</span>;<span style="color: #ff0000;">
+    font-size</span>:<span style="color: #0000ff;"> 14px</span>;<span style="color: #ff0000;">
+    font-weight</span>:<span style="color: #0000ff;"> bold</span>;<span style="color: #ff0000;">
+    text-align</span>:<span style="color: #0000ff;"> center</span>;<span style="color: #ff0000;">
+    border-top</span>:<span style="color: #0000ff;"> 1px solid #e1e1e1</span>;<span style="color: #ff0000;">
+    border-right</span>:<span style="color: #0000ff;"> 1px solid #e1e1e1</span>;<span style="color: #ff0000;">
+    background</span>:<span style="color: #0000ff;"> url(/Content/images/bg4.png?3) 0 -308px repeat-x</span>;<span style="color: #ff0000;">
+    text-decoration</span>:<span style="color: #0000ff;"> none</span>;<span style="color: #ff0000;">
+    color</span>:<span style="color: #0000ff;"> #333</span>;<span style="color: #ff0000;">
+    cursor</span>:<span style="color: #0000ff;"> pointer</span>;
+}<span style="color: #800000;">
+
+.tab-menu-box-2 .title a:hover </span>{<span style="color: #ff0000;">
+    background-position</span>:<span style="color: #0000ff;"> -26px -271px</span>;<span style="color: #ff0000;">
+    text-decoration</span>:<span style="color: #0000ff;"> none</span>;<span style="color: #ff0000;">
+    color</span>:<span style="color: #0000ff;"> #fff</span>;
+}<span style="color: #800000;">
+
+.tab-menu-box-2 .content </span>{<span style="color: #ff0000;">
+    min-height</span>:<span style="color: #0000ff;"> 100px</span>;<span style="color: #ff0000;">
+    background-color</span>:<span style="color: #0000ff;"> white</span>;
+}<span style="color: #800000;">
+
+
+.tab-menu-box3 </span>{<span style="color: #ff0000;">
+    border</span>:<span style="color: #0000ff;"> 1px solid #ddd</span>;
+}<span style="color: #800000;">
+
+.tab-menu-box3 .menu </span>{<span style="color: #ff0000;">
+    line-height</span>:<span style="color: #0000ff;"> 33px</span>;<span style="color: #ff0000;">
+    height</span>:<span style="color: #0000ff;"> 33px</span>;<span style="color: #ff0000;">
+    background-color</span>:<span style="color: #0000ff;"> #f5f5f5</span>;
+}<span style="color: #800000;">
+
+.tab-menu-box3 .content </span>{<span style="color: #ff0000;">
+    height</span>:<span style="color: #0000ff;"> 214px</span>;<span style="color: #ff0000;">
+    border-top</span>:<span style="color: #0000ff;"> 1px solid #ddd</span>;<span style="color: #ff0000;">
+    background-color</span>:<span style="color: #0000ff;"> white</span>;
+}<span style="color: #800000;">
+
+.tab-menu-box3 .menu ul </span>{<span style="color: #ff0000;">
+    padding</span>:<span style="color: #0000ff;"> 0</span>;<span style="color: #ff0000;">
+    margin</span>:<span style="color: #0000ff;"> 0</span>;<span style="color: #ff0000;">
+    list-style</span>:<span style="color: #0000ff;"> none</span>;
+    <span style="color: #008000;">/*</span><span style="color: #008000;">position: absolute;</span><span style="color: #008000;">*/</span>
+}<span style="color: #800000;">
+
+.tab-menu-box3 .menu ul li </span>{<span style="color: #ff0000;">
+    position</span>:<span style="color: #0000ff;"> relative</span>;<span style="color: #ff0000;">
+    float</span>:<span style="color: #0000ff;"> left</span>;<span style="color: #ff0000;">
+    font-size</span>:<span style="color: #0000ff;"> 14px</span>;<span style="color: #ff0000;">
+    font-family</span>:<span style="color: #0000ff;"> 'Microsoft Yahei','SimHei'</span>;<span style="color: #ff0000;">
+    text-align</span>:<span style="color: #0000ff;"> center</span>;<span style="color: #ff0000;">
+    font-size</span>:<span style="color: #0000ff;"> 14px</span>;<span style="color: #ff0000;">
+    width</span>:<span style="color: #0000ff;">50%</span>;<span style="color: #ff0000;">
+    cursor</span>:<span style="color: #0000ff;"> pointer</span>;
+}<span style="color: #800000;">
+ 
+.tab-menu-box3 .menu ul li:hover </span>{<span style="color: #ff0000;">
+    color</span>:<span style="color: #0000ff;"> #c9033b</span>;
+}<span style="color: #800000;">
+
+.tab-menu-box3 .menu .more </span>{<span style="color: #ff0000;">
+    float</span>:<span style="color: #0000ff;"> right</span>;<span style="color: #ff0000;">
+    font-size</span>:<span style="color: #0000ff;"> 12px</span>;<span style="color: #ff0000;">
+    padding-right</span>:<span style="color: #0000ff;"> 10px</span>;<span style="color: #ff0000;">
+    font-family</span>:<span style="color: #0000ff;"> "宋体"</span>;<span style="color: #ff0000;">
+    color</span>:<span style="color: #0000ff;"> #666</span>;<span style="color: #ff0000;">
+    text-decoration</span>:<span style="color: #0000ff;"> none</span>;
+}<span style="color: #800000;">
+
+.tab-menu-box3 .menu a:hover </span>{<span style="color: #ff0000;">
+    color</span>:<span style="color: #0000ff;"> #f60 !important</span>;<span style="color: #ff0000;">
+    text-decoration</span>:<span style="color: #0000ff;"> underline</span>;<span style="color: #ff0000;">
+    font-weight</span>:<span style="color: #0000ff;"> bold</span>;
+}<span style="color: #800000;">
+
+.tab-menu-box3 .menu .current </span>{<span style="color: #ff0000;">
+
+    margin-top</span>:<span style="color: #0000ff;"> -1px</span>;<span style="color: #ff0000;">
+    color</span>:<span style="color: #0000ff;"> #c9033b</span>;<span style="color: #ff0000;">
+    background</span>:<span style="color: #0000ff;"> #fff</span>;<span style="color: #ff0000;">
+    height</span>:<span style="color: #0000ff;"> 33px</span>;<span style="color: #ff0000;">
+    border-top</span>:<span style="color: #0000ff;"> 2px solid #c9033b</span>;<span style="color: #ff0000;">
+    z-index</span>:<span style="color: #0000ff;"> 10</span>;<span style="color: #ff0000;">
+    font-weight</span>:<span style="color: #0000ff;"> bold</span>;
+    
+}
+
+<span style="color: #008000;">/*</span><span style="color: #008000;">公共结束</span><span style="color: #008000;">*/</span></pre>
+</div>
+<span class="cnblogs_code_collapse">css</span></div>
+<div class="cnblogs_code" onclick="cnblogs_code_show('106e0f15-8bf9-480c-957e-d2c4bc7b3fce')"><img id="code_img_closed_106e0f15-8bf9-480c-957e-d2c4bc7b3fce" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_106e0f15-8bf9-480c-957e-d2c4bc7b3fce" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('106e0f15-8bf9-480c-957e-d2c4bc7b3fce',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_106e0f15-8bf9-480c-957e-d2c4bc7b3fce" class="cnblogs_code_hide">
+<pre><span style="color: #800000;">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;/head&gt;
+&lt;link href="common.css" rel="stylesheet" /&gt;
+&lt;body&gt;
+    &lt;div class='container'&gt;
+        &lt;div class='tab-menu-box1'&gt;
+            &lt;div class='menu'&gt;
+                &lt;ul id='tab-menu-title'&gt;
+                    &lt;li class='current' content-to='1'&gt;价格趋势&lt;/li&gt;
+                    &lt;li content-to='2'&gt;市场分布&lt;/li&gt;
+                    &lt;li content-to='3'&gt;其他&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+
+            &lt;div id='tab-menu-body' class='content'&gt;
+                &lt;div content='1'&gt;content1&lt;/div&gt;
+                &lt;div content='2' class='hide'&gt;content2&lt;/div&gt;
+                &lt;div content='3' class='hide'&gt;content3&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script src="./jquery-1.8.2.js"&gt;&lt;/script&gt;
+    &lt;script type='text/javascript'&gt;
+    $(function()</span>{<span style="color: #ff0000;">
+        ChangeTab('#tab-menu-title', '#tab-menu-body');
+    </span>}<span style="color: #800000;">)
+    function ChangeTab(title, body) </span>{<span style="color: #ff0000;">
+            $(title).children().bind("click", function () {
+                $menu = $(this);
+                $content = $(body).find('div[content="' + $(this).attr("content-to") + '"]');
+                $menu.addClass('current').siblings().removeClass('current');
+                $content.removeClass('hide').siblings().addClass('hide');
+            </span>}<span style="color: #800000;">);
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</span></pre>
+</div>
+<span class="cnblogs_code_collapse">html</span></div>
+<p>滚动菜单</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('14b4a423-d683-41b7-ad13-2febba90d73c')"><img id="code_img_closed_14b4a423-d683-41b7-ad13-2febba90d73c" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_14b4a423-d683-41b7-ad13-2febba90d73c" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('14b4a423-d683-41b7-ad13-2febba90d73c',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_14b4a423-d683-41b7-ad13-2febba90d73c" class="cnblogs_code_hide">
+<pre><span style="color: #0000ff;">&lt;!</span><span style="color: #ff00ff;">DOCTYPE html</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">html</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">head </span><span style="color: #ff0000;">lang</span><span style="color: #0000ff;">="en"</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">meta </span><span style="color: #ff0000;">charset</span><span style="color: #0000ff;">="UTF-8"</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">title</span><span style="color: #0000ff;">&gt;&lt;/</span><span style="color: #800000;">title</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">style</span><span style="color: #0000ff;">&gt;</span><span style="background-color: #f5f5f5; color: #800000;">
+
+        body</span><span style="background-color: #f5f5f5; color: #000000;">{</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            margin</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> 0px</span><span style="background-color: #f5f5f5; color: #000000;">;</span>
+        <span style="background-color: #f5f5f5; color: #000000;">}</span><span style="background-color: #f5f5f5; color: #800000;">
+        img </span><span style="background-color: #f5f5f5; color: #000000;">{</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            border</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> 0</span><span style="background-color: #f5f5f5; color: #000000;">;</span>
+        <span style="background-color: #f5f5f5; color: #000000;">}</span><span style="background-color: #f5f5f5; color: #800000;">
+        ul</span><span style="background-color: #f5f5f5; color: #000000;">{</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            padding</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> 0</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            margin</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> 0</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            list-style</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> none</span><span style="background-color: #f5f5f5; color: #000000;">;</span>
+        <span style="background-color: #f5f5f5; color: #000000;">}</span><span style="background-color: #f5f5f5; color: #800000;">
+        .clearfix:after </span><span style="background-color: #f5f5f5; color: #000000;">{</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            content</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> "."</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            display</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> block</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            height</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> 0</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            clear</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> both</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            visibility</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> hidden</span><span style="background-color: #f5f5f5; color: #000000;">;</span>
+        <span style="background-color: #f5f5f5; color: #000000;">}</span><span style="background-color: #f5f5f5; color: #800000;">
+
+        .wrap</span><span style="background-color: #f5f5f5; color: #000000;">{</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            width</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> 980px</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            margin</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> 0 auto</span><span style="background-color: #f5f5f5; color: #000000;">;</span>
+        <span style="background-color: #f5f5f5; color: #000000;">}</span><span style="background-color: #f5f5f5; color: #800000;">
+        
+        .pg-header</span><span style="background-color: #f5f5f5; color: #000000;">{</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            background-color</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> #303a40</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            -webkit-box-shadow</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> 0 2px 5px rgba(0,0,0,.2)</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            -moz-box-shadow</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> 0 2px 5px rgba(0,0,0,.2)</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            box-shadow</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> 0 2px 5px rgba(0,0,0,.2)</span><span style="background-color: #f5f5f5; color: #000000;">;</span>
+        <span style="background-color: #f5f5f5; color: #000000;">}</span><span style="background-color: #f5f5f5; color: #800000;">
+        .pg-header .logo</span><span style="background-color: #f5f5f5; color: #000000;">{</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            float</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> left</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            padding</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;">5px 10px 5px 0px</span><span style="background-color: #f5f5f5; color: #000000;">;</span>
+        <span style="background-color: #f5f5f5; color: #000000;">}</span><span style="background-color: #f5f5f5; color: #800000;">
+        .pg-header .logo img</span><span style="background-color: #f5f5f5; color: #000000;">{</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            vertical-align</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> middle</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            width</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> 110px</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            height</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> 40px</span><span style="background-color: #f5f5f5; color: #000000;">;</span>
+
+        <span style="background-color: #f5f5f5; color: #000000;">}</span><span style="background-color: #f5f5f5; color: #800000;">
+        .pg-header .nav</span><span style="background-color: #f5f5f5; color: #000000;">{</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            line-height</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> 50px</span><span style="background-color: #f5f5f5; color: #000000;">;</span>
+        <span style="background-color: #f5f5f5; color: #000000;">}</span><span style="background-color: #f5f5f5; color: #800000;">
+        .pg-header .nav ul li</span><span style="background-color: #f5f5f5; color: #000000;">{</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            float</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> left</span><span style="background-color: #f5f5f5; color: #000000;">;</span>
+        <span style="background-color: #f5f5f5; color: #000000;">}</span><span style="background-color: #f5f5f5; color: #800000;">
+        .pg-header .nav ul li a</span><span style="background-color: #f5f5f5; color: #000000;">{</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            display</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> block</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            color</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> #ccc</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            padding</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> 0 20px</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            text-decoration</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> none</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            font-size</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> 14px</span><span style="background-color: #f5f5f5; color: #000000;">;</span>
+        <span style="background-color: #f5f5f5; color: #000000;">}</span><span style="background-color: #f5f5f5; color: #800000;">
+        .pg-header .nav ul li a:hover</span><span style="background-color: #f5f5f5; color: #000000;">{</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            color</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> #fff</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            background-color</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> #425a66</span><span style="background-color: #f5f5f5; color: #000000;">;</span>
+        <span style="background-color: #f5f5f5; color: #000000;">}</span><span style="background-color: #f5f5f5; color: #800000;">
+        .pg-body</span><span style="background-color: #f5f5f5; color: #000000;">{</span>
+
+        <span style="background-color: #f5f5f5; color: #000000;">}</span><span style="background-color: #f5f5f5; color: #800000;">
+        .pg-body .catalog</span><span style="background-color: #f5f5f5; color: #000000;">{</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            position</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> absolute</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            top</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;">60px</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            width</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> 200px</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            background-color</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> #fafafa</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            bottom</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> 0px</span><span style="background-color: #f5f5f5; color: #000000;">;</span>
+        <span style="background-color: #f5f5f5; color: #000000;">}</span><span style="background-color: #f5f5f5; color: #800000;">
+        .pg-body .catalog.fixed</span><span style="background-color: #f5f5f5; color: #000000;">{</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            position</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> fixed</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            top</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;">10px</span><span style="background-color: #f5f5f5; color: #000000;">;</span>
+        <span style="background-color: #f5f5f5; color: #000000;">}</span><span style="background-color: #f5f5f5; color: #800000;">
+
+        .pg-body .catalog .catalog-item.active</span><span style="background-color: #f5f5f5; color: #000000;">{</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            color</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> #fff</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            background-color</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> #425a66</span><span style="background-color: #f5f5f5; color: #000000;">;</span>
+        <span style="background-color: #f5f5f5; color: #000000;">}</span><span style="background-color: #f5f5f5; color: #800000;">
+
+        .pg-body .content</span><span style="background-color: #f5f5f5; color: #000000;">{</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            position</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> absolute</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            top</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;">60px</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            width</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> 700px</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            margin-left</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> 210px</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            background-color</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> #fafafa</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            overflow</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> auto</span><span style="background-color: #f5f5f5; color: #000000;">;</span>
+        <span style="background-color: #f5f5f5; color: #000000;">}</span><span style="background-color: #f5f5f5; color: #800000;">
+        .pg-body .content .section</span><span style="background-color: #f5f5f5; color: #000000;">{</span><span style="background-color: #f5f5f5; color: #ff0000;">
+            height</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> 500px</span><span style="background-color: #f5f5f5; color: #000000;">;</span>
+        <span style="background-color: #f5f5f5; color: #000000;">}</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">style</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">head</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">body</span><span style="color: #0000ff;">&gt;</span>
+
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">="pg-header"</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">="wrap clearfix"</span><span style="color: #0000ff;">&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">="logo"</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">a </span><span style="color: #ff0000;">href</span><span style="color: #0000ff;">="#"</span><span style="color: #0000ff;">&gt;</span>
+                    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">img </span><span style="color: #ff0000;">src</span><span style="color: #0000ff;">="http://core.pc.lietou-static.com/revs/images/common/logo_7012c4a4.pn"</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">a</span><span style="color: #0000ff;">&gt;</span>
+            <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">="nav"</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">ul</span><span style="color: #0000ff;">&gt;</span>
+                    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">li</span><span style="color: #0000ff;">&gt;</span>
+                        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">a  </span><span style="color: #ff0000;">href</span><span style="color: #0000ff;">="#"</span><span style="color: #0000ff;">&gt;</span>首页<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">a</span><span style="color: #0000ff;">&gt;</span>
+                    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">li</span><span style="color: #0000ff;">&gt;</span>
+                    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">li</span><span style="color: #0000ff;">&gt;</span>
+                        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">a  </span><span style="color: #ff0000;">href</span><span style="color: #0000ff;">="#"</span><span style="color: #0000ff;">&gt;</span>功能一<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">a</span><span style="color: #0000ff;">&gt;</span>
+                    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">li</span><span style="color: #0000ff;">&gt;</span>
+                    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">li</span><span style="color: #0000ff;">&gt;</span>
+                        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">a  </span><span style="color: #ff0000;">href</span><span style="color: #0000ff;">="#"</span><span style="color: #0000ff;">&gt;</span>功能二<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">a</span><span style="color: #0000ff;">&gt;</span>
+                    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">li</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">ul</span><span style="color: #0000ff;">&gt;</span>
+            <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+
+        <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">="pg-body"</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">="wrap"</span><span style="color: #0000ff;">&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">="catalog"</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">="catalog-item"</span><span style="color: #ff0000;"> auto-to</span><span style="color: #0000ff;">="function1"</span><span style="color: #0000ff;">&gt;&lt;</span><span style="color: #800000;">a</span><span style="color: #0000ff;">&gt;</span>第1张<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">a</span><span style="color: #0000ff;">&gt;&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">="catalog-item"</span><span style="color: #ff0000;"> auto-to</span><span style="color: #0000ff;">="function2"</span><span style="color: #0000ff;">&gt;&lt;</span><span style="color: #800000;">a</span><span style="color: #0000ff;">&gt;</span>第2张<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">a</span><span style="color: #0000ff;">&gt;&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">="catalog-item"</span><span style="color: #ff0000;"> auto-to</span><span style="color: #0000ff;">="function3"</span><span style="color: #0000ff;">&gt;&lt;</span><span style="color: #800000;">a</span><span style="color: #0000ff;">&gt;</span>第3张<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">a</span><span style="color: #0000ff;">&gt;&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+            <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">="content"</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">menu</span><span style="color: #0000ff;">="function1"</span><span style="color: #ff0000;"> class</span><span style="color: #0000ff;">="section"</span><span style="color: #0000ff;">&gt;</span>
+                    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">h1</span><span style="color: #0000ff;">&gt;</span>第一章<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">h1</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">menu</span><span style="color: #0000ff;">="function2"</span><span style="color: #ff0000;"> class</span><span style="color: #0000ff;">="section"</span><span style="color: #0000ff;">&gt;</span>
+                    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">h1</span><span style="color: #0000ff;">&gt;</span>第二章<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">h1</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">menu</span><span style="color: #0000ff;">="function3"</span><span style="color: #ff0000;"> class</span><span style="color: #0000ff;">="section"</span><span style="color: #0000ff;">&gt;</span>
+                    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">h1</span><span style="color: #0000ff;">&gt;</span>第三章<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">h1</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+            <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">script </span><span style="color: #ff0000;">type</span><span style="color: #0000ff;">="text/javascript"</span><span style="color: #ff0000;"> src</span><span style="color: #0000ff;">="../js/jquery-1.8.2.min.js"</span><span style="color: #0000ff;">&gt;&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">script </span><span style="color: #ff0000;">type</span><span style="color: #0000ff;">="text/javascript"</span><span style="color: #0000ff;">&gt;</span><span style="background-color: #f5f5f5; color: #000000;">
+        $(</span><span style="background-color: #f5f5f5; color: #0000ff;">function</span><span style="background-color: #f5f5f5; color: #000000;">(){
+            Init();
+        });
+        </span><span style="background-color: #f5f5f5; color: #0000ff;">function</span><span style="background-color: #f5f5f5; color: #000000;"> Init(){
+            $(window).scroll(</span><span style="background-color: #f5f5f5; color: #0000ff;">function</span><span style="background-color: #f5f5f5; color: #000000;">() {
+                </span><span style="background-color: #f5f5f5; color: #0000ff;">var</span><span style="background-color: #f5f5f5; color: #000000;"> scrollTop </span><span style="background-color: #f5f5f5; color: #000000;">=</span><span style="background-color: #f5f5f5; color: #000000;"> $(window).scrollTop();
+                </span><span style="background-color: #f5f5f5; color: #0000ff;">if</span><span style="background-color: #f5f5f5; color: #000000;">(scrollTop </span><span style="background-color: #f5f5f5; color: #000000;">&gt;</span> <span style="background-color: #f5f5f5; color: #000000;">50</span><span style="background-color: #f5f5f5; color: #000000;">){
+                    $(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">.catalog</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">).addClass(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">fixed</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">);
+                }</span><span style="background-color: #f5f5f5; color: #0000ff;">else</span><span style="background-color: #f5f5f5; color: #000000;">{
+                    $(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">.catalog</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">).removeClass(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">fixed</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">);
+                }
+                $(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">.content</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">).children().each(</span><span style="background-color: #f5f5f5; color: #0000ff;">function</span><span style="background-color: #f5f5f5; color: #000000;">(){
+                    </span><span style="background-color: #f5f5f5; color: #0000ff;">var</span><span style="background-color: #f5f5f5; color: #000000;"> offSet </span><span style="background-color: #f5f5f5; color: #000000;">=</span><span style="background-color: #f5f5f5; color: #000000;"> $(</span><span style="background-color: #f5f5f5; color: #0000ff;">this</span><span style="background-color: #f5f5f5; color: #000000;">).offset();
+                    </span><span style="background-color: #f5f5f5; color: #0000ff;">var</span><span style="background-color: #f5f5f5; color: #000000;"> offTop </span><span style="background-color: #f5f5f5; color: #000000;">=</span><span style="background-color: #f5f5f5; color: #000000;"> offSet.top </span><span style="background-color: #f5f5f5; color: #000000;">-</span><span style="background-color: #f5f5f5; color: #000000;"> scrollTop;
+                    </span><span style="background-color: #f5f5f5; color: #0000ff;">var</span><span style="background-color: #f5f5f5; color: #000000;"> height </span><span style="background-color: #f5f5f5; color: #000000;">=</span><span style="background-color: #f5f5f5; color: #000000;"> $(</span><span style="background-color: #f5f5f5; color: #0000ff;">this</span><span style="background-color: #f5f5f5; color: #000000;">).height();
+
+                    </span><span style="background-color: #f5f5f5; color: #0000ff;">if</span><span style="background-color: #f5f5f5; color: #000000;">(offTop</span><span style="background-color: #f5f5f5; color: #000000;">&lt;=</span><span style="background-color: #f5f5f5; color: #000000;">0</span> <span style="background-color: #f5f5f5; color: #000000;">&amp;&amp;</span><span style="background-color: #f5f5f5; color: #000000;"> offTop</span><span style="background-color: #f5f5f5; color: #000000;">&gt;</span> <span style="background-color: #f5f5f5; color: #000000;">-</span><span style="background-color: #f5f5f5; color: #000000;">height){
+                        </span><span style="background-color: #f5f5f5; color: #008000;">//</span><span style="background-color: #f5f5f5; color: #008000;">去除其他</span>
+                        <span style="background-color: #f5f5f5; color: #008000;">//</span><span style="background-color: #f5f5f5; color: #008000;">添加自己</span>
+                        <span style="background-color: #f5f5f5; color: #0000ff;">var</span><span style="background-color: #f5f5f5; color: #000000;"> docHeight </span><span style="background-color: #f5f5f5; color: #000000;">=</span><span style="background-color: #f5f5f5; color: #000000;"> $(document).height();
+                        </span><span style="background-color: #f5f5f5; color: #0000ff;">var</span><span style="background-color: #f5f5f5; color: #000000;"> winHeight </span><span style="background-color: #f5f5f5; color: #000000;">=</span><span style="background-color: #f5f5f5; color: #000000;"> $(window).height();
+
+                        </span><span style="background-color: #f5f5f5; color: #0000ff;">if</span><span style="background-color: #f5f5f5; color: #000000;">(docHeight </span><span style="background-color: #f5f5f5; color: #000000;">==</span><span style="background-color: #f5f5f5; color: #000000;"> winHeight</span><span style="background-color: #f5f5f5; color: #000000;">+</span><span style="background-color: #f5f5f5; color: #000000;">scrollTop)
+                        {
+                            $(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">.catalog</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">).find(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">div:last-child</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">).addClass(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">active</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">).siblings().removeClass(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">active</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">);
+                        }</span><span style="background-color: #f5f5f5; color: #0000ff;">else</span><span style="background-color: #f5f5f5; color: #000000;">{
+                            </span><span style="background-color: #f5f5f5; color: #0000ff;">var</span><span style="background-color: #f5f5f5; color: #000000;"> target </span><span style="background-color: #f5f5f5; color: #000000;">=</span><span style="background-color: #f5f5f5; color: #000000;"> $(</span><span style="background-color: #f5f5f5; color: #0000ff;">this</span><span style="background-color: #f5f5f5; color: #000000;">).attr(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">menu</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">);
+                            $(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">.catalog</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">).find(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">div[auto-to="</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">+</span><span style="background-color: #f5f5f5; color: #000000;">target</span><span style="background-color: #f5f5f5; color: #000000;">+</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">"]</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">).addClass(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">active</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">).siblings().removeClass(</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">active</span><span style="background-color: #f5f5f5; color: #000000;">'</span><span style="background-color: #f5f5f5; color: #000000;">);
+                        }
+
+
+                    }
+                });
+
+            });
+
+
+        }
+
+    </span><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">body</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">html</span><span style="color: #0000ff;">&gt;</span></pre>
+</div>
+<span class="cnblogs_code_collapse">demo</span></div>
+<p>登陆注册验证</p>
+<p>　　点击这里<a href="http://files.cnblogs.com/files/wupeiqi/%E7%99%BB%E9%99%86%E6%B3%A8%E5%86%8C.zip" target="_blank">下载</a></p>
+<p>更多实例</p>
+<p>　　猛击这里<a href="http://files.cnblogs.com/files/wupeiqi/HtmlStore.zip" target="_blank">下载</a></p>
+<p>&nbsp;</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+
+		</div>
+		<div class = "postDesc">posted @ <span id="post-date">2015-04-26 06:36</span> <a href='http://www.cnblogs.com/wupeiqi/'>武沛齐</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>) &nbsp;<a href="https://i.cnblogs.com/EditArticles.aspx?postid=4457274" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(4457274);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=133379,cb_entryId=4457274,cb_blogApp=currentBlogApp,cb_blogUserGuid='7208b24d-95c9-e111-aa3f-842b2b196315',cb_entryCreatedDate='2015/4/26 6:36:00';loadViewCount(cb_entryId);</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='ad_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<div id='ad_c2' class='c_ad_block'></div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script></div>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright &copy;2016 武沛齐
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+</body>
+</html>

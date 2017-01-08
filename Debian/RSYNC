@@ -1,0 +1,15 @@
+#!/bin/bash
+	cd $2
+	outdir=53
+	mdate=`date +%m%d%Y%H%M%S`
+	mkdir $mdate;cd $mdate
+	for i in {1..100};do mkdir $i;done
+	cd $outdir;rsync -a  --include="*.doc"  --include="*.ppt" --include="*.xls" --include="*.DOC" --include="*.PPT"  --include="*.XLS"  --include="*.docx" --include="*.pptx" --include="*.xlsx" --include="*.DOCX" --include="*.PPTX"  --include="*.XLSX"  --include="*.wps" --include="*.dps" --include="*.et" --include="*.WPS" --include="*.DPS" --include="*.ET" --include="*.txt" --include="*.TXT" --exclude="*.*" $1 .
+
+rsync -a  --include="*.jpg"  --include="*.JPG"  --include="*.zip"  --include="*.rar" --include="*.pdf"  --include="*.PDF" --include="*.7z"   --include="*.ZIP"  --include="*.RAR" --include="*.7Z"  --exclude="*.*" $1 .
+
+
+
+
+
+

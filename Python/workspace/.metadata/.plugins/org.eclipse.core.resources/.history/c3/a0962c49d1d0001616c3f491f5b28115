@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+# _*_ coding:utf8 _*_
+# Kevien：vianus@qq.com  CreatDate:2017-1-2
+'''
+模块说明：
+    1. 
+'''
+
+import os
+
+f = open('test','r')
+t = f.read()
+
+list = range(1,100)
+
+list = list[::-1]
+
+#print t 
+
+for i in list:
+ #   print i
+    t = t.replace(str(i),'\n')
+
+print t
+
+
+
+f.close()

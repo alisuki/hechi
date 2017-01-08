@@ -1,0 +1,57 @@
+debian 程序开机自启动脚本 (2013-03-29 16:36:15)转载▼
+分类： Unix、Linux、数据库
+今天有新人问起debian下怎么没有rc.local，不知道如何设置自己的脚本开机启动。其实Debian下和FreeBSD下的设置有一些不同，这里介绍一些常规的设置：
+
+1、可以自己在/etc下创建rc.local文件，在里面添加自己的脚本。开机可以启动
+
+2、用update-rc.d命令，用法可以man一下，很简单:
+
+      比如： update-rc.d  yourscript.sh  defaults
+
+3、编辑/etc/init.d/bootmisc.sh文件，里面的语法和rc.local一样，你可以直接把原来的rc.local内容粘帖过去即可。
+
+4、另外的方法估计就是直接在/etc/rc*.d/ 目录下面建立自己的脚本链接，通过不同的运行级别开机启动了。这个自己还没试过
+
+
+
+
+将drms.sh 复制到 /etc/init.d/
+将drms.sh改为x可执行 
+chmod 755 drms.sh
+
+开机自启动
+update-rc.d drms.sh defaults
+删除自启动
+update-rc.d drms.sh remove
+
+
+
+drms.sh 脚本
+#!/bin/bash
+#Tomcat auto-start
+#
+#description:Auto-starts tomcat
+#processname:tomcat
+#pidfile:/var/run/tomcat.pid
+
+export JAVA_HOME=/usr/local/drms/jdk
+case $1 in
+start)
+nohup /opt/openoffice.org3/program/soffice -headless -accept="socket,host=127.0.0.1,port=8100;urp;" -nofirststartwizard  &
+sh /usr/local/drms/tomcat/bin/startup.sh
+;;
+
+stop)
+sh /usr/local/drms/tomcat/bin/shutdown.sh
+;;
+
+restart)
+sh /usr/local/drms/tomcat/bin/shutdown.sh
+sh /usr/local/drms/tomcat/bin/startup.sh
+
+exit 3
+;;
+esac
+
+:
+

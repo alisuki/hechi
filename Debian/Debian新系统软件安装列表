@@ -40,5 +40,6 @@ mate-disk-usage-analyzer
 dconf-editor
 fcitx fcitx-data fcitx-config-gtk fcitx-table fcitx-table-wbpy
 eclipse
-ipython
+bpython
 python-mysqldb
+mozo

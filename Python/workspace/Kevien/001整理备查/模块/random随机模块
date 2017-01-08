@@ -1,0 +1,27 @@
+
+一、random模块简介
+
+可以生成随机浮点数、整数、字符串，甚至帮助你随机选择列表序列中的一个元素，打乱一组数据等。
+
+
+
+二、random模块重要函数
+
+
+random.randint()		#随机生成一个整数，可以指定范围。
+random.uniform()		#随机生成一个浮点数，可以指定范围。
+random.random()			#随机生成一个0.0~1.0之间浮点数。
+
+random.choice(list)		#从序列list中随机选取一个元素；
+random.sample(list, n)	#从序列list中选择n个随机且独立的元素；
+
+random.getrandbits(n)	#以长整型形式返回n个随机位；
+random.shuffle(list)	#随机打乱序列元素。
+
+------示例--------------------
+list = [20, 16, 10, 5];
+random.shuffle(list)
+print "随机排序列表 : ",  list
+---------------------------
+
+

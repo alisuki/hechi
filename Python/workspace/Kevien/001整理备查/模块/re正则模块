@@ -1,0 +1,216 @@
+
+re正则表达式:
+
+===========================================================
+简单高效实用的方法：
+
+常用的四个符号：  .  *  ?  ()
+	.   匹配任意一个字符，换行符\n除外
+	*	匹配前一个字符0次或无限次
+	?	匹配前一个字符0次或1次
+	.*	贪婪算法，尽可能多的匹配
+	.*?	非贪婪算法，可返回多个元素
+	()	仅返回括号内的数据
+
+
+常用的三个方法：  findall ,  search ,  sub
+	re.findall		匹配所有符合规律的内容，返回包含结果的列表
+	re.search		匹配并提取第一个符合规律的内容，返回一个正则表达式对象。
+	re.sub			替换符合规律的内容，返回替换后的值。
+
+
+常用技巧：
+	不需要complie,因为return已加载过了
+	使用\d+匹配纯数字
+
+
+演示：
+
+# . 的使用举例
+import re
+a = 'xyzabc'
+b = re.findall('x.',a)
+c = re.findall('x..',a)
+d = re.findall('x...',a)
+print b,c,d
+#返回：	['xy'] ['xyz'] ['xyza']
+
+
+# * 的使用举例
+a = 'xyxyzabc'
+b = re.findall('x*',a)
+print b
+#返回：['x', '', 'x', '', '', '', '', '', '']
+
+# ? 的使用举例
+a = 'xy123'
+b = re.findall('x?',a)
+print b
+#返回：['x', '', '', '', '', '']
+
+# .* 的使用举例
+str = 'askdfewxxIxxfkasdjgkqwjxxLovexxkfdsajgkdsajxxYouxxfksald'
+b = re.findall('xx.*xx',str)
+print b
+#返回：['xxIxxfkasdjgkqwjxxLovexxkfdsajgkdsajxxYouxx']
+
+'''
+上面的内容全部只需要了解即可，真正需要掌握的只有下面这种组合方式(.*?)
+'''
+
+# .*? 的使用举例
+str = 'askdfewxxIxxfkasdjgkqwjxxLovexxkfdsajgkdsajxxYouxxfksald'
+b = re.findall('xx.*?xx',str)
+print b
+#返回：['xxIxx', 'xxLovexx', 'xxYouxx']
+
+
+# .*? 与 (.*?) 的区别：  仅返回括号内的内容
+str = 'askdfewxxIxxfkasdjgkqwjxxLovexxkfdsajgkdsajxxYouxxfksald'
+b = re.findall('xx(.*?)xx',str)
+print b
+#返回：['I', 'Love', 'You']
+
+# 参数re.S	单行模式（将多行当成单行进行匹配）
+s = '''aaaxxhello
+xxbbbxxworldxxccccc'''
+b = re.findall('xx(.*?)xx',s)	#未加参数
+print b
+#返回：['bbb']
+
+b = re.findall('xx(.*?)xx',s,re.S)	#加了re.S参数
+print b
+#返回：['hello\n', 'world']
+
+
+
+# findall 与 search 的区别: 
+	#findall()		匹配所有符合规律的内容，返回包含结果的列表。
+	#search()		匹配并提取第一个符合规律的内容，如果只需匹配一次，则效率比findall更高。
+	#取返回值的方式不同
+
+str = 'AAAxxIxxBBBxxLovexxCCCxxYouxxDDD'
+f1 = re.search('xx(.*?)xxBBBxx(.*?)xx',str)
+f2 = re.search('xx(.*?)xxBBBxx(.*?)xx',str)
+print f1.group(1),f2.group(2)
+#返回：I Love
+
+ff = re.findall('xx(.*?)xxBBBxx(.*?)xx',str)	#返回的是1个列表，列表内只有1个元组，元组内有2个元素。
+print ff[0][0],ff[0][1]
+#返回：I Love
+
+
+
+# sub 的使用举例
+s = '123aaaa123'
+b = re.sub('123(.*?)123','123xyz123',s)	#将s替换成123xyz123
+#b = re.sub('123(.*?)123','123%s123' % xyz,s)
+print b
+#返回：123xyz123		
+
+
+
+
+
+
+
+
+
+===========================================================
+
+备用知识：
+
+一、re正则表达式语法
+
+	1、特殊字符
+		.	匹配任意字符
+		[]	用来匹配一个指定的字符类别，所谓的字符类别就是你想匹配的一个字符集，对于字符集中的字符可以理解成或的关系
+
+		^	对于字符串，表示字符串的开头
+			对于^加上一个其他数字或字符，表示取反。比如，[^5]表示除了5之外的任意字符。[^^]表示除了^字符之外任意字符。
+
+		$	匹配字符串的末尾，或者匹配换行之前的字符串末尾
+		*	对于前一个字符重复0到无穷次
+		+	对于前一个字符重复1到无穷次
+		?	对于前一个字符重复0到1次
+
+		{m,n}	对于前一个字符重复次数在为m到n次。
+				{0,} == *
+				{1,} ==
+				{0,1} == ?
+				{m} 对于前一个字符重复m次
+
+	2、特殊转义序列（字符）
+
+		\A	匹配字符串的开头
+		\b	匹配一个空字符（仅对一个单词word的开始或结束有效）
+		\B	与\b含义相反
+		\d	匹配任何十进制数；它相当于类 [0-9]
+		\D	匹配任何非数字字符；它相当于类 [^0-9]
+		\s	匹配任何空白字符；它相当于类 [ \t\n\r\f\v]
+		\S	匹配任何非空白字符；它相当于类 [^ \t\n\r\f\v]
+		\w	匹配任何字母数字字符；它相当于类 [a-zA-Z0-9_]
+		\W	匹配任何非字母数字字符；它相当于类 [^a-zA-Z0-9_]
+		\Z	匹配字符串的结尾
+
+限定符模式		限定符写法				含义解释
+忽略大小写模式	re.IGNORECASE/re.I		默认不加此参数，是区分大小写的。加了此参数，则不区分大小写
+单行模式			re.DOTALL/re.S			默认'.'是不匹配回车换行的。加了此参数，则使得'.'也匹配回车换行，这就使得原本，中间包含了换行的，多行的字符串，变成了单行的效果。
+多行模式			re.MULTILINE/re.M		默认情况是：^只匹配，整个（中间包含了回车换行的，多行的）字符串的开始，同理，$只匹配整个字符串的末尾。而加上次参数，则^也匹配每个'\n'==newline=换行符之后的那个位置，表示下一行的开始，同理，$也匹配，换行符之前的那个位置，表示之前一行的结束位置
+松散模式			re.VERBOSE/re.X			默认的正则，都是连续的写在一起的，可以叫做，紧凑型的正则。加上此参数，则运行你在，原先是紧凑的正则中间，加上一些空格或tab，用于对齐格式，以及一些注释内容，目的在于方便别人看懂你写的正则，所以，相对紧凑型的写法，叫做，松散正则。此时，松散正则里面的空白符，即回车，换行，tab，都被忽略，如果想要表达回车换行本身，需要转义。松散正则中的注释，当然在解析的时候，也会被忽略掉的。
+区域模式			re.LOCALE/re.L			根据当前的local不同，会影响到其他一些正则的含义，比如\w, \W, \b, \B, \s and \S
+Unicode模式		re.UNICODE/re.U			根据Unicode字符编码去匹配，会影响到其他一些正则的含义，比如\w, \W, \b, \B, \d, \D, \s and \S
+
+
+最常用的是 .+?，表示任意字符，最少是1个				
+
+
+二、re模块重要函数变量
+
+	compile()		根据正则表达式字符串，创建模式的对象。不建议使用此项
+	findall()		匹配所有符合规律的内容，返回包含结果的列表。
+	search()		匹配并提取第一个符合规律的内容，返回一个正则表达式对象。
+	sub(old,new)	替换符合规律的内容，返回替换后的值。
+	match()			在字符串开始处匹配模式。
+	split()			根据模式的匹配项来分割字符串。
+	escape()		将字符串中所有特殊正则表达式字符转义。
+
+
+re.compile
+　　可以把正则表达式编译成一个正则表达式对象。可以把那些经常使用的正则表达式编译成正则表达式对象，这样可以提高一定的效率。
+--------------------
+text = "JGood is a handsome boy, he is cool, and so on..."
+regex = re.compile(r'\w*oo\w*')
+print regex.findall(text)   #查找所有包含'oo'的单词
+--------------------
+
+
+re.search（pattern，string，flags = 0）		
+	#在字符串内查找模式匹配,只到找到第一个匹配然后返回，如果字符串没有匹配，则返回None。
+	re.match与re.search的区别：re.match只匹配字符串的开始，如果字符串开始不符合正则表达式，则匹配失败，函数返回None；而re.search匹配整个字符串，直到找到一个匹配。
+
+
+re.match(pattern, string, flags)	#尝试从字符串的开始匹配一个模式
+	第一个参数是正则表达式，如果匹配成功，则返回一个Match，否则返回一个None；
+	第二个参数表示要匹配的字符串；
+	第三个参数是标致位，用于控制正则表达式的匹配方式，如：是否区分大小写，多行匹配等等。
+
+
+re.split
+　　用来分割字符串，如：re.split(r'\s+', text)；将字符串按空格分割成一个单词列表。
+
+
+re.findall
+　　re.findall可以获取字符串中所有匹配的字符串。如：re.findall(r'\w*oo\w*', text)；获取字符串中，包含'oo'的所有单词。
+
+
+re.sub(pattern, repl, string, count)
+　　re.sub用于替换字符串中的匹配项。下面一个例子将字符串中的空格 ' ' 替换成 '-' :  
+	其中第二个函数是替换后的字符串；本例中为'-'
+	第四个参数指替换个数。默认为0，表示每个匹配项都替换。
+--------------------
+import re
+text = "JGood is a handsome boy, he is cool, and so on..."
+--------------------
+
+

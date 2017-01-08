@@ -1,0 +1,74 @@
+#!/usr/bin/env python
+# _*_ coding:utf8 _*_
+# Kevien：vianus@qq.com  CreatDate:2017-1-4
+'''
+模块说明：
+    1. 
+'''
+
+def encrypt(key, s): 
+    b = bytearray(str(s).encode("utf8"))    # 将参数s（传入的字符串）转为byts数组序列，如:b[0] b[1] ...
+    n = len(b)          # 求出序列 b 的字节长度
+    c = bytearray(n*2)  # 将生成一个 2倍字节长度 的空数组
+    j = 0 
+    for i in range(0, n): 
+        b1 = b[i]       # b[i],即参数s（传入的字符串）所对应的asc码数字
+        b2 = b1 ^ key   # 进行位运算（异或） 
+#        print 'b1:',b1,'  b2:',b2
+        c1 = b2 % 26    # 返回b2/16的余数    取模（除法的余数）
+        c2 = b2 // 26   # 返回b2/16的整数    取整除
+#        print 'c1:',c1,'  c2:',c2
+        c1 = c1 + 65    # c1,c2都是0~15之间的数,加上65就变成了A-P 的字符的编码
+        c2 = c2 + 65    #  
+#        print 'c1_1:',c1,'  c2_2:',c2
+
+        c[j] = c1 
+        c[j+1] = c2 
+        print 'c',[j],':',c1,'  c',[j+1],':',c2
+
+        j = j+2 
+    print c.decode("utf8") 
+ 
+def decrypt(key, s): 
+    c = bytearray(str(s).encode("utf8")) 
+    n = len(c) # 计算 b 的字节数 
+    if n % 2 != 0 : 
+        return "" 
+    n = n // 2 
+    b = bytearray(n) 
+    j = 0 
+    for i in range(0, n): 
+        c1 = c[j] 
+        c2 = c[j+1] 
+        j = j+2 
+        c1 = c1 - 65 
+        c2 = c2 - 65 
+        b2 = c2*26 + c1 
+        b1 = b2^ key 
+        b[i]= b1 
+    try: 
+        return b.decode("utf8") 
+    except: 
+        return "failed" 
+ 
+key = 15 
+s1 = encrypt(key, '''12345678''') 
+s2 = decrypt(key, s1) 
+print s1,'\n',s2  
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

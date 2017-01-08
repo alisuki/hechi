@@ -1,0 +1,21 @@
+ufw配置教程
+sudo ufw status  #查看状态
+sudo ufw enable  #激活防火墙
+
+sudo ufw disable  #关闭防火墙
+
+sudo ufw default deny   #默认禁止外部对本机访问
+
+sudo ufw allow|deny [service]	#开启|禁止 访问某服务或端口
+如：sudo ufw allow ftp		#允许所有外部IP访问ftp服务
+    sudo ufw deny smtp		#禁止外部访问smtp服务
+    sudo ufw allow 80		#允许所有外部IP访问80端口
+    sudo ufw deny 192.168.1.101  #禁止此IP访问所有的本机端口
+    sudo ufw delete deny smtp	#删除 禁止访问smtp 这条规则
+    sudo ufw delete allow 80	#删除 允许访问80端口 这条规则
+
+允许所有局域网/无线局域网IP访问本主机：
+sudo ufw allow from 10.0.0.0/8
+sudo ufw allow from 172.16.0.0/12
+sudo ufw allow from 192.168.0.0/16
+	    

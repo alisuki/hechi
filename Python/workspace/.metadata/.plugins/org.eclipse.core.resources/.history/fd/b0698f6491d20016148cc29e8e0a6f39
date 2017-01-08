@@ -1,0 +1,46 @@
+#!/usr/bin/env python
+# _*_ coding:utf8 _*_
+# Kevien：vianus@qq.com  CreatDate:2017-1-3
+'''
+模块说明：
+    1. 
+'''
+
+import os
+import re
+
+
+f = open('test.html','r')
+html = f.read()
+#print html
+
+text = re.search(r'class="subTitle">国际新闻</h2>(.*?)点击查看更多',html,re.S)    #多行合并成单行匹配
+#print text.group(0) 
+
+text = text.group(0)
+
+url = re.search(r'class="linkto" href="(.*?)">(.*?)<d/a>', text, re.M)  #拆分每一行进行匹配
+print url.group(1)#[0][0]
+print url.group(2)#[0][1]
+
+
+cont = len(url)
+print cont
+
+for i in range(cont):
+    urlsub1 = re.search(r'http.*\.htm', url[i], re.S)
+    urlsub2 = re.search(r'(.*?)', url[i], re.S)
+    print urlsub1.group(0)
+    print urlsub2.group(0)
+print '\nth-------------------------------\n总共计数：',cont,' 条'
+
+
+
+
+
+
+
+
+
+
+

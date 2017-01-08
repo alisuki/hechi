@@ -1,0 +1,15 @@
+集合是一个无序不重复元素的集：set  常用于去重复
+
+a = set('abracadabra')
+b = set('alacazam')
+>>> a                                  # unique letters in a
+	{'a', 'r', 'b', 'c', 'd'}
+>>> a - b                              # 字母在a，但不在b
+	{'r', 'd', 'b'}
+>>> a | b                              # 字母在a或b
+	{'a', 'c', 'r', 'd', 'b', 'm', 'z', 'l'}
+>>> a & b                              # 字母在a和b
+	{'a', 'c'}
+>>> a ^ b                              # 字母在a或b，但不是两者
+	{'r', 'd', 'b', 'm', 'z', 'l'}
+

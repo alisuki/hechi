@@ -1,0 +1,20 @@
+json模块：
+
+正在替代XML，函数方法的使用与pickle一样
+
+一、json编码:示例
+
+import json
+lists = ['iplaypython',[1,2,3],{'name':'Kevien'}]
+strs = json.dumps(lists)    #进行序列化编码
+print strs
+
+
+
+二 、json解码:示例
+
+obj = json.loads(strs)      #还原str
+print type(obj)             #查看一下解码后的对象类型
+print obj
+
+

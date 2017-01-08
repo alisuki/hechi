@@ -1,0 +1,41 @@
+Python必知模块库：
+
+string 文本
+os 模块
+sys 模块
+time 日期时间
+re 正则表达式
+pickle 持久化
+json模块
+random 随机
+
+--------------------
+
+任务：把这个技术学透
+
+django框架
+
+
+
+
+--------------------
+
+未深入整理：
+mysql数据库
+requests模块（替代urllib2 模块）
+urlparse 解析URL
+urllib 模块
+smtplib 邮件
+Base64 编码
+threading多线程
+socket网络通信
+gzip压缩解压
+csv 模块
+logging 日志
+robotparser 解析
+Cookie 模块
+xmlrpclib客户端
+Queue 线程安全
+math数学计算
+linecache缓存
+
