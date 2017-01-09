@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="15" version="2.0">
+<workbench progressCount="33" version="2.0">
 <workbenchAdvisor/>
 <window height="770" maximized="true" width="547" x="505" y="0">
 <fastViewData fastViewLocation="1024">
@@ -34,10 +34,16 @@
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.internal.presentations.classic.WorkbenchPresentationFactoryClassic"/>
+<presentation id="org.eclipse.ui.internal.presentations.classic.WorkbenchPresentationFactoryClassic">
+<part id="0"/>
+</presentation>
 </folder>
 </info>
 </editorArea>
+<editor activePart="true" focus="true" id="org.python.pydev.editor.PythonEditor" name="syncsfs.py" partName="syncsfs" path="/media/data/git/Python/workspace/Kevien/test/syncsfs.py" title="syncsfs" tooltip="Kevien/test/syncsfs.py" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Kevien/test/syncsfs.py"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="454" selectionTopPixel="0"/>
+</editor>
 </editors>
 <views>
 <view id="org.eclipse.ui.navigator.ProjectExplorer" partName="项目资源管理器">
@@ -71,7 +77,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.ui.navigator.ProjectExplorer" activePerspective="org.eclipse.debug.ui.DebugPerspective">
+<perspectives activePart="org.python.pydev.editor.PythonEditor" activePerspective="org.eclipse.debug.ui.DebugPerspective">
 <perspective editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.debug.internal.ui.DebugPerspectiveFactory" id="org.eclipse.debug.ui.DebugPerspective" label="调试"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -88,6 +94,10 @@
 <alwaysOnActionSet id="org.eclipse.jdt.debug.ui.JDTDebugActionSet"/>
 <alwaysOnActionSet id="org.eclipse.jdt.ui.JavaActionSet"/>
 <alwaysOnActionSet id="org.eclipse.jdt.ui.CodingActionSet"/>
+<alwaysOnActionSet id="com.python.pydev.navigate.actionSet"/>
+<alwaysOnActionSet id="com.python.pydev.debug.actionSet"/>
+<alwaysOnActionSet id="org.python.pydev.exceptionBreakpoints"/>
+<alwaysOnActionSet id="org.python.pydev.pyPropertyTrace"/>
 <alwaysOnActionSet id="org.eclipse.debug.ui.debugActionSet"/>
 <show_view_action id="org.eclipse.ant.ui.views.AntView"/>
 <show_view_action id="org.eclipse.debug.ui.BreakpointView"/>
@@ -112,15 +122,15 @@
 <hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.change.type"/>
 <hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.generate.tostring"/>
 <hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.move.element"/>
-<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.introduce.parameter.object"/>
 <hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.self.encapsulate.field"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.introduce.parameter.object"/>
 <hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.find.broken.nls.keys"/>
 <hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.promote.local.variable"/>
 <hide_menu_item_id id="org.eclipse.ltk.ui.refactor.apply.refactoring.script"/>
 <hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.create.delegate.methods"/>
 <hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.modify.method.parameters"/>
-<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.extract.class"/>
 <hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.move.inner.to.top.level"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.extract.class"/>
 <hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.introduce.indirection"/>
 <hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.use.supertype"/>
 <hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.extract.local.variable"/>
@@ -154,11 +164,11 @@
 <hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.infer.type.arguments"/>
 <hide_menu_item_id id="org.eclipse.jdt.ui.edit.text.java.indent"/>
 <hide_toolbar_item_id id="org.eclipse.ui.file.print"/>
-<hide_toolbar_item_id id="com.python.pydev.debug.actions.AttachToProcess"/>
-<hide_toolbar_item_id id="com.python.pydev.debug.actionSet"/>
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
-<hide_toolbar_item_id id="org.eclipse.jdt.ui.navigate.open.type"/>
+<hide_toolbar_item_id id="com.python.pydev.debug.actionSet"/>
+<hide_toolbar_item_id id="com.python.pydev.debug.actions.AttachToProcess"/>
 <hide_toolbar_item_id id="com.python.pydev.debug.actions.EndDebugServer"/>
+<hide_toolbar_item_id id="org.eclipse.jdt.ui.navigate.open.type"/>
 <hide_toolbar_item_id id="com.python.pydev.analysis.actions.pyGlobalsBrowserWorkbench"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <hide_toolbar_item_id id="com.python.pydev.debug.actions.StartDebugServer"/>
@@ -198,7 +208,7 @@
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@68f58297" ratio="0.44798303" ratioLeft="211" ratioRight="260" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
-<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.navigator.ProjectExplorer" label="项目资源管理器"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="控制台"/>
 <presentation id="org.eclipse.ui.internal.presentations.classic.WorkbenchPresentationFactoryClassic">
@@ -246,7 +256,7 @@
 <presentation id="org.eclipse.ui.internal.presentations.classic.WorkbenchPresentationFactoryClassic"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.24792627" ratioLeft="269" ratioRight="816" relationship="2" relative="org.eclipse.ui.internal.ViewStack@68f58297"/>
+<info part="org.eclipse.ui.editorss" ratio="0.24055299" ratioLeft="261" ratioRight="824" relationship="2" relative="org.eclipse.ui.internal.ViewStack@68f58297"/>
 <info folder="true" part="org.eclipse.debug.internal.ui.ToolsFolderView" ratio="0.5" ratioLeft="624" ratioRight="624" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
 <folder appearance="2" expanded="2">
 <page content="org.eclipse.debug.ui.ExpressionView" label="LabelNotFound"/>
@@ -335,7 +345,14 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.python.pydev.editor.PythonEditor" path="/Kevien/test/syncsfs.py"/>
+</editors>
+<item active="true" historyLabel="syncsfs" index="0">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+</navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
@@ -352,6 +369,15 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.python.pydev.editor.PythonEditor" name="syncsfs.py" tooltip="Kevien/test/syncsfs.py">
+<persistable path="/Kevien/test/syncsfs.py"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.systemExternalEditor" name="1_使用while循环输入1234568910.py" tooltip="Kevien/第2篇/1_使用while循环输入1234568910.py">
+<persistable path="/Kevien/第2篇/1_使用while循环输入1234568910.py"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.systemExternalEditor" name="ryncsfs.py" tooltip="Kevien/test/ryncsfs.py">
+<persistable path="/Kevien/test/ryncsfs.py"/>
+</file>
 <file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.python.pydev.editor.PythonEditor" name="re.py" tooltip="/usr/lib/python2.7/re.py">
 <persistable uri="file:/usr/lib/python2.7/re.py"/>
 </file>
@@ -387,15 +413,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="Mysql常用命令" tooltip="Kevien/第6篇/Mysql常用命令">
 <persistable path="/Kevien/第6篇/Mysql常用命令"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.python.pydev.editor.PythonEditor" name="MySQL使用.py" tooltip="Kevien/第6篇/MySQL使用.py">
-<persistable path="/Kevien/第6篇/MySQL使用.py"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.python.pydev.editor.PythonEditor" name="sec_md5.py" tooltip="Kevien/001学习备录/sec_md5.py">
-<persistable path="/Kevien/001学习备录/sec_md5.py"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.python.pydev.editor.PythonEditor" name="def_arg.py" tooltip="Kevien/001学习备录/def_arg.py">
-<persistable path="/Kevien/001学习备录/def_arg.py"/>
 </file>
 </mruList>
 </workbench>

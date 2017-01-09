@@ -1,0 +1,84 @@
+#!/bin/bash
+# Kevien：vianus@qq.com  CreatDate:2016-12-21
+
+#挂载sfs文件
+sfs=`mktemp -d /tmp/sfs.XXXX`
+sudo mount -t squashfs $1 $sfs
+
+
+#挂载分区
+sys=`mktemp -d /tmp/sfs.XXXX`
+sudo mount $2 $sys
+
+#取根分区的UUID和分区类型
+uuid=`sudo blkid | grep $2`
+uuid=${uuid#*UUID=\"}
+uuid=${uuid:0:36}
+
+type=`sudo blkid | grep $2`
+type=${type#*TYPE=\"}
+type=${type%\" *}
+
+#取swap分区的UUID
+swap=`sudo blkid | grep swap`
+swap=${swap#*UUID=\"}
+swap=${swap:0:36}
+
+#预先生成fstab
+echo "# <file system>		<mount point>	 <type>		<options>       <dump>  <pass>">/tmp/fstab
+echo "UUID=$uuid	/	$type	defaults	0	1" >>/tmp/fstab
+echo "UUID=$swap	none	swap	sw	0	0" >>/tmp/fstab
+cat $sys/etc/fstab | grep "^/dev/" >>/tmp/fstab
+
+sudo rsync $0 /tmp/sfs
+
+list=`ls -A $sys`
+echo -e "\033[1;31;5m \n$2分区内包含以下文件将被删除：\n$list\n\033[0m"
+read -p  "是否确定继续 [Y/N]：" question
+
+echo -e "\033[1;31;5m 开始恢复文件。。。\033[0m"
+sleep 2
+if [ "$question" = "Y" ] ; then	
+		#恢复数据
+		sudo rsync -aP --delete --exclude='media' --exclude='mnt' --exclude='dev' --exclude='sys' --exclude='proc' --exclude='tmp' --exclude='srv' --exclude='run' --exclude='lost+found' $sfs/ $sys/
+elif [ "$question" = "y" ]; then
+		sudo rsync -aP --delete --exclude='media' --exclude='mnt' --exclude='dev' --exclude='sys' --exclude='proc' --exclude='tmp' --exclude='srv' --exclude='run' --exclude='lost+found' $sfs/ $sys/
+else
+		zenity --error --timeout=3 --text="取消操作！"
+		exit;
+	fi
+echo -e "\033[1;31;5m 文件同步恢复完成！\033[0m"
+sleep 1
+
+#更新fstab
+sudo cp $sys/etc/fstab $sys/etc/fstab.bak
+sudo cp /tmp/fstab $sys/etc/fstab
+echo -e "\033[1;31;5m 分区挂载点更新完成!\033[0m"
+sleep 1
+
+#修改grub启动菜单颜色的源文件:etc/grub.d/05_debian_theme
+sudo perl -pi -e 's|'black\/light-gray'|'white\/black'|g' $sys/etc/grub.d/05_debian_theme
+sudo perl -pi -e 's|'cyan/blue'|'white\/black'|g' $sys/etc/grub.d/05_debian_theme
+sudo perl -pi -e 's|'white\/blue'|'white\/black'|g' $sys/etc/grub.d/05_debian_theme
+#更新grub.cfg
+sudo mv  $sys/boot/grub/grub.cfg $sys/boot/grub/grub.cfg.bak
+sudo update-grub -o $sys/boot/grub/grub.cfg
+echo -e "\033[1;31;5m 系统启动菜单更新完成！\033[0m"
+sleep 1
+
+#安装grub引导到磁盘
+hdd=$2
+hdd=${hdd:0:8}	#取出:/dev/sdx
+sudo grub-install --root-directory=$sys $hdd
+echo -e "\033[1;31;5m 已完成安装系统引导:$hdd\033[0m"
+sleep 1
+
+sudo rsync /tmp/sfs $sys/usr/local/bin/
+sudo umount $sfs $sys
+zenity --info --title="恢复成功" --text="\n已恢复完成，请再检查下fstab文件！"
+pluma /etc/fstab
+
+exit 0
+
+
+

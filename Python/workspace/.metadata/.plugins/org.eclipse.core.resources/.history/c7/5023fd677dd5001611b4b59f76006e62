@@ -1,0 +1,65 @@
+#!/usr/bin/env python
+# _*_ coding:utf8 _*_
+# Kevien：vianus@qq.com  CreatDate:2016-12-21
+
+import sys
+import os
+
+print "脚本名：", sys.argv[0]
+
+for i in range(1, len(sys.argv)):
+  print "参数", i, sys.argv[1]
+    
+
+os.mkdir('/tmp/sfs')
+os.mkdir('/tmp/sys')
+
+#挂载sfs文件
+#os.system(mount -t squashfs sys.argv[1] sfsfile)
+
+print (sys.argv[1])
+
+#挂载分区
+#os.system(mount sys.argv[2] partition)
+
+list= os.listdir(sys)
+print "\n",sys.argv[2],"分区内包含以下文件将被删除：\n",list,"\n"
+question = raw_input("是否确定继续 [Y/N]：" )
+
+
+sys.exit()
+
+
+
+'''
+#zenity --question --title="郑重提示！" --text="\n$2分区内包含以下文件将被删除：\n`ls $sys`， \n是否确定？ " ;
+    if [ "$question" = "Y" ] ; then    
+        #恢复数据
+        echo $question
+#        gksu -u root -D 正在恢复文件 "rsync -avP --delete --include='dev' --include='lost+found' --include='proc' --include='sys' --include='tmp' --include='srv' --include='run" $sfs/ $sys/
+        sudo umount $sfs $sys
+        zenity --info --title="恢复成功" --text="\n已恢复完成，请检查fstab文件！"
+    elif [ "$question" = "y" ]; then
+        echo $question
+#        gksu -u root -D 正在恢复文件 "rsync -avP --delete --include='dev' --include='lost+found' --include='proc' --include='sys' --include='tmp' --include='srv' --include='run" $sfs/ $sys/
+        sudo umount $sfs $sys
+        zenity --info --title="恢复成功" --text="\n已恢复完成，请检查fstab文件！"
+    else
+        zenity --error --timeout=3 --text="本次操作已取消！"
+        exit;
+    fi
+    
+    
+exit 0
+
+
+
+
+
+uuid=${uuid#*UUID=\"}
+echo ${uuid:0:36}
+
+b=${a//123/321}
+
+
+'''

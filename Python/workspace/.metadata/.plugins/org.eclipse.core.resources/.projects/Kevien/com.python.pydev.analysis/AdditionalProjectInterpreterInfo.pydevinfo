@@ -2,6 +2,7 @@
 -- START DISKCACHE
 /media/data/git/Python/workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/Kevien/com.python.pydev.analysis/v2_indexcache
 test.cus_pass|1483515993000|/media/data/git/Python/workspace/Kevien/test/cus_pass.py
+test.syncsfs|1483864420000|/media/data/git/Python/workspace/Kevien/test/syncsfs.py
 第4篇.函数编程_三元_set_表达式|1482386177000|/media/data/git/Python/workspace/Kevien/第4篇/函数编程_三元_set_表达式.py
 test.re|1483545523000|/media/data/git/Python/workspace/Kevien/test/re.py
 第2篇.1_使用while循环输入1234568910|1482212912000|/media/data/git/Python/workspace/Kevien/第2篇/1_使用while循环输入1234568910.py
@@ -40,34 +41,35 @@ pickle序列化|1483420769000|/media/data/git/Python/workspace/Kevien/pickle序�
 第5篇.面向对象（中级篇）|1482394794000|/media/data/git/Python/workspace/Kevien/第5篇/面向对象（中级篇）.py
 -- END DISKCACHE
 -- START DICTIONARY
-24
+25
 3=test.cus_pass
-6=第3篇.字典操作
-22=Person.__init__
-2=第3篇.判断及循环
-11=第3篇.replace
-15=第3篇.列表操作
-8=第3篇.3_通过序号选择商品
+15=test.syncsfs
 9=第4篇.函数编程_三元_set_表达式
 4=test.re
-16=第2篇.1_使用while循环输入1234568910
-7=第3篇.1_元素分类
-23=MyClass.Pro
-5=第6篇.MySQL使用
-18=第4篇.装饰器
-24=MyClass
-17=第5篇.类
-20=第2篇.6_用户登陆（三次机会重试）
-19=第4篇.字符串格式化
-14=第3篇.字符串操作
+17=第2篇.1_使用while循环输入1234568910
+25=MyClass
+21=第2篇.6_用户登陆（三次机会重试）
 13=第4篇.序列化
-1=第5篇.面向对象（初级篇）
+14=第3篇.字符串操作
 12=pickle序列化
-21=Person
+1=第5篇.面向对象（初级篇）
 10=删除文件每行的前3个字符
+6=第3篇.字典操作
+11=第3篇.replace
+2=第3篇.判断及循环
+23=Person.__init__
+16=第3篇.列表操作
+8=第3篇.3_通过序号选择商品
+7=第3篇.1_元素分类
+5=第6篇.MySQL使用
+24=MyClass.Pro
+19=第4篇.装饰器
+18=第5篇.类
+20=第4篇.字符串格式化
+22=Person
 -- END DICTIONARY
 -- START TREE 1
-54
+57
 __s|1|__show2!10@
 a|1|a!19@
 b|2|b!19@b!27@
@@ -81,7 +83,7 @@ cur|1|cursor!43@
 dec|1|decrypt!26@
 dic|5|dicts2!51@dict!59@dict!67@dict!75@dicts!51@
 enc|1|encrypt!26@
-f|3|f!83@f!35@f!91@
+f|3|f!83@f!91@f!35@
 f2|1|f2!91@
 fla|0|
 fun|1|func!74@
@@ -90,48 +92,51 @@ j|1|j!27@
 key|1|key!27@
 len|1|LENGTH!99@
 li|3|li!51@li!19@li!67@
-lis|7|list!107@list!59@list!91@list!19@lists!115@lists!123@list!75@
+lis|8|list!107@list!59@list!91@list!19@lists!115@list!123@lists!131@list!75@
 mai|1|main!98@
 msg|1|msg!115@
 myc|1|MyClass!9@
 n|2|n!27@n!43@
 nam|1|name_dict!107@
 new|1|new!83@
-num|2|num!131@num!19@
+num|2|num!139@num!19@
 obj|1|obj!11@
 par|1|param!43@
-per|6|Person!9@Person!137@person2!139@person1!11@person2!11@person1!139@
+per|6|Person!9@Person!145@person2!147@person1!11@person2!11@person1!147@
+que|1|question!123@
 res|3|result!107@result!75@result_json!107@
 s|1|s!75@
 s1|1|s1!27@
 s2|1|s2!27@
 sel|1|self!11@
-seq|1|seq!123@
+seq|1|seq!131@
+sfs|0|
 sho|3|show2!74@show3!74@show1!74@
 sql|1|sql!43@
-src|3|src3!146@src2!146@src1!146@
+src|3|src3!154@src2!154@src1!154@
 sul|1|sult_json!107@
+sys|0|
 t|3|t!83@t!91@t!75@
 tem|1|temp!75@
 tes|5|test!51@test2!10@test1!11@test3!10@test2!75@
 tex|2|text!83@text!35@
 tmp|1|tmp!67@
-tpl|1|tpl!155@
-tup|1|tuples!123@
+tpl|1|tpl!163@
+tup|1|tuples!131@
 url|1|url!35@
-use|2|user_passwd!163@user_name!163@
+use|2|user_passwd!171@user_name!171@
 val|2|Valus2!59@Valus1!59@
-war|1|warter!146@
+war|1|warter!154@
 -- END TREE
 -- START TREE 2
 9
-__i|2|__init__!21&138@__init__!21&10@
-age|2|age!22&139@age!22&11@
-bar|1|Bar!21&10@
-hel|1|Hello!21&10@
-job|2|job!22&139@job!22&11@
-nam|3|name!22&139@name!22&11@name!23&11@
-pro|1|Pro!24&10@
-sex|2|sex!22&11@sex!22&139@
-tes|1|test0!24&11@
+__i|2|__init__!22&146@__init__!22&10@
+age|2|age!23&147@age!23&11@
+bar|1|Bar!22&10@
+hel|1|Hello!22&10@
+job|2|job!23&147@job!23&11@
+nam|3|name!23&147@name!23&11@name!24&11@
+pro|1|Pro!25&10@
+sex|2|sex!23&11@sex!23&147@
+tes|1|test0!25&11@
 -- END TREE

@@ -3,6 +3,8 @@ MODULES_MANAGER_V2
 pickle序列化|/media/data/git/Python/workspace/Kevien/pickle序列化.py
 test.cus_pass|/media/data/git/Python/workspace/Kevien/test/cus_pass.py
 test.re|/media/data/git/Python/workspace/Kevien/test/re.py
+test.ryncsfs|/media/data/git/Python/workspace/Kevien/test/ryncsfs.py
+test.syncsfs|/media/data/git/Python/workspace/Kevien/test/syncsfs.py
 删除文件每行的前3个字符|/media/data/git/Python/workspace/Kevien/删除文件每行的前3个字符.py
 第2篇.1_使用while循环输入1234568910|/media/data/git/Python/workspace/Kevien/第2篇/1_使用while循环输入1234568910.py
 第2篇.6_用户登陆（三次机会重试）|/media/data/git/Python/workspace/Kevien/第2篇/6_用户登陆（三次机会重试）.py
